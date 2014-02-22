@@ -3,15 +3,12 @@
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
-using System;
 using System.Diagnostics;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Globalization;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Navigation;
 using JetBrains.Annotations;
+using Player.Model;
 
 namespace Player
 {
@@ -20,6 +17,8 @@ namespace Player
 	/// </summary>
 	sealed partial class _App
 	{
+		[NotNull] private readonly _KaraokeMachine _machine;
+
 		/// <summary>
 		///    Initializes the singleton application object.  This is the first line of authored code
 		///    executed, and as such is the logical equivalent of main() or WinMain().
@@ -28,6 +27,7 @@ namespace Player
 		{
 			InitializeComponent();
 			Suspending += _OnSuspending;
+			_machine = _KaraokeMachine.BoundToModel();
 		}
 
 		/// <summary>
@@ -38,19 +38,10 @@ namespace Player
 		protected override void OnLaunched([NotNull] LaunchActivatedEventArgs e)
 		{
 			_TurnOnDebuggingConsole();
-			var rootFrame = _CreateMainWindow(e);
-			_NavigateToCorrectStartingPage(e, rootFrame);
+			var rootFrame = _CreateMainWindow();
+			_InitializeViewState(e);
+			rootFrame.ChangeToCurrentPageIfNotCurrentlyShowingAnything(e);
 			_ActivateApplication();
-		}
-
-		/// <summary>
-		///    Invoked when Navigation to a certain page fails
-		/// </summary>
-		/// <param name="sender">The Frame which failed navigation</param>
-		/// <param name="e">Details about the navigation failure</param>
-		private static void _OnNavigationFailed([NotNull] object sender, [NotNull] NavigationFailedEventArgs e)
-		{
-			throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
 		}
 
 		/// <summary>
@@ -69,40 +60,22 @@ namespace Player
 		}
 
 		[NotNull]
-		private static Frame _CreateMainWindow([NotNull] LaunchActivatedEventArgs e)
+		private _RootWindow _CreateMainWindow()
 		{
-			var rootFrame = Window.Current.Content as Frame;
-			if (rootFrame != null) return rootFrame;
-
-			rootFrame = _InitializeRootWindow(e);
-			Window.Current.Content = rootFrame;
-			return rootFrame;
+			return _RootWindow.WrapExistingFrameIfPresent(_machine) ?? _RootWindow.InitializeNewWindow(_machine);
 		}
 
-		[NotNull]
-		private static Frame _InitializeRootWindow([NotNull] LaunchActivatedEventArgs e)
+		private static void _InitializeViewState([NotNull] LaunchActivatedEventArgs e)
 		{
-			var rootFrame = new Frame {Language = ApplicationLanguages.Languages[0]};
-			rootFrame.NavigationFailed += _OnNavigationFailed;
-
 			if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
 			{
 				_LoadSavedStateFromTombstone();
 			}
-			return rootFrame;
 		}
 
 		private static void _ActivateApplication()
 		{
 			Window.Current.Activate();
-		}
-
-		private static void _NavigateToCorrectStartingPage([NotNull] LaunchActivatedEventArgs e, [NotNull] Frame rootFrame)
-		{
-			if (rootFrame.Content == null)
-			{
-				rootFrame.Navigate(typeof (MainPage), e.Arguments);
-			}
 		}
 
 		private static void _SaveApplicationState()
@@ -113,8 +86,9 @@ namespace Player
 		{
 		}
 
-		private static void _StopBackgroundActivity()
+		private void _StopBackgroundActivity()
 		{
+			_machine.Pause();
 		}
 
 		private void _TurnOnDebuggingConsole()

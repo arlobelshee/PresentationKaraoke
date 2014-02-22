@@ -116,6 +116,9 @@
     <Compile Include="Model\Presentation.cs" />
     <Compile Include="Model\Slide.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\_KaraokeMachine.cs" />
+    <Compile Include="_IShowKaraokeMachines.cs" />
+    <Compile Include="_RootWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
