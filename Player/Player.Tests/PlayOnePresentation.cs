@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 using Player.Model;
 
 namespace Player.Tests
@@ -9,7 +10,10 @@ namespace Player.Tests
 		[Test]
 		public void APresentationHasOneCurrentSlide()
 		{
-			var testSubject = new _Presentation(new _Slide());
+			var startingSlide = new _Slide();
+			var testSubject = new _Presentation(startingSlide);
+			testSubject.Slide.Should()
+				.Be(startingSlide);
 		}
 	}
 }

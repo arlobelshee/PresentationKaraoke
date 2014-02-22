@@ -1,12 +1,13 @@
-﻿using Player.Model;
+﻿using JetBrains.Annotations;
 
-namespace Player.Tests
+namespace Player.Model
 {
 	internal class _Presentation
 	{
+		[NotNull]
 		public _Slide Slide { get; set; }
 
-		public _Presentation(_Slide slide)
+		public _Presentation([NotNull] _Slide slide)
 		{
 			Slide = slide;
 		}
