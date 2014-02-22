@@ -5,16 +5,14 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Presentation Karaoke Player")]
+[assembly: AssemblyTitle("Player.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Arlo Belshee")]
-[assembly: AssemblyProduct("Player")]
-[assembly: AssemblyCopyright("Copyright © Arlo Belshee 2014")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Player.Tests")]
+[assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-
-[assembly: InternalsVisibleTo("Player.Tests")]
 
 // Version information for an assembly consists of the following four values:
 //
