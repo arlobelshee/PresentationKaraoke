@@ -1,6 +1,6 @@
 ﻿namespace Player.Model
 {
-	internal class Slide
+	internal class _Slide
 	{
 	}
 }

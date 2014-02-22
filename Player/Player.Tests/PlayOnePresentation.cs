@@ -7,9 +7,9 @@ namespace Player.Tests
 	public class PlayOnePresentation
 	{
 		[Test]
-		public void CanRunTests()
+		public void APresentationHasOneCurrentSlide()
 		{
-			var testSubject = new Slide();
+			var testSubject = new _Presentation(new _Slide());
 		}
 	}
 }
