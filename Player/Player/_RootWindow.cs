@@ -17,23 +17,23 @@ namespace Player
 	internal class _RootWindow
 	{
 		private readonly Frame _rootFrame;
-		private readonly _KaraokeMachine _machine;
+		private readonly KaraokeMachine _machine;
 
-		private _RootWindow([NotNull] Frame rootFrame, [NotNull] _KaraokeMachine machine)
+		private _RootWindow([NotNull] Frame rootFrame, [NotNull] KaraokeMachine machine)
 		{
 			_rootFrame = rootFrame;
 			_machine = machine;
 		}
 
 		[CanBeNull]
-		public static _RootWindow WrapExistingFrameIfPresent([NotNull] _KaraokeMachine machine)
+		public static _RootWindow WrapExistingFrameIfPresent([NotNull] KaraokeMachine machine)
 		{
 			var rootFrame = Window.Current.Content as Frame;
 			return rootFrame == null ? null : new _RootWindow(rootFrame, machine);
 		}
 
 		[NotNull]
-		public static _RootWindow InitializeNewWindow([NotNull] _KaraokeMachine machine)
+		public static _RootWindow InitializeNewWindow([NotNull] KaraokeMachine machine)
 		{
 			var rootFrame = new Frame {Language = ApplicationLanguages.Languages[0]};
 			rootFrame.NavigationFailed += _OnNavigationFailed;

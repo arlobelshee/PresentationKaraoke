@@ -5,6 +5,6 @@ namespace Player
 {
 	internal interface _IShowKaraokeMachines
 	{
-		void UseMachine([NotNull] _KaraokeMachine machine);
+		void UseMachine([NotNull] KaraokeMachine machine);
 	}
 }

@@ -15,7 +15,7 @@ namespace Player.Tests
 		[Test]
 		public void NormalMachineInitialization_Should_BindEventsToBrains()
 		{
-			var testSubject = _KaraokeMachine.BoundToModel();
+			var testSubject = KaraokeMachine.BoundToModel();
 			testSubject.Pause.Should()
 				.NotBeNull();
 		}

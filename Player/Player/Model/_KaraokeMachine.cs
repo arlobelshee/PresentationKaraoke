@@ -4,28 +4,49 @@
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
 using System;
+using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 
 namespace Player.Model
 {
-	internal class _KaraokeMachine
+	public class KaraokeMachine : FirePropertyChanged
 	{
 		[NotNull]
 		public Type CurrentPageType
 		{
-			get { return typeof (MainPage); }
+			get { return _currentPageType; }
+			set
+			{
+				if (value == _currentPageType) return;
+				_currentPageType = value;
+				NotifyChangeWatchers();
+			}
 		}
 
 		[NotNull]
-		public Action Pause;
-
-		[NotNull]
-		public static _KaraokeMachine BoundToModel()
+		public Presentation NowPlaying
 		{
-			return new _KaraokeMachine();
+			get { return _nowPlaying; }
+			set
+			{
+				if (value == _nowPlaying) return;
+				_nowPlaying = value;
+				NotifyChangeWatchers();
+			}
 		}
 
-		public _KaraokeMachine()
+		[NotNull] public Action Pause;
+
+		private Presentation _nowPlaying;
+		private Type _currentPageType;
+
+		[NotNull]
+		public static KaraokeMachine BoundToModel()
+		{
+			return new KaraokeMachine();
+		}
+
+		public KaraokeMachine()
 		{
 			Pause = _NoOp;
 		}

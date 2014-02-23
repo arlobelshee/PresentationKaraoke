@@ -2,14 +2,14 @@
 
 namespace Player.Model
 {
-	internal class _Presentation
+	public class Presentation
 	{
 		[NotNull]
-		public _Slide Slide { get; set; }
+		public Slide CurrentSlide { get; set; }
 
-		public _Presentation([NotNull] _Slide slide)
+		public Presentation([NotNull] Slide initialSlide)
 		{
-			Slide = slide;
+			CurrentSlide = initialSlide;
 		}
 	}
 }

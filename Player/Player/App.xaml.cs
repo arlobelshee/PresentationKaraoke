@@ -17,7 +17,7 @@ namespace Player
 	/// </summary>
 	sealed partial class _App
 	{
-		[NotNull] private readonly _KaraokeMachine _machine;
+		[NotNull] private readonly KaraokeMachine _machine;
 
 		/// <summary>
 		///    Initializes the singleton application object.  This is the first line of authored code
@@ -27,7 +27,7 @@ namespace Player
 		{
 			InitializeComponent();
 			Suspending += _OnSuspending;
-			_machine = _KaraokeMachine.BoundToModel();
+			_machine = KaraokeMachine.BoundToModel();
 		}
 
 		/// <summary>
