@@ -31,8 +31,18 @@ namespace Player.Tests
 			machine.ShouldRaisePropertyChangeFor(m => m.CurrentPageType);
 			machine.ShouldRaisePropertyChangeFor(m => m.NowPlaying);
 			machine.CurrentPageType.Should()
-				.Be(typeof (MainPage));
+				.Be(typeof (PresentationPlayingPage));
 			machine.NowPlaying.Should()
+				.NotBeNull();
+		}
+
+		[Test]
+		public void NewlyCreatedMachines_Should_BeShowingAPresentation()
+		{
+			var testSubject = KaraokeMachine.BoundToModel();
+			testSubject.CurrentPageType.Should()
+				.Be(typeof (PresentationPlayingPage));
+			testSubject.NowPlaying.Should()
 				.NotBeNull();
 		}
 	}

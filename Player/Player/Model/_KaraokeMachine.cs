@@ -4,7 +4,6 @@
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
 using System;
-using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 
 namespace Player.Model
@@ -43,7 +42,7 @@ namespace Player.Model
 		[NotNull]
 		public static KaraokeMachine BoundToModel()
 		{
-			return new KaraokeMachine();
+			return new KaraokeMachine {_currentPageType = typeof (PresentationPlayingPage), _nowPlaying = new Presentation(new Slide())};
 		}
 
 		public KaraokeMachine()

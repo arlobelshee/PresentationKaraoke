@@ -19,7 +19,7 @@ namespace Player.Model
 		public void BeginPresentation()
 		{
 			_machine.NowPlaying = new Presentation(new Slide());
-			_machine.CurrentPageType = typeof (MainPage);
+			_machine.CurrentPageType = typeof (PresentationPlayingPage);
 		}
 	}
 }
