@@ -15,6 +15,7 @@ namespace Player.Model
 
 		protected void NotifyChangeWatchers([CanBeNull,CallerMemberName] string changedProperty=null)
 		{
+			if (PropertyChanged == null) return;
 			PropertyChanged(this, new PropertyChangedEventArgs(changedProperty));
 		}
 	}

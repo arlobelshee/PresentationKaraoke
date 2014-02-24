@@ -64,9 +64,9 @@ namespace Player
 
 		private void _BindNewPageToMachine()
 		{
-			var page = _rootFrame.Content as _IShowKaraokeMachines;
+			var page = _rootFrame.Content as Page;
 			if (page != null)
-				page.UseMachine(_machine);
+				page.DataContext = _machine;
 		}
 
 		private static void _OnNavigationFailed([NotNull] object sender, [NotNull] NavigationFailedEventArgs e)

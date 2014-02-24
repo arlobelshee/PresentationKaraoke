@@ -4,6 +4,8 @@
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
 using System;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using JetBrains.Annotations;
 
 namespace Player.Model
@@ -52,6 +54,16 @@ namespace Player.Model
 
 		private static void _NoOp()
 		{
+		}
+	}
+
+	public class DesignDataMachine_PlayPresentation : KaraokeMachine
+	{
+		public DesignDataMachine_PlayPresentation()
+		{
+			var initialSlide = new Slide {Background = "Assets/burning_car.jpeg"};
+			NowPlaying = new Presentation(initialSlide);
+			CurrentPageType = typeof (PresentationPlayingPage);
 		}
 	}
 }
