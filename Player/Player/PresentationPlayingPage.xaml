@@ -10,7 +10,7 @@
 	DataContext="{Binding RelativeSource={RelativeSource Self}}"
 	d:DataContext="{Binding Source={d:DesignInstance Type=vm:DesignDataMachine_PlayPresentation, IsDesignTimeCreatable=True}}">
 
-	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" DataContext="{Binding NowPlaying.CurrentSlide}">
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" DataContext="{Binding CurrentSlide}">
 		<Image x:Name="BackgroundImage" Margin="0" Source="{Binding Background}" Stretch="UniformToFill" />
 
 	</Grid>

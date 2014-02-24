@@ -20,7 +20,7 @@ namespace Player.Model
 		{
 			var initialSlide = new Slide();
 			initialSlide.Background = "Assets/burning_car.jpeg";
-			_machine.NowPlaying = new Presentation(initialSlide);
+			_machine.CurrentSlide = initialSlide;
 			_machine.CurrentPageType = typeof (PresentationPlayingPage);
 		}
 	}

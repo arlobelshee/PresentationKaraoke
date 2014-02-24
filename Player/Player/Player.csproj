@@ -114,7 +114,6 @@
       <DependentUpon>PresentationPlayingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\FirePropertyChanged.cs" />
-    <Compile Include="Model\Presentation.cs" />
     <Compile Include="Model\Slide.cs" />
     <Compile Include="Model\_MachineBrains.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

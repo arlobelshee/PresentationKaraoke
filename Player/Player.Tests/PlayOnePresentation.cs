@@ -13,15 +13,6 @@ namespace Player.Tests
 	public class PlayOnePresentation
 	{
 		[Test]
-		public void APresentationHasOneCurrentSlide()
-		{
-			var startingSlide = new Slide();
-			var testSubject = new Presentation(startingSlide);
-			testSubject.CurrentSlide.Should()
-				.Be(startingSlide);
-		}
-
-		[Test]
 		public void TellingTheMachineToPlay_Should_UpdateThePresentationAndStartPlayingIt()
 		{
 			var machine = new KaraokeMachine();
@@ -29,10 +20,10 @@ namespace Player.Tests
 			machine.MonitorEvents();
 			testSubject.BeginPresentation();
 			machine.ShouldRaisePropertyChangeFor(m => m.CurrentPageType);
-			machine.ShouldRaisePropertyChangeFor(m => m.NowPlaying);
+			machine.ShouldRaisePropertyChangeFor(m => m.CurrentSlide);
 			machine.CurrentPageType.Should()
 				.Be(typeof (PresentationPlayingPage));
-			machine.NowPlaying.Should()
+			machine.CurrentSlide.Should()
 				.NotBeNull();
 		}
 
@@ -42,7 +33,7 @@ namespace Player.Tests
 			var testSubject = KaraokeMachine.BoundToModel();
 			testSubject.CurrentPageType.Should()
 				.Be(typeof (PresentationPlayingPage));
-			testSubject.NowPlaying.Should()
+			testSubject.CurrentSlide.Should()
 				.NotBeNull();
 		}
 	}

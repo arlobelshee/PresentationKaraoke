@@ -25,26 +25,29 @@ namespace Player.Model
 		}
 
 		[NotNull]
-		public Presentation NowPlaying
+		public Slide CurrentSlide
 		{
-			get { return _nowPlaying; }
+			get { return _currentSlide; }
 			set
 			{
-				if (value == _nowPlaying) return;
-				_nowPlaying = value;
+				if (value == _currentSlide) return;
+				_currentSlide = value;
 				NotifyChangeWatchers();
 			}
 		}
 
 		[NotNull] public Action Pause;
 
-		private Presentation _nowPlaying;
+		private Slide _currentSlide;
 		private Type _currentPageType;
 
 		[NotNull]
 		public static KaraokeMachine BoundToModel()
 		{
-			return new KaraokeMachine {_currentPageType = typeof (PresentationPlayingPage), _nowPlaying = new Presentation(new Slide())};
+			var result = new KaraokeMachine();
+			var brains = new _MachineBrains(result);
+			brains.BeginPresentation();
+			return result;
 		}
 
 		public KaraokeMachine()
@@ -62,7 +65,7 @@ namespace Player.Model
 		public DesignDataMachine_PlayPresentation()
 		{
 			var initialSlide = new Slide {Background = "Assets/burning_car.jpeg"};
-			NowPlaying = new Presentation(initialSlide);
+			CurrentSlide = initialSlide;
 			CurrentPageType = typeof (PresentationPlayingPage);
 		}
 	}
