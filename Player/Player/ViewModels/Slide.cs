@@ -1,7 +1,12 @@
-﻿using Windows.UI.Xaml.Media;
-using JetBrains.Annotations;
+﻿// Presentation Karaoke Player
+// File: Slide.cs
+// 
+// Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
-namespace Player.Model
+using JetBrains.Annotations;
+using Player.Model;
+
+namespace Player.ViewModels
 {
 	public class Slide : FirePropertyChanged
 	{

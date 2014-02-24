@@ -6,6 +6,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 using Player.Model;
+using Player.ViewModels;
 
 namespace Player.Tests
 {

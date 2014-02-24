@@ -3,12 +3,13 @@
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:local="using:Player"
-	xmlns:vm="using:Player.Model"
+	xmlns:vm="using:Player.ViewModels"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:viewModels="using:Player.ViewModels"
 	mc:Ignorable="d"
 	DataContext="{Binding RelativeSource={RelativeSource Self}}"
-	d:DataContext="{Binding Source={d:DesignInstance Type=vm:DesignDataMachine_PlayPresentation, IsDesignTimeCreatable=True}}">
+	d:DataContext="{Binding Source={d:DesignInstance Type=viewModels:DesignDataMachine_PlayPresentation, IsDesignTimeCreatable=True}}">
 
 	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" DataContext="{Binding CurrentSlide}">
 		<Image x:Name="BackgroundImage" Margin="0" Source="{Binding Background}" Stretch="UniformToFill" />

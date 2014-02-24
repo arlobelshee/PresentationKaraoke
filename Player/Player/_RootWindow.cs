@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using JetBrains.Annotations;
 using Player.Model;
+using Player.ViewModels;
 
 namespace Player
 {

@@ -4,6 +4,7 @@
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
 using JetBrains.Annotations;
+using Player.ViewModels;
 
 namespace Player.Model
 {

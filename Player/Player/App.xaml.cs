@@ -9,6 +9,7 @@ using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using JetBrains.Annotations;
 using Player.Model;
+using Player.ViewModels;
 
 namespace Player
 {

@@ -103,21 +103,20 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Annotations.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PresentationPlayingPage.xaml.cs">
+    <Compile Include="Views\PresentationPlayingPage.xaml.cs">
       <DependentUpon>PresentationPlayingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\FirePropertyChanged.cs" />
-    <Compile Include="Model\Slide.cs" />
+    <Compile Include="ViewModels\Slide.cs" />
     <Compile Include="Model\_MachineBrains.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Model\_KaraokeMachine.cs" />
+    <Compile Include="ViewModels\_KaraokeMachine.cs" />
     <Compile Include="_RootWindow.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -138,7 +137,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="PresentationPlayingPage.xaml">
+    <Page Include="Views\PresentationPlayingPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
