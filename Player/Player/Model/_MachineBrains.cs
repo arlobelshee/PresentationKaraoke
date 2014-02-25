@@ -19,8 +19,11 @@ namespace Player.Model
 
 		public void BeginPresentation()
 		{
-			var initialSlide = new Slide();
-			initialSlide.Background = "Assets/burning_car.jpeg";
+			var initialSlide = new Slide
+			{
+				Background = "../Assets/burning_car.jpeg",
+				MessageCenter = "Let's get started!"
+			};
 			_machine.CurrentSlide = initialSlide;
 			_machine.CurrentPageType = typeof (PresentationPlayingPage);
 		}

@@ -63,7 +63,13 @@ namespace Player.ViewModels
 	{
 		public DesignDataMachine_PlayPresentation()
 		{
-			var initialSlide = new Slide {Background = "Assets/burning_car.jpeg", MessageTop = "Smart and funny at the top", MessageCenter = null, MessageBottom = "Witty down low"};
+			var initialSlide = new Slide
+			{
+				Background = "../Assets/burning_car.jpeg",
+				MessageTop = "Smart and funny at the top",
+				MessageCenter = null,
+				MessageBottom = "Witty down low"
+			};
 			CurrentSlide = initialSlide;
 			CurrentPageType = typeof (PresentationPlayingPage);
 		}
