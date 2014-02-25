@@ -109,6 +109,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\HasContent.cs" />
     <Compile Include="Views\PresentationPlayingPage.xaml.cs">
       <DependentUpon>PresentationPlayingPage.xaml</DependentUpon>
     </Compile>
