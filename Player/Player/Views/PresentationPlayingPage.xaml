@@ -11,8 +11,26 @@
 	DataContext="{Binding RelativeSource={RelativeSource Self}}"
 	d:DataContext="{Binding Source={d:DesignInstance Type=viewModels:DesignDataMachine_PlayPresentation, IsDesignTimeCreatable=True}}">
 
+	<Page.Resources>
+		<SolidColorBrush x:Key="Background_Black" Color="#99000000"/>
+		<SolidColorBrush x:Key="Background_White" Color="#99FFFFFF"/>
+		<SolidColorBrush x:Key="Foreground_Black" Color="Black"/>
+		<SolidColorBrush x:Key="Foreground_White" Color="White"/>
+	</Page.Resources>
 	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" DataContext="{Binding CurrentSlide}">
 		<Image x:Name="BackgroundImage" Margin="0" Source="{Binding Background}" Stretch="UniformToFill" />
+
+		<Border VerticalAlignment="Top" Background="{StaticResource Background_Black}" IsHitTestVisible="False">
+			<TextBlock Text="Hello" VerticalAlignment="Top" Padding="15,30" FontSize="48" FontFamily="Candara" IsTapEnabled="False" IsRightTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False" ManipulationMode="None" TextWrapping="WrapWholeWords" TextAlignment="Center" FontWeight="Bold" Opacity="1.0" Foreground="{StaticResource Foreground_White}"/>
+		</Border>
+
+		<Border VerticalAlignment="Center" Background="{StaticResource Background_Black}" IsHitTestVisible="False">
+			<TextBlock Text="Hello" VerticalAlignment="Top" Padding="15,30" FontSize="48" FontFamily="Candara" IsTapEnabled="False" IsRightTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False" ManipulationMode="None" TextWrapping="WrapWholeWords" TextAlignment="Center" FontWeight="Bold" Opacity="1.0" Foreground="{StaticResource Foreground_White}"/>
+		</Border>
+
+		<Border VerticalAlignment="Bottom" Background="{StaticResource Background_Black}" IsHitTestVisible="False">
+			<TextBlock Text="Hello" VerticalAlignment="Top" Padding="15,30" FontSize="48" FontFamily="Candara" IsTapEnabled="False" IsRightTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False" ManipulationMode="None" TextWrapping="WrapWholeWords" TextAlignment="Center" FontWeight="Bold" Opacity="1.0" Foreground="{StaticResource Foreground_White}"/>
+		</Border>
 
 	</Grid>
 </Page>
