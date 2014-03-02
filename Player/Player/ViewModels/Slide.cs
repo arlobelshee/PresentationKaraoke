@@ -21,5 +21,14 @@ namespace Player.ViewModels
 
 		[CanBeNull]
 		public string MessageBottom { get; set; }
+
+		public static Slide BurningCar()
+		{
+			var initialSlide = new Slide
+			{
+				Background = "../Assets/burning_car.jpeg"
+			};
+			return initialSlide;
+		}
 	}
 }

@@ -60,21 +60,23 @@ namespace Player.ViewModels
 		private static void _NoOp()
 		{
 		}
+
+		public void ShowSlide([NotNull] Slide initialSlide)
+		{
+			CurrentSlide = initialSlide;
+			CurrentPageType = typeof (PresentationPlayingPage);
+		}
 	}
 
 	public class KaraokeMachine_PlayPresentation_DesignData : KaraokeMachine
 	{
 		public KaraokeMachine_PlayPresentation_DesignData()
 		{
-			var initialSlide = new Slide
-			{
-				Background = "../Assets/burning_car.jpeg",
-				MessageTop = "Smart and funny at the top",
-				MessageCenter = null,
-				MessageBottom = "Witty down low",
-			};
-			CurrentSlide = initialSlide;
-			CurrentPageType = typeof (PresentationPlayingPage);
+			var initialSlide = Slide.BurningCar();
+			initialSlide.MessageBottom = "Witty down low";
+			initialSlide.MessageCenter = null;
+			initialSlide.MessageTop = "Smart and funny at the top";
+			ShowSlide(initialSlide);
 			AdvanceSlide = () => new MessageDialog("This would advance the slide.").ShowAsync();
 			Pause = () => new MessageDialog("Pausing the presentation.").ShowAsync();
 		}
