@@ -41,6 +41,7 @@ namespace Player.ViewModels
 
 		private Slide _currentSlide;
 		private Type _currentPageType;
+		internal _MachineBrains Brains_TestAccess;
 
 		[NotNull]
 		public static KaraokeMachine BoundToModel()

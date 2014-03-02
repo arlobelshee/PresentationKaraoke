@@ -104,6 +104,8 @@
     <Compile Include="BeAWinStoreApplication.cs" />
     <Compile Include="PlayOnePresentation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZZSupport\DataBinding\CommandsCanVerifyTheirBindingTargets.cs" />
+    <Compile Include="ZZSupport\Tests\CommandTestExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FluentAssertions">

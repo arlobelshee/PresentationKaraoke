@@ -5,7 +5,6 @@
 
 using FluentAssertions;
 using NUnit.Framework;
-using Player.Model;
 using Player.ViewModels;
 
 namespace Player.Tests
@@ -17,7 +16,11 @@ namespace Player.Tests
 		public void NormalMachineInitialization_Should_BindEventsToBrains()
 		{
 			var testSubject = KaraokeMachine.BoundToModel();
+			var brains = testSubject.Brains_TestAccess;
 			testSubject.Pause.Should()
+				.NotBeNull();
+			//.Be((Action)brains.Pause);
+			testSubject.AdvanceSlide.Should()
 				.NotBeNull();
 		}
 	}

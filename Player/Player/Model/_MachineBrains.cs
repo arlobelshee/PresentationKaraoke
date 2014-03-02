@@ -15,6 +15,7 @@ namespace Player.Model
 		public _MachineBrains([NotNull] KaraokeMachine machine)
 		{
 			_machine = machine;
+			machine.Pause = Pause;
 		}
 
 		public void BeginPresentation()
@@ -23,5 +24,9 @@ namespace Player.Model
 			initialSlide.MessageCenter = "Let's get started!";
 			_machine.ShowSlide(initialSlide);
 		}
+
+		public void Pause() { }
+
+		public void AdvanceSlide() { }
 	}
 }
