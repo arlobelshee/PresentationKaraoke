@@ -9,7 +9,7 @@
 	xmlns:viewModels="using:Player.ViewModels"
 	mc:Ignorable="d"
 	DataContext="{Binding RelativeSource={RelativeSource Self}}"
-	d:DataContext="{Binding Source={d:DesignInstance Type=viewModels:DesignDataMachine_PlayPresentation, IsDesignTimeCreatable=True}}">
+	d:DataContext="{Binding Source={d:DesignInstance Type=viewModels:KaraokeMachine_PlayPresentation_DesignData, IsDesignTimeCreatable=True}}">
 
 	<Page.Resources>
 		<SolidColorBrush x:Key="Background_Black" Color="#99000000"/>

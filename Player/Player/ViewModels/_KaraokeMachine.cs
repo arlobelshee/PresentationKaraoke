@@ -4,6 +4,7 @@
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
 using System;
+using Windows.UI.Popups;
 using JetBrains.Annotations;
 using Player.Model;
 
@@ -36,6 +37,7 @@ namespace Player.ViewModels
 		}
 
 		[NotNull] public Action Pause;
+		[NotNull] public Action AdvanceSlide;
 
 		private Slide _currentSlide;
 		private Type _currentPageType;
@@ -52,6 +54,7 @@ namespace Player.ViewModels
 		public KaraokeMachine()
 		{
 			Pause = _NoOp;
+			AdvanceSlide = _NoOp;
 		}
 
 		private static void _NoOp()
@@ -59,19 +62,21 @@ namespace Player.ViewModels
 		}
 	}
 
-	public class DesignDataMachine_PlayPresentation : KaraokeMachine
+	public class KaraokeMachine_PlayPresentation_DesignData : KaraokeMachine
 	{
-		public DesignDataMachine_PlayPresentation()
+		public KaraokeMachine_PlayPresentation_DesignData()
 		{
 			var initialSlide = new Slide
 			{
 				Background = "../Assets/burning_car.jpeg",
 				MessageTop = "Smart and funny at the top",
 				MessageCenter = null,
-				MessageBottom = "Witty down low"
+				MessageBottom = "Witty down low",
 			};
 			CurrentSlide = initialSlide;
 			CurrentPageType = typeof (PresentationPlayingPage);
+			AdvanceSlide = () => new MessageDialog("This would advance the slide.").ShowAsync();
+			Pause = () => new MessageDialog("Pausing the presentation.").ShowAsync();
 		}
 	}
 }
