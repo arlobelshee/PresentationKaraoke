@@ -16,18 +16,24 @@ namespace Player.Model
 		{
 			_machine = machine;
 			machine.Pause.BindTo(Pause);
+			machine.AdvanceSlide.BindTo(AdvanceSlide);
 			machine.Brains_TestAccess = this;
 		}
 
 		public void BeginPresentation()
 		{
 			var initialSlide = Slide.BurningCar();
-			initialSlide.MessageCenter = "Let's get started!";
+			initialSlide.MessageCenter = "Let's play!";
 			_machine.ShowSlide(initialSlide);
 		}
 
 		public void Pause() { }
 
-		public void AdvanceSlide() { }
+		public void AdvanceSlide()
+		{
+			var nextSlide = Slide.BurningCar();
+			nextSlide.MessageTop = "You are so advanced!";
+			_machine.ShowSlide(nextSlide);
+		}
 	}
 }

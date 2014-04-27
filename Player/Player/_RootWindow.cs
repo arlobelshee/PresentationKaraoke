@@ -10,7 +10,6 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using JetBrains.Annotations;
-using Player.Model;
 using Player.ViewModels;
 
 namespace Player
@@ -36,7 +35,10 @@ namespace Player
 		[NotNull]
 		public static _RootWindow InitializeNewWindow([NotNull] KaraokeMachine machine)
 		{
-			var rootFrame = new Frame {Language = ApplicationLanguages.Languages[0]};
+			var rootFrame = new Frame
+			{
+				Language = ApplicationLanguages.Languages[0]
+			};
 			rootFrame.NavigationFailed += _OnNavigationFailed;
 			Window.Current.Content = rootFrame;
 
@@ -67,7 +69,10 @@ namespace Player
 		{
 			var page = _rootFrame.Content as Page;
 			if (page != null)
+			{
 				page.DataContext = _machine;
+				page.Focus(FocusState.Keyboard);
+			}
 		}
 
 		private static void _OnNavigationFailed([NotNull] object sender, [NotNull] NavigationFailedEventArgs e)
