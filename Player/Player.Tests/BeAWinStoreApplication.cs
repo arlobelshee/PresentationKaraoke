@@ -18,8 +18,7 @@ namespace Player.Tests
 			var testSubject = KaraokeMachine.BoundToModel();
 			var brains = testSubject.Brains_TestAccess;
 			testSubject.Pause.Should()
-				.NotBeNull();
-			//.Be((Action)brains.Pause);
+			.BeBoundTo(brains.Pause);
 			testSubject.AdvanceSlide.Should()
 				.NotBeNull();
 		}

@@ -4,9 +4,10 @@
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
 using JetBrains.Annotations;
-using Player.Tests.ZZSupport.DataBinding;
+using Player.Model;
+using Player.Tests.ZZSupport.Tests;
 
-namespace Player.Tests.ZZSupport.Tests
+namespace FluentAssertions
 {
 	public static class CommandTestExtensions
 	{

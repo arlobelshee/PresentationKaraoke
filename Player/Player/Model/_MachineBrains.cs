@@ -15,7 +15,8 @@ namespace Player.Model
 		public _MachineBrains([NotNull] KaraokeMachine machine)
 		{
 			_machine = machine;
-			machine.Pause = Pause;
+			machine.Pause.BindTo(Pause);
+			machine.Brains_TestAccess = this;
 		}
 
 		public void BeginPresentation()

@@ -36,8 +36,8 @@ namespace Player.ViewModels
 			}
 		}
 
-		[NotNull] public Action Pause;
-		[NotNull] public Action AdvanceSlide;
+		[NotNull] public Command Pause;
+		[NotNull] public Command AdvanceSlide;
 
 		private Slide _currentSlide;
 		private Type _currentPageType;
@@ -54,8 +54,8 @@ namespace Player.ViewModels
 
 		public KaraokeMachine()
 		{
-			Pause = _NoOp;
-			AdvanceSlide = _NoOp;
+			Pause = new Command(_NoOp);
+			AdvanceSlide = new Command(_NoOp);
 		}
 
 		private static void _NoOp()
@@ -78,8 +78,8 @@ namespace Player.ViewModels
 			initialSlide.MessageCenter = null;
 			initialSlide.MessageTop = "Smart and funny at the top";
 			ShowSlide(initialSlide);
-			AdvanceSlide = () => new MessageDialog("This would advance the slide.").ShowAsync();
-			Pause = () => new MessageDialog("Pausing the presentation.").ShowAsync();
+			AdvanceSlide.BindTo(() => new MessageDialog("This would advance the slide.").ShowAsync());
+			Pause.BindTo(() => new MessageDialog("Pausing the presentation.").ShowAsync());
 		}
 	}
 }

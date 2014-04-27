@@ -89,7 +89,7 @@ namespace Player
 
 		private void _StopBackgroundActivity()
 		{
-			_machine.Pause();
+			_machine.Pause.Call();
 		}
 
 		private void _TurnOnDebuggingConsole()
