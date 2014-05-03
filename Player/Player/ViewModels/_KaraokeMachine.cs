@@ -7,6 +7,7 @@ using System;
 using Windows.UI.Popups;
 using JetBrains.Annotations;
 using Player.Model;
+using Player.Views;
 
 namespace Player.ViewModels
 {
@@ -36,8 +37,8 @@ namespace Player.ViewModels
 			}
 		}
 
-		[NotNull] public Command Pause;
-		[NotNull] public Command AdvanceSlide;
+		[NotNull] public readonly Command Pause;
+		[NotNull] public readonly Command AdvanceSlide;
 
 		private Slide _currentSlide;
 		private Type _currentPageType;

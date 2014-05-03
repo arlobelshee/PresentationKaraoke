@@ -111,6 +111,7 @@
     </Compile>
     <Compile Include="Model\Command.cs" />
     <Compile Include="ViewModels\HasContent.cs" />
+    <Compile Include="Views\NavigationTarget.cs" />
     <Compile Include="Views\PresentationPlayingPage.xaml.cs">
       <DependentUpon>PresentationPlayingPage.xaml</DependentUpon>
     </Compile>

@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using JetBrains.Annotations;
 using Player.ViewModels;
+using Player.Views;
 
 namespace Player
 {
@@ -23,6 +24,7 @@ namespace Player
 		{
 			_rootFrame = rootFrame;
 			_machine = machine;
+			_rootFrame.Focus(FocusState.Programmatic);
 		}
 
 		[CanBeNull]
@@ -55,12 +57,14 @@ namespace Player
 
 		public void ChangeToCurrentPage([NotNull] string arguments)
 		{
+			_UnbindOldPageFromMachine();
 			_rootFrame.Navigate(_machine.CurrentPageType, arguments);
 			_BindNewPageToMachine();
 		}
 
 		public void ChangeToCurrentPage()
 		{
+			_UnbindOldPageFromMachine();
 			_rootFrame.Navigate(_machine.CurrentPageType);
 			_BindNewPageToMachine();
 		}
@@ -71,7 +75,25 @@ namespace Player
 			if (page != null)
 			{
 				page.DataContext = _machine;
-				page.Focus(FocusState.Keyboard);
+			}
+			var target = _rootFrame.Content as NavigationTarget;
+			if (target != null)
+			{
+				_rootFrame.KeyUp += target.OnKey;
+			}
+		}
+
+		private void _UnbindOldPageFromMachine()
+		{
+			var page = _rootFrame.Content as Page;
+			if (page != null)
+			{
+				page.DataContext = null;
+			}
+			var target = _rootFrame.Content as NavigationTarget;
+			if (target != null)
+			{
+				_rootFrame.KeyUp -= target.OnKey;
 			}
 		}
 
