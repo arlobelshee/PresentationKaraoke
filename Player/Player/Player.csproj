@@ -109,7 +109,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\AsyncCommand.cs" />
     <Compile Include="Model\Command.cs" />
+    <Compile Include="Model\HasTarget.cs" />
     <Compile Include="ViewModels\HasContent.cs" />
     <Compile Include="ViewModels\ColorScheme.cs" />
     <Compile Include="Views\NavigationTarget.cs" />

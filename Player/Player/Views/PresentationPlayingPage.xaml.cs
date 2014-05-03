@@ -41,11 +41,11 @@ namespace Player.Views
 		public void OnKey(object sender, KeyRoutedEventArgs e)
 		{
 			if (AdvanceSlideKeys.Contains(e.Key))
-				_TheMachine.AdvanceSlide.Call();
+				_TheMachine.AdvanceSlide.Execute();
 			if (StopKeys.Contains(e.Key))
-				_TheMachine.Stop.Call();
+				_TheMachine.Stop.Execute();
 			if (e.Key >= VirtualKey.A && e.Key <= VirtualKey.Z)
-				_TheMachine.Pause.Call();
+				_TheMachine.Pause.Execute();
 		}
 
 		[NotNull]

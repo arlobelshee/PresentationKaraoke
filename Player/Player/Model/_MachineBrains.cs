@@ -3,6 +3,7 @@
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
+using System.Threading.Tasks;
 using JetBrains.Annotations;
 using Player.ViewModels;
 
@@ -20,16 +21,18 @@ namespace Player.Model
 			_machine.SlideAdvanceSpeed = 20;
 		}
 
-		public void Start()
+		[NotNull]
+		public async Task Start()
 		{
-			var initialSlide = Slide.Whisky();
+			var initialSlide = await Slide.Whisky();
 			initialSlide.MessageCenter = "Let's play!";
 			_machine.ShowSlide(initialSlide);
 		}
 
-		public void AdvanceSlide()
+		[NotNull]
+		public async Task AdvanceSlide()
 		{
-			var nextSlide = Slide.BurningCar();
+			var nextSlide = await Slide.BurningCar();
 			nextSlide.MessageTop = "You are so advanced!";
 			_machine.ShowSlide(nextSlide);
 		}

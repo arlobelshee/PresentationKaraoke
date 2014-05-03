@@ -51,10 +51,10 @@ namespace Player.ViewModels
 		public Command Pause { get; private set; }
 
 		[NotNull]
-		public Command AdvanceSlide { get; private set; }
+		public AsyncCommand AdvanceSlide { get; private set; }
 
 		[NotNull]
-		public Command Start { get; private set; }
+		public AsyncCommand Start { get; private set; }
 
 		[NotNull]
 		public Command Stop { get; private set; }
@@ -75,8 +75,8 @@ namespace Player.ViewModels
 		public KaraokeMachine()
 		{
 			Pause = new Command(_NoOp);
-			AdvanceSlide = new Command(_NoOp);
-			Start = new Command(_NoOp);
+			AdvanceSlide = AsyncCommand.Wrapping(_NoOp);
+			Start = AsyncCommand.Wrapping(_NoOp);
 			Stop = new Command(_NoOp);
 		}
 
@@ -100,11 +100,15 @@ namespace Player.ViewModels
 	{
 		public KaraokeMachine_PlayPresentation_DesignData()
 		{
-			var initialSlide = Slide.BurningCar();
-			initialSlide.MessageBottom = "Witty down low";
-			initialSlide.MessageCenter = null;
-			initialSlide.MessageTop = "Smart and funny at the top";
-			ShowSlide(initialSlide);
+			var future = Slide.BurningCar();
+			future.ContinueWith(t =>
+			{
+				var initialSlide = t.Result;
+				initialSlide.MessageBottom = "Witty down low";
+				initialSlide.MessageCenter = null;
+				initialSlide.MessageTop = "Smart and funny at the top";
+				ShowSlide(initialSlide);
+			});
 		}
 	}
 

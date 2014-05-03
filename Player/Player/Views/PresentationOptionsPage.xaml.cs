@@ -22,13 +22,13 @@ namespace Player.Views
 		private void PlayNormal_OnClick([CanBeNull] object sender, [CanBeNull] RoutedEventArgs e)
 		{
 			_TheMachine
-				.Start.Call();
+				.Start.Execute();
 		}
 
 		private void PlayFullAuto_OnClick([CanBeNull] object sender, [CanBeNull] RoutedEventArgs e)
 		{
 			_TheMachine
-				.Start.Call();
+				.Start.Execute();
 		}
 
 		[NotNull]

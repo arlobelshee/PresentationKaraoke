@@ -28,7 +28,7 @@ namespace Player.Tests.ZZSupport.DataBinding
 			var testSubject = new Command(_RecordCalls);
 			_calls.Should()
 				.Be(0);
-			testSubject.Call();
+			testSubject.Execute();
 			_calls.Should()
 				.Be(1);
 		}
