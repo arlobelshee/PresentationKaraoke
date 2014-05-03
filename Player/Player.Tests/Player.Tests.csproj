@@ -101,7 +101,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="BeAWinStoreApplication.cs" />
+    <Compile Include="ViewModelShouldPropagateEvents.cs" />
     <Compile Include="PlayOnePresentation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ZZSupport\Tests\CommandAssertions.cs" />

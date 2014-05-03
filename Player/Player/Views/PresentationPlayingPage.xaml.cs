@@ -28,6 +28,11 @@ namespace Player.Views
 			VirtualKey.Up
 		};
 
+		private static readonly VirtualKey[] StopKeys =
+		{
+			VirtualKey.Escape
+		};
+
 		public PresentationPlayingPage()
 		{
 			InitializeComponent();
@@ -37,6 +42,10 @@ namespace Player.Views
 		{
 			if (AdvanceSlideKeys.Contains(e.Key))
 				_TheMachine.AdvanceSlide.Call();
+			if (StopKeys.Contains(e.Key))
+				_TheMachine.Stop.Call();
+			if (e.Key >= VirtualKey.A && e.Key <= VirtualKey.Z)
+				_TheMachine.Pause.Call();
 		}
 
 		[NotNull]

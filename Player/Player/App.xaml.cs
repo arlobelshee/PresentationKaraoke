@@ -28,7 +28,7 @@ namespace Player
 		{
 			InitializeComponent();
 			Suspending += _OnSuspending;
-			_machine = KaraokeMachine.BoundToModel();
+			_machine = KaraokeMachine.WithABrain();
 		}
 
 		/// <summary>

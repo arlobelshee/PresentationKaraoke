@@ -39,17 +39,19 @@ namespace Player.ViewModels
 
 		[NotNull] public readonly Command Pause;
 		[NotNull] public readonly Command AdvanceSlide;
+		[NotNull] public readonly Command Start;
+		[NotNull] public readonly Command Stop;
 
 		private Slide _currentSlide;
 		private Type _currentPageType;
 		internal _MachineBrains Brains_TestAccess;
 
 		[NotNull]
-		public static KaraokeMachine BoundToModel()
+		public static KaraokeMachine WithABrain()
 		{
 			var result = new KaraokeMachine();
-			var brains = new _MachineBrains(result);
-			brains.BeginPresentation();
+			_MachineBrains.SupplyBrainFor(result);
+			result.Start.Call();
 			return result;
 		}
 
@@ -57,6 +59,8 @@ namespace Player.ViewModels
 		{
 			Pause = new Command(_NoOp);
 			AdvanceSlide = new Command(_NoOp);
+			Start = new Command(_NoOp);
+			Stop = new Command(_NoOp);
 		}
 
 		private static void _NoOp()
@@ -81,6 +85,8 @@ namespace Player.ViewModels
 			ShowSlide(initialSlide);
 			AdvanceSlide.BindTo(() => new MessageDialog("This would advance the slide.").ShowAsync());
 			Pause.BindTo(() => new MessageDialog("Pausing the presentation.").ShowAsync());
+			Stop.BindTo(() => new MessageDialog("This would start a new presentation.").ShowAsync());
+			Stop.BindTo(() => new MessageDialog("Stopping the presentation.").ShowAsync());
 		}
 	}
 }
