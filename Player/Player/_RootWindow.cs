@@ -25,6 +25,8 @@ namespace Player
 			_rootFrame = rootFrame;
 			_machine = machine;
 			_rootFrame.Focus(FocusState.Programmatic);
+			_machine.PropertyChanged +=
+				(sender, args) => { if (string.Equals(args.PropertyName, "CurrentPageType")) ChangeToCurrentPage(); };
 		}
 
 		[CanBeNull]

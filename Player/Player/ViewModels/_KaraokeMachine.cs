@@ -4,7 +4,6 @@
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
 using System;
-using Windows.UI.Popups;
 using JetBrains.Annotations;
 using Player.Model;
 using Player.Views;
@@ -37,13 +36,32 @@ namespace Player.ViewModels
 			}
 		}
 
-		[NotNull] public readonly Command Pause;
-		[NotNull] public readonly Command AdvanceSlide;
-		[NotNull] public readonly Command Start;
-		[NotNull] public readonly Command Stop;
+		public int SlideAdvanceSpeed
+		{
+			get { return _slideAdvanceSpeed; }
+			set
+			{
+				if (value == _slideAdvanceSpeed) return;
+				_slideAdvanceSpeed = value;
+				NotifyChangeWatchers();
+			}
+		}
+
+		[NotNull]
+		public Command Pause { get; private set; }
+
+		[NotNull]
+		public Command AdvanceSlide { get; private set; }
+
+		[NotNull]
+		public Command Start { get; private set; }
+
+		[NotNull]
+		public Command Stop { get; private set; }
 
 		private Slide _currentSlide;
 		private Type _currentPageType;
+		private int _slideAdvanceSpeed;
 		internal _MachineBrains Brains_TestAccess;
 
 		[NotNull]
@@ -51,7 +69,6 @@ namespace Player.ViewModels
 		{
 			var result = new KaraokeMachine();
 			_MachineBrains.SupplyBrainFor(result);
-			result.Start.Call();
 			return result;
 		}
 
@@ -72,6 +89,11 @@ namespace Player.ViewModels
 			CurrentSlide = initialSlide;
 			CurrentPageType = typeof (PresentationPlayingPage);
 		}
+
+		public void ShowOptions()
+		{
+			CurrentPageType = typeof (PresentationOptionsPage);
+		}
 	}
 
 	public class KaraokeMachine_PlayPresentation_DesignData : KaraokeMachine
@@ -83,10 +105,14 @@ namespace Player.ViewModels
 			initialSlide.MessageCenter = null;
 			initialSlide.MessageTop = "Smart and funny at the top";
 			ShowSlide(initialSlide);
-			AdvanceSlide.BindTo(() => new MessageDialog("This would advance the slide.").ShowAsync());
-			Pause.BindTo(() => new MessageDialog("Pausing the presentation.").ShowAsync());
-			Stop.BindTo(() => new MessageDialog("This would start a new presentation.").ShowAsync());
-			Stop.BindTo(() => new MessageDialog("Stopping the presentation.").ShowAsync());
+		}
+	}
+
+	public class KaraokeMachine_ShowOptions_DesignData : KaraokeMachine
+	{
+		public KaraokeMachine_ShowOptions_DesignData()
+		{
+			ShowOptions();
 		}
 	}
 }

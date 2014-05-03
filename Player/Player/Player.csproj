@@ -111,7 +111,11 @@
     </Compile>
     <Compile Include="Model\Command.cs" />
     <Compile Include="ViewModels\HasContent.cs" />
+    <Compile Include="ViewModels\ColorScheme.cs" />
     <Compile Include="Views\NavigationTarget.cs" />
+    <Compile Include="Views\PresentationOptionsPage.xaml.cs">
+      <DependentUpon>PresentationOptionsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PresentationPlayingPage.xaml.cs">
       <DependentUpon>PresentationPlayingPage.xaml</DependentUpon>
     </Compile>
@@ -134,12 +138,17 @@
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\whisky.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\PresentationOptionsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PresentationPlayingPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

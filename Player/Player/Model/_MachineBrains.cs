@@ -16,11 +16,13 @@ namespace Player.Model
 		{
 			_machine = machine;
 			machine.Brains_TestAccess = this;
+			_machine.ShowOptions();
+			_machine.SlideAdvanceSpeed = 20;
 		}
 
 		public void Start()
 		{
-			var initialSlide = Slide.BurningCar();
+			var initialSlide = Slide.Whisky();
 			initialSlide.MessageCenter = "Let's play!";
 			_machine.ShowSlide(initialSlide);
 		}
@@ -38,6 +40,7 @@ namespace Player.Model
 
 		public void Stop()
 		{
+			_machine.ShowOptions();
 		}
 
 		public static void SupplyBrainFor([NotNull] KaraokeMachine machine)

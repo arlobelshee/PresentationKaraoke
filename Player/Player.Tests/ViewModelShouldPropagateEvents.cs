@@ -30,7 +30,7 @@ namespace Player.Tests
 		}
 
 		[Test]
-		public void ShowingASlideShouldSendPropertyChangeNotifications()
+		public void ShowingASlide_Should_SendPropertyChangeNotifications()
 		{
 			_testSubject.CurrentPageType = typeof (object);
 			_testSubject.MonitorEvents();
@@ -41,6 +41,27 @@ namespace Player.Tests
 			_testSubject.ShouldRaisePropertyChangeFor(m => m.CurrentSlide);
 			_testSubject.CurrentPageType.Should()
 				.Be(typeof(PresentationPlayingPage));
+		}
+
+		[Test]
+		public void ShowingOptions_Should_SendPropertyChangeNotifications()
+		{
+			_testSubject.CurrentPageType = typeof (object);
+			_testSubject.MonitorEvents();
+
+			_testSubject.ShowOptions();
+	
+			_testSubject.ShouldRaisePropertyChangeFor(m => m.CurrentPageType);
+			_testSubject.CurrentPageType.Should()
+				.Be(typeof(PresentationOptionsPage));
+		}
+
+		[Test]
+		public void ChangingSlideSpeed_Should_SendPropertyChangeNotifications()
+		{
+			_testSubject.MonitorEvents();
+			_testSubject.SlideAdvanceSpeed = 99;
+			_testSubject.ShouldRaisePropertyChangeFor(m => m.SlideAdvanceSpeed);
 		}
 
 		[SetUp]

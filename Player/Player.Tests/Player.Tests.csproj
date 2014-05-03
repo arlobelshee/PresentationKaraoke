@@ -107,6 +107,8 @@
     <Compile Include="ZZSupport\Tests\CommandAssertions.cs" />
     <Compile Include="ZZSupport\DataBinding\CommandsCanVerifyTheirBindingTargets.cs" />
     <Compile Include="ZZSupport\Tests\CommandTestExtensions.cs" />
+    <Compile Include="ZZSupport\Tests\HelperTestExtensions.cs" />
+    <Compile Include="ZZSupport\Tests\_TypedObjectAssertions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FluentAssertions">
