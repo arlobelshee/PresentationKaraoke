@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 
-namespace Player.Model
+namespace Player.MvvmHelpers
 {
 	public class FirePropertyChanged : INotifyPropertyChanged
 	{

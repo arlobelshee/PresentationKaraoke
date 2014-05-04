@@ -7,7 +7,7 @@ using System;
 using System.Windows.Input;
 using JetBrains.Annotations;
 
-namespace Player.Model
+namespace Player.MvvmHelpers
 {
 	public class Command : HasTarget<Action>, ICommand
 	{

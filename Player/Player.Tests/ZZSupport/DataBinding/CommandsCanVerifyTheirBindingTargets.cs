@@ -3,9 +3,10 @@
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
+using System;
 using FluentAssertions;
 using NUnit.Framework;
-using Player.Model;
+using Player.MvvmHelpers;
 
 namespace Player.Tests.ZZSupport.DataBinding
 {
@@ -34,7 +35,7 @@ namespace Player.Tests.ZZSupport.DataBinding
 		}
 
 		[Test]
-		[ExpectedException(typeof (AssertionException), MatchType = MessageMatch.Contains,
+		[ExpectedException(MatchType = MessageMatch.Contains,
 			ExpectedMessage = "Expected object to be \r\n\r\nSystem.Action\r\n{\r\n   Method = Void _RecordCalls()")]
 		public void BeBoundTo_Should_ReportErrorsCorrectly()
 		{

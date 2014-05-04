@@ -6,7 +6,7 @@
 using System;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
-using Player.Model;
+using Player.MvvmHelpers;
 using Player.Tests.ZZSupport.Tests;
 
 namespace FluentAssertions
@@ -22,7 +22,7 @@ namespace FluentAssertions
 		[NotNull]
 		public static CommandAssertions<Func<Task>, AsyncCommand> Should([NotNull] this AsyncCommand testSubject)
 		{
-			return new CommandAssertions<Func<Task>, AsyncCommand> (testSubject);
+			return new CommandAssertions<Func<Task>, AsyncCommand>(testSubject);
 		}
 	}
 }

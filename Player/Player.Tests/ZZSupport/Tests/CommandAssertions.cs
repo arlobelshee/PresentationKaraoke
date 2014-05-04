@@ -6,7 +6,7 @@
 using FluentAssertions;
 using FluentAssertions.Primitives;
 using JetBrains.Annotations;
-using Player.Model;
+using Player.MvvmHelpers;
 
 namespace Player.Tests.ZZSupport.Tests
 {

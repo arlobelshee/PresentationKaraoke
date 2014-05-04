@@ -1,11 +1,12 @@
 ﻿// Presentation Karaoke Player
-// File: _KaraokeMachine.cs
+// File: KaraokeMachine.cs
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
 using System;
 using JetBrains.Annotations;
 using Player.Model;
+using Player.MvvmHelpers;
 using Player.Views;
 
 namespace Player.ViewModels
@@ -59,9 +60,14 @@ namespace Player.ViewModels
 		[NotNull]
 		public Command Stop { get; private set; }
 
+		[NotNull]
+		public UiControlMaker ControlMaker { get; private set; }
+
 		private Slide _currentSlide;
 		private Type _currentPageType;
+
 		private int _slideAdvanceSpeed;
+
 		internal _MachineBrains Brains_TestAccess;
 
 		[NotNull]
@@ -72,8 +78,20 @@ namespace Player.ViewModels
 			return result;
 		}
 
-		public KaraokeMachine()
+		[NotNull]
+		public static KaraokeMachine Brainless()
 		{
+			return new KaraokeMachine(UiControlMaker.Simulated());
+		}
+
+		protected KaraokeMachine()
+			: this(new UiControlMaker())
+		{
+		}
+
+		public KaraokeMachine([NotNull] UiControlMaker uiControlMaker)
+		{
+			ControlMaker = uiControlMaker;
 			Pause = new Command(_NoOp);
 			AdvanceSlide = AsyncCommand.Wrapping(_NoOp);
 			Start = AsyncCommand.Wrapping(_NoOp);
@@ -100,7 +118,7 @@ namespace Player.ViewModels
 	{
 		public KaraokeMachine_PlayPresentation_DesignData()
 		{
-			var future = Slide.BurningCar();
+			var future = _BuiltInSlides.BurningCar(new UiControlMaker());
 			future.ContinueWith(t =>
 			{
 				var initialSlide = t.Result;

@@ -109,9 +109,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\AsyncCommand.cs" />
-    <Compile Include="Model\Command.cs" />
-    <Compile Include="Model\HasTarget.cs" />
+    <Compile Include="Model\AsyncLazy.cs" />
+    <Compile Include="Model\SlideLibrary.cs" />
+    <Compile Include="Model\UiControlMaker.cs" />
+    <Compile Include="Model\_TrivialTestSlides.cs" />
+    <Compile Include="MvvmHelpers\AsyncCommand.cs" />
+    <Compile Include="MvvmHelpers\Command.cs" />
+    <Compile Include="MvvmHelpers\HasTarget.cs" />
+    <Compile Include="Model\_BuiltInSlides.cs" />
     <Compile Include="ViewModels\HasContent.cs" />
     <Compile Include="ViewModels\ColorScheme.cs" />
     <Compile Include="Views\NavigationTarget.cs" />
@@ -121,11 +126,11 @@
     <Compile Include="Views\PresentationPlayingPage.xaml.cs">
       <DependentUpon>PresentationPlayingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\FirePropertyChanged.cs" />
+    <Compile Include="MvvmHelpers\FirePropertyChanged.cs" />
     <Compile Include="ViewModels\Slide.cs" />
     <Compile Include="Model\_MachineBrains.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\_KaraokeMachine.cs" />
+    <Compile Include="ViewModels\KaraokeMachine.cs" />
     <Compile Include="_RootWindow.cs" />
   </ItemGroup>
   <ItemGroup>

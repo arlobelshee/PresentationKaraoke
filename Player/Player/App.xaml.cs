@@ -3,11 +3,9 @@
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
-using System.Diagnostics;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
 using JetBrains.Annotations;
 using Player.ViewModels;
 
@@ -18,7 +16,7 @@ namespace Player
 	/// </summary>
 	sealed partial class _App
 	{
-		[NotNull] private readonly KaraokeMachine _machine;
+		[NotNull] private KaraokeMachine _machine;
 
 		/// <summary>
 		///    Initializes the singleton application object.  This is the first line of authored code
@@ -28,7 +26,6 @@ namespace Player
 		{
 			InitializeComponent();
 			Suspending += _OnSuspending;
-			_machine = KaraokeMachine.WithABrain();
 		}
 
 		/// <summary>
@@ -38,7 +35,7 @@ namespace Player
 		/// <param name="e">Details about the launch request and process.</param>
 		protected override void OnLaunched([NotNull] LaunchActivatedEventArgs e)
 		{
-			_TurnOnDebuggingConsole();
+			_machine = KaraokeMachine.WithABrain();
 			var rootFrame = _CreateMainWindow();
 			_InitializeViewState(e);
 			rootFrame.ChangeToCurrentPageIfNotCurrentlyShowingAnything(e);
@@ -90,16 +87,6 @@ namespace Player
 		private void _StopBackgroundActivity()
 		{
 			_machine.Pause.Execute();
-		}
-
-		private void _TurnOnDebuggingConsole()
-		{
-#if DEBUG
-			if (Debugger.IsAttached)
-			{
-				DebugSettings.EnableFrameRateCounter = true;
-			}
-#endif
 		}
 	}
 }
