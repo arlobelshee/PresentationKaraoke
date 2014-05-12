@@ -102,9 +102,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Annotations.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -112,6 +109,8 @@
     <Compile Include="Model\AsyncLazy.cs" />
     <Compile Include="Model\SlideLibrary.cs" />
     <Compile Include="Model\UiControlMaker.cs" />
+    <Compile Include="Model\_PresentationData.cs" />
+    <Compile Include="Model\_PresentationFileSet.cs" />
     <Compile Include="Model\_TrivialTestSlides.cs" />
     <Compile Include="MvvmHelpers\AsyncCommand.cs" />
     <Compile Include="MvvmHelpers\Command.cs" />
@@ -137,6 +136,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="packages.config" />
     <None Include="Player_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +160,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\netcore45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

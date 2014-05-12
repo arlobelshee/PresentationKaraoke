@@ -3,6 +3,8 @@
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
+using System.Collections.Generic;
+using System.Linq;
 using JetBrains.Annotations;
 using Player.ViewModels;
 
@@ -13,10 +15,15 @@ namespace Player.Model
 		private readonly Slide[] _allSlides;
 		private int _lastSlideGiven;
 
-		public _SlideLibrary([NotNull] Slide[] slides)
+		public _SlideLibrary([NotNull] IEnumerable<Slide> slides)
 		{
-			_allSlides = slides;
-			_lastSlideGiven = slides.Length;
+			_allSlides = slides.ToArray();
+			_lastSlideGiven = _allSlides.Length;
+		}
+
+		public int Length
+		{
+			get { return _allSlides.Length; }
 		}
 
 		[NotNull]
