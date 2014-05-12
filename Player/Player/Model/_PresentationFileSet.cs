@@ -9,7 +9,6 @@ using System.IO.Compression;
 using System.Linq;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
-using Newtonsoft.Json;
 using Player.ViewModels;
 
 namespace Player.Model
@@ -20,38 +19,19 @@ namespace Player.Model
 		public async Task<_SlideLibrary> ReadPresentation([NotNull] Stream presentationFile)
 		{
 			var archive = new ZipArchive(presentationFile, ZipArchiveMode.Read);
-			var manifest = archive.GetEntry("index.json");
-			var allSlides = ParseManifest(manifest);
+			var allSlides = ParseManifest(archive.GetEntry("index.json"));
 			return new _SlideLibrary(await allSlides);
 		}
 
 		[NotNull]
 		private async Task<IEnumerable<Slide>> ParseManifest([NotNull] ZipArchiveEntry manifest)
 		{
-			var presentation = await ParseJson(manifest);
-			return presentation.slides.Select(s => new Slide
+			_PresentationData presentation;
+			using (var stream = manifest.Open())
 			{
-				MessageTop = s.top
-			});
-		}
-
-		[NotNull]
-		private Task<_PresentationData> ParseJson([NotNull] ZipArchiveEntry manifest)
-		{
-			return Task.Factory.StartNew(() =>
-			{
-				using (var stream = manifest.Open())
-				{
-					using (var contents = new StreamReader(stream))
-					{
-						using (var json = new JsonTextReader(contents))
-						{
-							var reader = new JsonSerializer();
-							return reader.Deserialize<_PresentationData>(json);
-						}
-					}
-				}
-			});
+				presentation = await _PresentationData.FromJson(stream);
+			}
+			return presentation.slides.Select(s => s.ToSlide());
 		}
 	}
 }
