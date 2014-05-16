@@ -12,7 +12,10 @@ namespace Player.ViewModels
 {
 	public class Slide
 	{
-		[NotNull]
+		[CanBeNull]
+		public string BackgroundImageName { get; set; }
+
+		[CanBeNull]
 		public BitmapImage Background { get; set; }
 
 		public Stretch BackgroundFill { get; set; }

@@ -39,6 +39,9 @@ namespace Player.Model
 			[CanBeNull]
 			public string text_color { get; set; }
 
+			[CanBeNull]
+			public string background_image { get; set; }
+
 			[NotNull]
 			public Slide ToSlide()
 			{
@@ -48,7 +51,8 @@ namespace Player.Model
 					MessageCenter = middle,
 					MessageBottom = bottom,
 					BackgroundColor = ColorScheme.FromHtmlArgbStringValue(background_color ?? "#FF000000"),
-					BackgroundFill = (Stretch) Enum.Parse(typeof (Stretch), image_stretch ?? "Uniform")
+					BackgroundFill = (Stretch) Enum.Parse(typeof (Stretch), image_stretch ?? "Uniform"),
+					BackgroundImageName = background_image,
 				};
 				if (text_color == "white")
 				{

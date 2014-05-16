@@ -51,6 +51,7 @@ namespace Player.Tests.UsePresentationFromFile
 				background_color= "#01020304",
 				image_stretch="Fill",
 				text_color="white",
+				background_image="img.png"
 			};
 			var expectedSlide = new Slide
 			{
@@ -58,7 +59,8 @@ namespace Player.Tests.UsePresentationFromFile
 				MessageBottom = "bottom",
 				MessageTop = "top",
 				MessageCenter = "middle",
-				BackgroundFill = Stretch.Fill
+				BackgroundFill = Stretch.Fill,
+				BackgroundImageName = "img.png"
 			};
 			expectedSlide.UseWhiteText();
 			testSubject.ToSlide()
@@ -75,7 +77,8 @@ namespace Player.Tests.UsePresentationFromFile
 				MessageBottom = null,
 				MessageTop = null,
 				MessageCenter = null,
-				BackgroundFill = Stretch.Uniform
+				BackgroundFill = Stretch.Uniform,
+				BackgroundImageName = null
 			};
 			expectedSlide.UseBlackText();
 			testSubject.ToSlide()
