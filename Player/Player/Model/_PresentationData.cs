@@ -3,8 +3,10 @@
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
+using System;
 using System.IO;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Media;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 using Player.ViewModels;
@@ -28,13 +30,35 @@ namespace Player.Model
 			[CanBeNull]
 			public string bottom { get; set; }
 
+			[CanBeNull]
+			public string background_color { get; set; }
+
+			[CanBeNull]
+			public string image_stretch { get; set; }
+
+			[CanBeNull]
+			public string text_color { get; set; }
+
 			[NotNull]
 			public Slide ToSlide()
 			{
-				return new Slide
+				var result = new Slide
 				{
-					MessageTop = top
+					MessageTop = top,
+					MessageCenter = middle,
+					MessageBottom = bottom,
+					BackgroundColor = ColorScheme.FromHtmlArgbStringValue(background_color ?? "#FF000000"),
+					BackgroundFill = (Stretch) Enum.Parse(typeof (Stretch), image_stretch ?? "Uniform")
 				};
+				if (text_color == "white")
+				{
+					result.UseWhiteText();
+				}
+				else
+				{
+					result.UseBlackText();
+				}
+				return result;
 			}
 		}
 

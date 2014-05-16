@@ -6,10 +6,13 @@
 using System.IO;
 using System.IO.Compression;
 using System.Threading.Tasks;
+using Windows.UI;
+using Windows.UI.Xaml.Media;
 using FluentAssertions;
 using JetBrains.Annotations;
 using NUnit.Framework;
 using Player.Model;
+using Player.ViewModels;
 
 namespace Player.Tests.UsePresentationFromFile
 {
@@ -35,6 +38,48 @@ namespace Player.Tests.UsePresentationFromFile
 					MessageTop = "Hello, world!"
 				}, config => config.ExcludingMissingProperties());
 			}
+		}
+
+		[Test]
+		public void SlideDataThatSpecifiesEverythingShouldInflateCorrectly()
+		{
+			var testSubject = new _PresentationData._SlideData
+			{
+				bottom = "bottom",
+				middle = "middle",
+				top = "top",
+				background_color= "#01020304",
+				image_stretch="Fill",
+				text_color="white",
+			};
+			var expectedSlide = new Slide
+			{
+				BackgroundColor = Color.FromArgb(1, 2, 3, 4),
+				MessageBottom = "bottom",
+				MessageTop = "top",
+				MessageCenter = "middle",
+				BackgroundFill = Stretch.Fill
+			};
+			expectedSlide.UseWhiteText();
+			testSubject.ToSlide()
+				.ShouldBeEquivalentTo(expectedSlide);
+		}
+
+		[Test]
+		public void SlideDataThatSpecifiesNothingShouldUseDefaults()
+		{
+			var testSubject = new _PresentationData._SlideData();
+			var expectedSlide = new Slide
+			{
+				BackgroundColor = Color.FromArgb(255, 0, 0, 0),
+				MessageBottom = null,
+				MessageTop = null,
+				MessageCenter = null,
+				BackgroundFill = Stretch.Uniform
+			};
+			expectedSlide.UseBlackText();
+			testSubject.ToSlide()
+				.ShouldBeEquivalentTo(expectedSlide);
 		}
 
 		[NotNull]
