@@ -19,6 +19,8 @@ namespace Player.Tests.UsePresentationFromFile
 	[TestFixture]
 	public class ReadAPresentation
 	{
+		private const string ImageName = "image.png";
+
 		[NotNull]
 		[Test]
 		public async Task ShouldReadOneSlidePresentationWithoutImages()
@@ -85,8 +87,28 @@ namespace Player.Tests.UsePresentationFromFile
 				.ShouldBeEquivalentTo(expectedSlide);
 		}
 
+		[NotNull,Test]
+		public async Task ImageLoaderShouldLoadImagesFromArchiveAsynchronously()
+		{
+			using (var zipData = new MemoryStream())
+			{
+				await _WriteImageToStream(zipData);
+				var testSubject = new _PresentationFileSet();
+				var preso = await testSubject.ReadPresentation(zipData);
+				preso.ShouldBeEquivalentTo(new
+				{
+					Length = 1
+				}, config => config.ExcludingMissingProperties());
+				var onlySlide = preso.PickOneRandomSlide();
+				onlySlide.ShouldBeEquivalentTo(new
+				{
+					MessageTop = "Hello, world!"
+				}, config => config.ExcludingMissingProperties());
+			}
+		}
+
 		[NotNull]
-		private static async Task _WriteTrivialOneSlidePresoToStream([NotNull] MemoryStream zipData)
+		private static async Task _WriteTrivialOneSlidePresoToStream([NotNull] Stream zipData)
 		{
 			using (var file = new ZipArchive(zipData, ZipArchiveMode.Create, true))
 			{
@@ -94,6 +116,19 @@ namespace Player.Tests.UsePresentationFromFile
 				using (var manifestContents = new StreamWriter(manifest.Open()))
 				{
 					await manifestContents.WriteAsync(@"{""slides"": [{""top"":""Hello, world!""}]}");
+				}
+			}
+		}
+
+		[NotNull]
+		private static async Task _WriteImageToStream([NotNull] Stream zipData)
+		{
+			using (var file = new ZipArchive(zipData, ZipArchiveMode.Create, true))
+			{
+				var manifest = file.CreateEntry(ImageName);
+				using (var manifestContents = manifest.Open())
+				{
+					await _BuiltInSlides.CopyImageToStream(manifestContents);
 				}
 			}
 		}
