@@ -109,6 +109,7 @@
     <Compile Include="Model\AsyncLazy.cs" />
     <Compile Include="Model\SlideLibrary.cs" />
     <Compile Include="Model\UiControlMaker.cs" />
+    <Compile Include="Model\_ImageLoader.cs" />
     <Compile Include="Model\_PresentationData.cs" />
     <Compile Include="Model\_PresentationFileSet.cs" />
     <Compile Include="Model\_TrivialTestSlides.cs" />
@@ -140,12 +141,12 @@
     <None Include="Player_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\burning_car.jpeg" />
+    <EmbeddedResource Include="Assets\burning_car.jpeg" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
-    <Content Include="Assets\whisky.jpeg" />
+    <EmbeddedResource Include="Assets\whisky.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

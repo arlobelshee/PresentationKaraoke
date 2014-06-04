@@ -43,6 +43,15 @@ namespace Player.Tests.UsePresentationFromFile
 		}
 
 		[Test]
+		public void ShouldBeAbleToAccessBuiltInImageDataFromTests()
+		{
+			using (var data = _BuiltInSlides.ImageDataFor(_BuiltInSlides.WhiskeyName))
+			{
+				data.Length.Should()
+					.BeGreaterThan(0);
+			}
+		}
+		[Test]
 		public void SlideDataThatSpecifiesEverythingShouldInflateCorrectly()
 		{
 			var testSubject = new _PresentationData._SlideData
@@ -88,22 +97,16 @@ namespace Player.Tests.UsePresentationFromFile
 		}
 
 		[NotNull,Test]
-		public async Task ImageLoaderShouldLoadImagesFromArchiveAsynchronously()
+		public async Task ImageLoaderShouldLoadImagesFromArchive()
 		{
 			using (var zipData = new MemoryStream())
 			{
 				await _WriteImageToStream(zipData);
-				var testSubject = new _PresentationFileSet();
-				var preso = await testSubject.ReadPresentation(zipData);
-				preso.ShouldBeEquivalentTo(new
+				var testSubject = new _ImageLoader(new ZipArchive(zipData, ZipArchiveMode.Read));
+				using (var result = testSubject.LoadImageData(ImageName))
 				{
-					Length = 1
-				}, config => config.ExcludingMissingProperties());
-				var onlySlide = preso.PickOneRandomSlide();
-				onlySlide.ShouldBeEquivalentTo(new
-				{
-					MessageTop = "Hello, world!"
-				}, config => config.ExcludingMissingProperties());
+					await result.ShouldNotBeEmpty();
+				}
 			}
 		}
 
@@ -112,11 +115,7 @@ namespace Player.Tests.UsePresentationFromFile
 		{
 			using (var file = new ZipArchive(zipData, ZipArchiveMode.Create, true))
 			{
-				var manifest = file.CreateEntry("index.json");
-				using (var manifestContents = new StreamWriter(manifest.Open()))
-				{
-					await manifestContents.WriteAsync(@"{""slides"": [{""top"":""Hello, world!""}]}");
-				}
+				await _WriteManifest(file);
 			}
 		}
 
@@ -125,11 +124,27 @@ namespace Player.Tests.UsePresentationFromFile
 		{
 			using (var file = new ZipArchive(zipData, ZipArchiveMode.Create, true))
 			{
-				var manifest = file.CreateEntry(ImageName);
-				using (var manifestContents = manifest.Open())
-				{
-					await _BuiltInSlides.CopyImageToStream(manifestContents);
-				}
+				await _WriteImage(file);
+			}
+		}
+
+		[NotNull]
+		private static async Task _WriteImage([NotNull] ZipArchive file)
+		{
+			var manifest = file.CreateEntry(ImageName);
+			using (var manifestContents = manifest.Open())
+			{
+				await _BuiltInSlides.CopyArbitraryImageToStream(manifestContents);
+			}
+		}
+
+		[NotNull]
+		private static async Task _WriteManifest([NotNull] ZipArchive file)
+		{
+			var manifest = file.CreateEntry("index.json");
+			using (var manifestContents = new StreamWriter(manifest.Open()))
+			{
+				await manifestContents.WriteAsync(@"{""slides"": [{""top"":""Hello, world!""}]}");
 			}
 		}
 	}

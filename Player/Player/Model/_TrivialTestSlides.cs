@@ -26,7 +26,7 @@ namespace Player.Model
 		[NotNull]
 		public static Task<_SlideLibrary> LoadAllSlides()
 		{
-			return Task.FromResult(new _SlideLibrary(new[] {Slide1, Slide2}));
+			return Task.FromResult(new _SlideLibrary(new[] {Slide1, Slide2}, null));
 		}
 	}
 }

@@ -3,10 +3,9 @@
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
-using System;
 using System.IO;
+using System.Reflection;
 using System.Threading.Tasks;
-using Windows.Storage;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using JetBrains.Annotations;
@@ -16,17 +15,14 @@ namespace Player.Model
 {
 	internal static class _BuiltInSlides
 	{
-		[NotNull] private static readonly AsyncLazy<StorageFile> Whisky =
-			new AsyncLazy<StorageFile>(() => _LoadImageData("whisky.jpeg"));
-
-		[NotNull] private static readonly AsyncLazy<StorageFile> Car =
-			new AsyncLazy<StorageFile>(() => _LoadImageData("burning_car.jpeg"));
+		public const string WhiskeyName = "whisky.jpeg";
+		private const string CarName = "burning_car.jpeg";
 
 		[NotNull]
 		public static async Task<_SlideLibrary> LoadAllSlides([NotNull] UiControlMaker uiControls)
 		{
 			var allSlides = await Task.WhenAll(_MakeWhiskySlide(uiControls), BurningCar(uiControls));
-			return new _SlideLibrary(allSlides);
+			return new _SlideLibrary(allSlides, null);
 		}
 
 		[NotNull]
@@ -34,7 +30,7 @@ namespace Player.Model
 		{
 			var result = new Slide
 			{
-				Background = await _LoadImageFrom(Car, uiControls),
+				Background = await _LoadImage(CarName, uiControls),
 				BackgroundFill = Stretch.UniformToFill,
 				BackgroundColor = ColorScheme.FromHtmlArgbStringValue("#FF000000"),
 				MessageTop = "You are so advanced!"
@@ -48,7 +44,7 @@ namespace Player.Model
 		{
 			var result = new Slide
 			{
-				Background = await _LoadImageFrom(Whisky, uiControls),
+				Background = await _LoadImage(WhiskeyName, uiControls),
 				BackgroundFill = Stretch.Uniform,
 				BackgroundColor = ColorScheme.FromHtmlArgbStringValue("#FFFFFFFF"),
 				MessageCenter = "Let's play!"
@@ -58,30 +54,28 @@ namespace Player.Model
 		}
 
 		[NotNull]
-		public static async Task CopyImageToStream([NotNull] Stream destination)
-		{
-			using (var fileStream = await (await Whisky).OpenAsync(FileAccessMode.Read))
-			{
-				await fileStream.AsStreamForRead()
-					.CopyToAsync(destination);
-			}
-		}
-
-		[NotNull]
-		private static async Task<BitmapImage> _LoadImageFrom([NotNull] AsyncLazy<StorageFile> file,
+		private static async Task<BitmapImage> _LoadImage([NotNull] string file,
 			[NotNull] UiControlMaker uiControls)
 		{
-			using (var fileStream = await (await file).OpenAsync(FileAccessMode.Read))
+			using (var fileStream = ImageDataFor(file))
 			{
-				return await uiControls.CreateImage(fileStream);
+				return await uiControls.CreateImage(fileStream.AsRandomAccessStream());
 			}
 		}
 
 		[NotNull]
-		private static async Task<StorageFile> _LoadImageData([NotNull] string name)
+		public static Stream ImageDataFor([NotNull] string name)
 		{
-			var uri = new Uri("ms-appx:///Assets/" + name);
-			return await StorageFile.GetFileFromApplicationUriAsync(uri);
+			return typeof (_BuiltInSlides).GetTypeInfo()
+				.Assembly.GetManifestResourceStream("Player.Assets." + name);
+		}
+
+		[NotNull]
+		public static Task CopyArbitraryImageToStream([NotNull] Stream destination)
+		{
+			var fileStream = ImageDataFor(WhiskeyName);
+			return fileStream.CopyToAsync(destination)
+				.ContinueWith(t => fileStream.Dispose());
 		}
 	}
 }

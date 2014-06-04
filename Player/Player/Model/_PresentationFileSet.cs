@@ -20,7 +20,7 @@ namespace Player.Model
 		{
 			var archive = new ZipArchive(presentationFile, ZipArchiveMode.Read);
 			var allSlides = ParseManifest(archive.GetEntry("index.json"));
-			return new _SlideLibrary(await allSlides);
+			return new _SlideLibrary(await allSlides, new _ImageLoader(archive));
 		}
 
 		[NotNull]

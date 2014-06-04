@@ -15,7 +15,7 @@ namespace Player.Model
 		private readonly Slide[] _allSlides;
 		private int _lastSlideGiven;
 
-		public _SlideLibrary([NotNull] IEnumerable<Slide> slides)
+		public _SlideLibrary([NotNull] IEnumerable<Slide> slides, _ImageLoader imageLoader)
 		{
 			_allSlides = slides.ToArray();
 			_lastSlideGiven = _allSlides.Length;
