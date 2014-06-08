@@ -14,7 +14,7 @@ namespace Player.Model
 		}
 
 		[NotNull]
-		public Stream LoadImageData([NotNull] string name)
+		public Stream Load([NotNull] string name)
 		{
 			return _imageBundle.GetEntry(name)
 				.Open();

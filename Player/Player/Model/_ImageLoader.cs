@@ -6,6 +6,6 @@ namespace Player.Model
 	public interface ImageLoader
 	{
 		[NotNull]
-		Stream LoadImageData([NotNull] string name);
+		Stream Load([NotNull] string name);
 	}
 }

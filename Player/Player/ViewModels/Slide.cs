@@ -3,6 +3,7 @@
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
+using System.Threading.Tasks;
 using Windows.UI;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
@@ -13,11 +14,8 @@ namespace Player.ViewModels
 {
 	public class Slide
 	{
-		[CanBeNull]
-		public string BackgroundImageName { get; set; }
-
-		[CanBeNull]
-		public ImageSource Background { get; set; }
+		[NotNull]
+		public InflatableImageData Background { get; set; }
 
 		public Stretch BackgroundFill { get; set; }
 
@@ -46,6 +44,17 @@ namespace Player.ViewModels
 		{
 			TextBackgroundColor = ColorScheme.BgWhite;
 			TextForegroundColor = ColorScheme.FgBlack;
+		}
+
+		[NotNull]
+		public Task Inflate()
+		{
+			return Background.Inflate();
+		}
+
+		public void Deflate()
+		{
+			Background.Deflate();
 		}
 	}
 }

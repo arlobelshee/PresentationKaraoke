@@ -8,7 +8,7 @@ namespace Player.Model
 	{
 		private readonly Dictionary<string, Stream> _images = new Dictionary<string, Stream>();
 
-		public Stream LoadImageData(string name)
+		public Stream Load(string name)
 		{
 			return _images[name];
 		}

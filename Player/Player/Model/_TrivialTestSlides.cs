@@ -32,7 +32,7 @@ namespace Player.Model
 		public static Task<_SlideLibrary> LoadAllSlides()
 		{
 			return
-				Task.FromResult(new _SlideLibrary(new[] {Slide1, Slide2}, new _ImageLoaderHardCoded(), UiControlMaker.Simulated()));
+				Task.FromResult(new _SlideLibrary(new[] {Slide1, Slide2}));
 		}
 	}
 }

@@ -97,7 +97,7 @@ namespace Player.Tests.UsePresentationFromFile
 			{
 				await _WriteImageToStream(zipData);
 				var testSubject = new _ImageLoaderZip(new ZipArchive(zipData, ZipArchiveMode.Read));
-				using (var result = testSubject.LoadImageData(ImageName))
+				using (var result = testSubject.Load(ImageName))
 				{
 					await result.ShouldNotBeEmpty();
 				}
@@ -120,7 +120,7 @@ namespace Player.Tests.UsePresentationFromFile
 				{
 					BackgroundImageName = name
 				};
-				var testSubject = new _SlideLibrary(new[] {firstSlide, secondSlide}, images, UiControlMaker.Simulated());
+				var testSubject = new _SlideLibrary(new[] {firstSlide, secondSlide});
 				firstSlide.Background.Should()
 					.BeNull();
 				secondSlide.Background.Should()
