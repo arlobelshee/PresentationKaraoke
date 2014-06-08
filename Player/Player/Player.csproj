@@ -110,6 +110,8 @@
     <Compile Include="Model\SlideLibrary.cs" />
     <Compile Include="Model\UiControlMaker.cs" />
     <Compile Include="Model\_ImageLoader.cs" />
+    <Compile Include="Model\_ImageLoaderHardCoded.cs" />
+    <Compile Include="Model\_ImageLoaderZip.cs" />
     <Compile Include="Model\_PresentationData.cs" />
     <Compile Include="Model\_PresentationFileSet.cs" />
     <Compile Include="Model\_TrivialTestSlides.cs" />

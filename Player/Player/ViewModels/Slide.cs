@@ -7,6 +7,7 @@ using Windows.UI;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using JetBrains.Annotations;
+using Player.Model;
 
 namespace Player.ViewModels
 {
@@ -16,7 +17,7 @@ namespace Player.ViewModels
 		public string BackgroundImageName { get; set; }
 
 		[CanBeNull]
-		public BitmapImage Background { get; set; }
+		public ImageSource Background { get; set; }
 
 		public Stretch BackgroundFill { get; set; }
 

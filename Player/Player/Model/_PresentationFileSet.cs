@@ -16,11 +16,11 @@ namespace Player.Model
 	internal class _PresentationFileSet
 	{
 		[NotNull]
-		public async Task<_SlideLibrary> ReadPresentation([NotNull] Stream presentationFile)
+		public async Task<_SlideLibrary> ReadPresentation([NotNull] Stream presentationFile, [NotNull] UiControlMaker uiControls)
 		{
 			var archive = new ZipArchive(presentationFile, ZipArchiveMode.Read);
 			var allSlides = ParseManifest(archive.GetEntry("index.json"));
-			return new _SlideLibrary(await allSlides, new _ImageLoader(archive));
+			return new _SlideLibrary(await allSlides, new _ImageLoaderZip(archive), uiControls);
 		}
 
 		[NotNull]

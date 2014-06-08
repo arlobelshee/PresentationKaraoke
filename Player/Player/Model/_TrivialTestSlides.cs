@@ -1,3 +1,8 @@
+// Presentation Karaoke Player
+// File: _TrivialTestSlides.cs
+// 
+// Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
+
 using System.Threading.Tasks;
 using JetBrains.Annotations;
 using Player.ViewModels;
@@ -26,7 +31,8 @@ namespace Player.Model
 		[NotNull]
 		public static Task<_SlideLibrary> LoadAllSlides()
 		{
-			return Task.FromResult(new _SlideLibrary(new[] {Slide1, Slide2}, null));
+			return
+				Task.FromResult(new _SlideLibrary(new[] {Slide1, Slide2}, new _ImageLoaderHardCoded(), UiControlMaker.Simulated()));
 		}
 	}
 }

@@ -29,28 +29,21 @@ namespace Player.Tests.UsePresentationFromFile
 			{
 				await _WriteTrivialOneSlidePresoToStream(zipData);
 				var testSubject = new _PresentationFileSet();
-				var preso = await testSubject.ReadPresentation(zipData);
-				preso.ShouldBeEquivalentTo(new
-				{
-					Length = 1
-				}, config => config.ExcludingMissingProperties());
-				var onlySlide = preso.PickOneRandomSlide();
-				onlySlide.ShouldBeEquivalentTo(new
-				{
-					MessageTop = "Hello, world!"
-				}, config => config.ExcludingMissingProperties());
+				var preso = await testSubject.ReadPresentation(zipData, UiControlMaker.Simulated());
+				_ShouldBeTrivialOneSlidePreso(preso);
 			}
 		}
 
 		[Test]
 		public void ShouldBeAbleToAccessBuiltInImageDataFromTests()
 		{
-			using (var data = _BuiltInSlides.ImageDataFor(_BuiltInSlides.WhiskeyName))
+			using (var data = _BuiltInSlides.ImageDataFor(_BuiltInSlides.WhiskeyFileName))
 			{
 				data.Length.Should()
 					.BeGreaterThan(0);
 			}
 		}
+
 		[Test]
 		public void SlideDataThatSpecifiesEverythingShouldInflateCorrectly()
 		{
@@ -59,10 +52,10 @@ namespace Player.Tests.UsePresentationFromFile
 				bottom = "bottom",
 				middle = "middle",
 				top = "top",
-				background_color= "#01020304",
-				image_stretch="Fill",
-				text_color="white",
-				background_image="img.png"
+				background_color = "#01020304",
+				image_stretch = "Fill",
+				text_color = "white",
+				background_image = "img.png"
 			};
 			var expectedSlide = new Slide
 			{
@@ -96,17 +89,52 @@ namespace Player.Tests.UsePresentationFromFile
 				.ShouldBeEquivalentTo(expectedSlide);
 		}
 
-		[NotNull,Test]
+		[NotNull]
+		[Test]
 		public async Task ImageLoaderShouldLoadImagesFromArchive()
 		{
 			using (var zipData = new MemoryStream())
 			{
 				await _WriteImageToStream(zipData);
-				var testSubject = new _ImageLoader(new ZipArchive(zipData, ZipArchiveMode.Read));
+				var testSubject = new _ImageLoaderZip(new ZipArchive(zipData, ZipArchiveMode.Read));
 				using (var result = testSubject.LoadImageData(ImageName))
 				{
 					await result.ShouldNotBeEmpty();
 				}
+			}
+		}
+
+		[NotNull,Test]
+		public async Task SlideShouldLookUpImageInLoaderOnDemand()
+		{
+			const string name = "frog";
+			var images = new _ImageLoaderHardCoded();
+			using (var data = new MemoryStream())
+			{
+				images.Add(name, data);
+				var firstSlide = new Slide
+				{
+					BackgroundImageName = name
+				};
+				var secondSlide = new Slide
+				{
+					BackgroundImageName = name
+				};
+				var testSubject = new _SlideLibrary(new[] {firstSlide, secondSlide}, images, UiControlMaker.Simulated());
+				firstSlide.Background.Should()
+					.BeNull();
+				secondSlide.Background.Should()
+					.BeNull();
+				var inflatedSlide = await testSubject.PickOneRandomSlide();
+				inflatedSlide.Background.Should()
+					.NotBeNull();
+				var nextSlide = inflatedSlide;
+				while (nextSlide == inflatedSlide)
+				{
+					nextSlide = await testSubject.PickOneRandomSlide();
+				}
+				inflatedSlide.Background.Should()
+					.BeNull();
 			}
 		}
 
@@ -146,6 +174,17 @@ namespace Player.Tests.UsePresentationFromFile
 			{
 				await manifestContents.WriteAsync(@"{""slides"": [{""top"":""Hello, world!""}]}");
 			}
+		}
+
+		private static void _ShouldBeTrivialOneSlidePreso([NotNull] _SlideLibrary preso)
+		{
+			preso.Length.Should()
+				.Be(1);
+			var onlySlide = preso.PickOneRandomSlide();
+			onlySlide.ShouldBeEquivalentTo(new
+			{
+				MessageTop = "Hello, world!"
+			}, config => config.ExcludingMissingProperties());
 		}
 	}
 }

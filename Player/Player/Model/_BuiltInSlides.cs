@@ -15,14 +15,19 @@ namespace Player.Model
 {
 	internal static class _BuiltInSlides
 	{
-		public const string WhiskeyName = "whisky.jpeg";
-		private const string CarName = "burning_car.jpeg";
+		public const string WhiskeyFileName = "whisky.jpeg";
+		public const string WhiskeyName = "whisky";
+		private const string CarFileName = "burning_car.jpeg";
+		private const string CarName = "car";
 
 		[NotNull]
 		public static async Task<_SlideLibrary> LoadAllSlides([NotNull] UiControlMaker uiControls)
 		{
 			var allSlides = await Task.WhenAll(_MakeWhiskySlide(uiControls), BurningCar(uiControls));
-			return new _SlideLibrary(allSlides, null);
+			var images = new _ImageLoaderHardCoded();
+			images.Add(WhiskeyName, ImageDataFor(WhiskeyFileName));
+			images.Add(CarName, ImageDataFor(CarFileName));
+			return new _SlideLibrary(allSlides, images, uiControls);
 		}
 
 		[NotNull]
@@ -30,7 +35,7 @@ namespace Player.Model
 		{
 			var result = new Slide
 			{
-				Background = await _LoadImage(CarName, uiControls),
+				Background = await _LoadImage(CarFileName, uiControls),
 				BackgroundFill = Stretch.UniformToFill,
 				BackgroundColor = ColorScheme.FromHtmlArgbStringValue("#FF000000"),
 				MessageTop = "You are so advanced!"
@@ -44,7 +49,7 @@ namespace Player.Model
 		{
 			var result = new Slide
 			{
-				Background = await _LoadImage(WhiskeyName, uiControls),
+				Background = await _LoadImage(WhiskeyFileName, uiControls),
 				BackgroundFill = Stretch.Uniform,
 				BackgroundColor = ColorScheme.FromHtmlArgbStringValue("#FFFFFFFF"),
 				MessageCenter = "Let's play!"
@@ -54,7 +59,7 @@ namespace Player.Model
 		}
 
 		[NotNull]
-		private static async Task<BitmapImage> _LoadImage([NotNull] string file,
+		private static async Task<ImageSource> _LoadImage([NotNull] string file,
 			[NotNull] UiControlMaker uiControls)
 		{
 			using (var fileStream = ImageDataFor(file))
@@ -73,7 +78,7 @@ namespace Player.Model
 		[NotNull]
 		public static Task CopyArbitraryImageToStream([NotNull] Stream destination)
 		{
-			var fileStream = ImageDataFor(WhiskeyName);
+			var fileStream = ImageDataFor(WhiskeyFileName);
 			return fileStream.CopyToAsync(destination)
 				.ContinueWith(t => fileStream.Dispose());
 		}

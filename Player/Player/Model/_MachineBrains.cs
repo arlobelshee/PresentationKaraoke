@@ -27,13 +27,13 @@ namespace Player.Model
 		[NotNull]
 		public async Task Start()
 		{
-			_machine.ShowSlide((await _slideLibrary).PickOneRandomSlide());
+			_machine.ShowSlide(await (await _slideLibrary).PickOneRandomSlide());
 		}
 
 		[NotNull]
 		public async Task AdvanceSlide()
 		{
-			_machine.ShowSlide((await _slideLibrary).PickOneRandomSlide());
+			_machine.ShowSlide(await (await _slideLibrary).PickOneRandomSlide());
 		}
 
 		public void Pause()

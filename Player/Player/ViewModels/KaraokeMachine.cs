@@ -102,9 +102,9 @@ namespace Player.ViewModels
 		{
 		}
 
-		public void ShowSlide([NotNull] Slide initialSlide)
+		public void ShowSlide([NotNull] Slide nextSlide)
 		{
-			CurrentSlide = initialSlide;
+			CurrentSlide = nextSlide;
 			CurrentPageType = typeof (PresentationPlayingPage);
 		}
 
