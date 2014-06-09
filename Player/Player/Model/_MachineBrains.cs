@@ -27,13 +27,13 @@ namespace Player.Model
 		[NotNull]
 		public async Task Start()
 		{
-			_machine.ShowSlide((await _slideLibrary).PickOneRandomSlide());
+			await _machine.ShowSlide((await _slideLibrary).PickOneRandomSlide());
 		}
 
 		[NotNull]
 		public async Task AdvanceSlide()
 		{
-			_machine.ShowSlide((await _slideLibrary).PickOneRandomSlide());
+			await _machine.ShowSlide((await _slideLibrary).PickOneRandomSlide());
 		}
 
 		public void Pause()
@@ -47,7 +47,7 @@ namespace Player.Model
 
 		public static void SupplyBrainFor([NotNull] KaraokeMachine machine)
 		{
-			_ConnectBrainsToMachine(machine, () => _BuiltInSlides.LoadAllSlides(machine.ControlMaker));
+			_ConnectBrainsToMachine(machine, () => _BuiltInSlides.LoadAllSlides());
 		}
 
 		[NotNull]

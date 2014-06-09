@@ -19,6 +19,7 @@ namespace Player.Tests.UsePresentationFromFile
 	[TestFixture]
 	public class ReadAPresentation
 	{
+		private _ImageLoaderHardCoded _noImages;
 		private const string ImageName = "image.png";
 
 		[NotNull]
@@ -30,10 +31,8 @@ namespace Player.Tests.UsePresentationFromFile
 				await _WriteTrivialOneSlidePresoToStream(zipData);
 				var testSubject = new _PresentationFileSet();
 				var preso = await testSubject.ReadPresentation(zipData);
-				preso.ShouldBeEquivalentTo(new
-				{
-					Length = 1
-				}, config => config.ExcludingMissingProperties());
+				preso.Length.Should()
+					.Be(1);
 				var onlySlide = preso.PickOneRandomSlide();
 				onlySlide.ShouldBeEquivalentTo(new
 				{
@@ -45,12 +44,13 @@ namespace Player.Tests.UsePresentationFromFile
 		[Test]
 		public void ShouldBeAbleToAccessBuiltInImageDataFromTests()
 		{
-			using (var data = _BuiltInSlides.ImageDataFor(_BuiltInSlides.WhiskeyName))
+			using (var data = _BuiltInSlides.ImageDataFor(_BuiltInSlides.WhiskeyFileName))
 			{
 				data.Length.Should()
 					.BeGreaterThan(0);
 			}
 		}
+
 		[Test]
 		public void SlideDataThatSpecifiesEverythingShouldInflateCorrectly()
 		{
@@ -59,12 +59,12 @@ namespace Player.Tests.UsePresentationFromFile
 				bottom = "bottom",
 				middle = "middle",
 				top = "top",
-				background_color= "#01020304",
-				image_stretch="Fill",
-				text_color="white",
-				background_image="img.png"
+				background_color = "#01020304",
+				image_stretch = "Fill",
+				text_color = "white",
+				background_image = "img.png"
 			};
-			var expectedSlide = new Slide
+			var expectedSlide = new Slide(_noImages)
 			{
 				BackgroundColor = Color.FromArgb(1, 2, 3, 4),
 				MessageBottom = "bottom",
@@ -74,7 +74,7 @@ namespace Player.Tests.UsePresentationFromFile
 				BackgroundImageName = "img.png"
 			};
 			expectedSlide.UseWhiteText();
-			testSubject.ToSlide()
+			testSubject.ToSlide(_noImages)
 				.ShouldBeEquivalentTo(expectedSlide);
 		}
 
@@ -82,7 +82,7 @@ namespace Player.Tests.UsePresentationFromFile
 		public void SlideDataThatSpecifiesNothingShouldUseDefaults()
 		{
 			var testSubject = new _PresentationData._SlideData();
-			var expectedSlide = new Slide
+			var expectedSlide = new Slide(_noImages)
 			{
 				BackgroundColor = Color.FromArgb(255, 0, 0, 0),
 				MessageBottom = null,
@@ -92,22 +92,29 @@ namespace Player.Tests.UsePresentationFromFile
 				BackgroundImageName = null
 			};
 			expectedSlide.UseBlackText();
-			testSubject.ToSlide()
+			testSubject.ToSlide(_noImages)
 				.ShouldBeEquivalentTo(expectedSlide);
 		}
 
-		[NotNull,Test]
+		[NotNull]
+		[Test]
 		public async Task ImageLoaderShouldLoadImagesFromArchive()
 		{
 			using (var zipData = new MemoryStream())
 			{
 				await _WriteImageToStream(zipData);
-				var testSubject = new _ImageLoader(new ZipArchive(zipData, ZipArchiveMode.Read));
-				using (var result = testSubject.LoadImageData(ImageName))
+				var testSubject = new _ImageLoaderZip(new ZipArchive(zipData, ZipArchiveMode.Read));
+				using (var result = testSubject.Load(ImageName))
 				{
 					await result.ShouldNotBeEmpty();
 				}
 			}
+		}
+
+		[SetUp]
+		public void SetUp()
+		{
+			_noImages = new _ImageLoaderHardCoded();
 		}
 
 		[NotNull]

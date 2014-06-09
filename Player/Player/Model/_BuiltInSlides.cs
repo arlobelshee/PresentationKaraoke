@@ -3,11 +3,11 @@
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
+using System;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Imaging;
 using JetBrains.Annotations;
 using Player.ViewModels;
 
@@ -15,22 +15,41 @@ namespace Player.Model
 {
 	internal static class _BuiltInSlides
 	{
-		public const string WhiskeyName = "whisky.jpeg";
-		private const string CarName = "burning_car.jpeg";
+		public const string WhiskeyFileName = "whisky.jpeg";
+		private const string WhiskeyName = "whisky";
+		private const string CarFileName = "burning_car.jpeg";
+		private const string CarName = "car";
+
+		private static readonly Lazy<ImageLoader> ImageData = new Lazy<ImageLoader>(_InitImageData);
 
 		[NotNull]
-		public static async Task<_SlideLibrary> LoadAllSlides([NotNull] UiControlMaker uiControls)
+		public static Task<_SlideLibrary> LoadAllSlides()
 		{
-			var allSlides = await Task.WhenAll(_MakeWhiskySlide(uiControls), BurningCar(uiControls));
-			return new _SlideLibrary(allSlides, null);
+			var allSlides = new[] {_MakeWhiskySlide(ImageData.Value), _MakeBurningCarSlide(ImageData.Value)};
+			return Task.FromResult(new _SlideLibrary(allSlides));
 		}
 
 		[NotNull]
-		public static async Task<Slide> BurningCar([NotNull] UiControlMaker uiControls)
+		private static _ImageLoaderHardCoded _InitImageData()
 		{
-			var result = new Slide
+			var imageData = new _ImageLoaderHardCoded();
+			imageData.Add(WhiskeyName, ImageDataFor(WhiskeyFileName));
+			imageData.Add(CarName, ImageDataFor(CarFileName));
+			return imageData;
+		}
+
+		[NotNull]
+		public static Slide BurningCar()
+		{
+			return _MakeBurningCarSlide(ImageData.Value);
+		}
+
+		[NotNull]
+		private static Slide _MakeBurningCarSlide([NotNull] ImageLoader imageData)
+		{
+			var result = new Slide(imageData)
 			{
-				Background = await _LoadImage(CarName, uiControls),
+				BackgroundImageName = CarFileName,
 				BackgroundFill = Stretch.UniformToFill,
 				BackgroundColor = ColorScheme.FromHtmlArgbStringValue("#FF000000"),
 				MessageTop = "You are so advanced!"
@@ -40,27 +59,17 @@ namespace Player.Model
 		}
 
 		[NotNull]
-		private static async Task<Slide> _MakeWhiskySlide([NotNull] UiControlMaker uiControls)
+		private static Slide _MakeWhiskySlide([NotNull] ImageLoader imageData)
 		{
-			var result = new Slide
+			var result = new Slide(imageData)
 			{
-				Background = await _LoadImage(WhiskeyName, uiControls),
+				BackgroundImageName = WhiskeyFileName,
 				BackgroundFill = Stretch.Uniform,
 				BackgroundColor = ColorScheme.FromHtmlArgbStringValue("#FFFFFFFF"),
 				MessageCenter = "Let's play!"
 			};
 			result.UseBlackText();
 			return result;
-		}
-
-		[NotNull]
-		private static async Task<BitmapImage> _LoadImage([NotNull] string file,
-			[NotNull] UiControlMaker uiControls)
-		{
-			using (var fileStream = ImageDataFor(file))
-			{
-				return await uiControls.CreateImage(fileStream.AsRandomAccessStream());
-			}
 		}
 
 		[NotNull]
@@ -73,7 +82,7 @@ namespace Player.Model
 		[NotNull]
 		public static Task CopyArbitraryImageToStream([NotNull] Stream destination)
 		{
-			var fileStream = ImageDataFor(WhiskeyName);
+			var fileStream = ImageDataFor(WhiskeyFileName);
 			return fileStream.CopyToAsync(destination)
 				.ContinueWith(t => fileStream.Dispose());
 		}

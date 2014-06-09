@@ -1,13 +1,15 @@
 // Presentation Karaoke Player
-// File: _UiControlCreation.cs
+// File: UiControlMaker.cs
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
 using System;
+using System.IO;
 using System.Threading.Tasks;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Media.Imaging;
 using JetBrains.Annotations;
+using Player.ViewModels;
 
 namespace Player.Model
 {
@@ -15,7 +17,7 @@ namespace Player.Model
 	{
 		private readonly TaskFactory _uiThreadTaskFactory;
 
-		public UiControlMaker(): this(TaskScheduler.FromCurrentSynchronizationContext())
+		public UiControlMaker() : this(TaskScheduler.FromCurrentSynchronizationContext())
 		{
 		}
 
@@ -32,13 +34,27 @@ namespace Player.Model
 				var image = new BitmapImage();
 				await image.SetSourceAsync(imageData);
 				return image;
-			}).Unwrap();
+			})
+				.Unwrap();
 		}
 
 		[NotNull]
 		public static UiControlMaker Simulated()
 		{
 			return new UiControlMaker(TaskScheduler.Default);
+		}
+
+		[NotNull]
+		public async Task Inflate([NotNull] Slide slide)
+		{
+			if (string.IsNullOrEmpty(slide.BackgroundImageName)) return;
+			slide.Background = await CreateImage(slide.ImageData.Load(slide.BackgroundImageName).AsRandomAccessStream());
+		}
+
+		public void Deflate([CanBeNull] Slide slide)
+		{
+			if (slide == null) return;
+			slide.Background = null;
 		}
 	}
 }

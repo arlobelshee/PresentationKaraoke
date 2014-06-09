@@ -19,19 +19,19 @@ namespace Player.Model
 		public async Task<_SlideLibrary> ReadPresentation([NotNull] Stream presentationFile)
 		{
 			var archive = new ZipArchive(presentationFile, ZipArchiveMode.Read);
-			var allSlides = ParseManifest(archive.GetEntry("index.json"));
-			return new _SlideLibrary(await allSlides, new _ImageLoader(archive));
+			var allSlides = ParseManifest(archive.GetEntry("index.json"), new _ImageLoaderZip(archive));
+			return new _SlideLibrary(await allSlides);
 		}
 
 		[NotNull]
-		private async Task<IEnumerable<Slide>> ParseManifest([NotNull] ZipArchiveEntry manifest)
+		private async Task<IEnumerable<Slide>> ParseManifest([NotNull] ZipArchiveEntry manifest, [NotNull] ImageLoader imageData)
 		{
 			_PresentationData presentation;
 			using (var stream = manifest.Open())
 			{
 				presentation = await _PresentationData.FromJson(stream);
 			}
-			return presentation.slides.Select(s => s.ToSlide());
+			return presentation.slides.Select(s => s.ToSlide(imageData));
 		}
 	}
 }

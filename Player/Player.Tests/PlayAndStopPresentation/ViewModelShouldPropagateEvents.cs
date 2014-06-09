@@ -3,7 +3,9 @@
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
+using System.Threading.Tasks;
 using FluentAssertions;
+using JetBrains.Annotations;
 using NUnit.Framework;
 using Player.Model;
 using Player.ViewModels;
@@ -30,13 +32,13 @@ namespace Player.Tests.PlayAndStopPresentation
 				.BeBoundTo(brains.Start);
 		}
 
-		[Test]
-		public void ShowingASlide_Should_SendPropertyChangeNotifications()
+		[NotNull,Test]
+		public async Task ShowingASlide_Should_SendPropertyChangeNotifications()
 		{
 			_testSubject.CurrentPageType = typeof (object);
 			_testSubject.MonitorEvents();
 
-			_testSubject.ShowSlide(new Slide());
+			await _testSubject.ShowSlide(new Slide(new _ImageLoaderHardCoded()));
 
 			_testSubject.ShouldRaisePropertyChangeFor(m => m.CurrentPageType);
 			_testSubject.ShouldRaisePropertyChangeFor(m => m.CurrentSlide);

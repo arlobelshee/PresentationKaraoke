@@ -11,12 +11,13 @@ namespace Player.Model
 
 		static _TrivialTestSlides()
 		{
-			Slide1 = new Slide
+			var noImages = new _ImageLoaderHardCoded();
+			Slide1 = new Slide(noImages)
 			{
 				MessageTop = "first slide"
 			};
 			Slide1.UseBlackText();
-			Slide2 = new Slide
+			Slide2 = new Slide(noImages)
 			{
 				MessageTop = "second slide"
 			};
@@ -26,7 +27,7 @@ namespace Player.Model
 		[NotNull]
 		public static Task<_SlideLibrary> LoadAllSlides()
 		{
-			return Task.FromResult(new _SlideLibrary(new[] {Slide1, Slide2}, null));
+			return Task.FromResult(new _SlideLibrary(new[] {Slide1, Slide2}));
 		}
 	}
 }

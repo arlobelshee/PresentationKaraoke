@@ -43,9 +43,9 @@ namespace Player.Model
 			public string background_image { get; set; }
 
 			[NotNull]
-			public Slide ToSlide()
+			public Slide ToSlide([NotNull] ImageLoader images)
 			{
-				var result = new Slide
+				var result = new Slide(images)
 				{
 					MessageTop = top,
 					MessageCenter = middle,

@@ -3,20 +3,30 @@
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
+using System.IO;
 using Windows.UI;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using JetBrains.Annotations;
+using Player.Model;
 
 namespace Player.ViewModels
 {
 	public class Slide
 	{
+		public Slide([NotNull] ImageLoader imageData)
+		{
+			ImageData = imageData;
+		}
+
 		[CanBeNull]
 		public string BackgroundImageName { get; set; }
 
 		[CanBeNull]
 		public BitmapImage Background { get; set; }
+
+		[CanBeNull]
+		public Stream BackgroundRawData { get; set; }
 
 		public Stretch BackgroundFill { get; set; }
 
@@ -34,6 +44,9 @@ namespace Player.ViewModels
 		public Color TextForegroundColor { get; set; }
 
 		public Color TextBackgroundColor { get; set; }
+
+		[NotNull]
+		public ImageLoader ImageData { get; set; }
 
 		public void UseWhiteText()
 		{

@@ -4,6 +4,8 @@
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
 using System;
+using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
 using JetBrains.Annotations;
 using Player.Model;
 using Player.MvvmHelpers;
@@ -102,9 +104,13 @@ namespace Player.ViewModels
 		{
 		}
 
-		public void ShowSlide([NotNull] Slide initialSlide)
+		[NotNull]
+		public async Task ShowSlide([NotNull] Slide nextSlide)
 		{
-			CurrentSlide = initialSlide;
+			await ControlMaker.Inflate(nextSlide);
+			var prevSlide = CurrentSlide;
+			CurrentSlide = nextSlide;
+			ControlMaker.Deflate(prevSlide);
 			CurrentPageType = typeof (PresentationPlayingPage);
 		}
 
@@ -118,15 +124,11 @@ namespace Player.ViewModels
 	{
 		public KaraokeMachine_PlayPresentation_DesignData()
 		{
-			var future = _BuiltInSlides.BurningCar(new UiControlMaker());
-			future.ContinueWith(t =>
-			{
-				var initialSlide = t.Result;
-				initialSlide.MessageBottom = "Witty down low";
-				initialSlide.MessageCenter = null;
-				initialSlide.MessageTop = "Smart and funny at the top";
-				ShowSlide(initialSlide);
-			});
+			var initialSlide = _BuiltInSlides.BurningCar();
+			initialSlide.MessageBottom = "Witty down low";
+			initialSlide.MessageCenter = null;
+			initialSlide.MessageTop = "Smart and funny at the top";
+			ShowSlide(initialSlide);
 		}
 	}
 
