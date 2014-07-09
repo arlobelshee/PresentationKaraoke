@@ -84,17 +84,17 @@ namespace Player.ViewModels
 		[NotNull]
 		public static KaraokeMachine Brainless()
 		{
-			return new KaraokeMachine(new UiControlMaker(ExecuteVia.BackgroundWorkers()));
+			return new KaraokeMachine(ExecuteVia.SynchronousCall());
 		}
 
 		protected KaraokeMachine()
-			: this(new UiControlMaker(ExecuteVia.CurrentThread()))
+			: this(ExecuteVia.ThisThread())
 		{
 		}
 
-		public KaraokeMachine([NotNull] UiControlMaker uiControlMaker)
+		public KaraokeMachine([NotNull] ExecuteVia uiThread) : base(uiThread)
 		{
-			ControlMaker = uiControlMaker;
+			ControlMaker = new UiControlMaker(uiThread);
 			Pause = new Command(_NoOp);
 			AdvanceSlide = AsyncCommand.Wrapping(_NoOp);
 			Start = AsyncCommand.Wrapping(_NoOp);

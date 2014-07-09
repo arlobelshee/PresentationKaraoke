@@ -1,5 +1,5 @@
 // Presentation Karaoke Player
-// File: ThreadSpecificExecution.cs
+// File: ExecuteVia.cs
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
@@ -11,36 +11,70 @@ namespace Player.Model
 {
 	public class ExecuteVia
 	{
-		[NotNull] private readonly TaskFactory _uiThreadTaskFactory;
+		[NotNull] private static readonly Task<bool> AlreadyCompletedTask = Task.FromResult(true);
 
-		private ExecuteVia([NotNull] TaskScheduler scheduler)
+		[NotNull]
+		public virtual Task<T> Do<T>([NotNull] Func<Task<T>> work)
 		{
-			_uiThreadTaskFactory = new TaskFactory(scheduler);
+			return work();
 		}
 
 		[NotNull]
-		public Task<T> Do<T>([NotNull] Func<Task<T>> createImage)
+		public virtual Task<T> Do<T>([NotNull] Func<T> work)
 		{
-			return _uiThreadTaskFactory.StartNew(createImage)
-				.Unwrap();
+			return Task.FromResult(work());
 		}
 
 		[NotNull]
-		public Task<T> Do<T>([NotNull] Func<T> createImage)
+		public virtual Task Do([NotNull] Action work)
 		{
-			return _uiThreadTaskFactory.StartNew(createImage);
+			work();
+			return AlreadyCompletedTask;
 		}
 
 		[NotNull]
 		public static ExecuteVia BackgroundWorkers()
 		{
-			return new ExecuteVia(TaskScheduler.Default);
+			return new _ExecuteViaAsync(TaskScheduler.Default);
 		}
 
 		[NotNull]
-		public static ExecuteVia CurrentThread()
+		public static ExecuteVia ThisThread()
 		{
-			return new ExecuteVia(TaskScheduler.FromCurrentSynchronizationContext());
+			return new _ExecuteViaAsync(TaskScheduler.FromCurrentSynchronizationContext());
+		}
+
+		[NotNull]
+		public static ExecuteVia SynchronousCall()
+		{
+			return new ExecuteVia();
+		}
+
+		private class _ExecuteViaAsync : ExecuteVia
+		{
+			[NotNull]
+			private readonly TaskFactory _uiThreadTaskFactory;
+
+			public _ExecuteViaAsync([NotNull] TaskScheduler scheduler)
+			{
+				_uiThreadTaskFactory = new TaskFactory(scheduler);
+			}
+
+			public override Task<T> Do<T>(Func<Task<T>> work)
+			{
+				return _uiThreadTaskFactory.StartNew(work)
+					.Unwrap();
+			}
+
+			public override Task<T> Do<T>(Func<T> work)
+			{
+				return _uiThreadTaskFactory.StartNew(work);
+			}
+
+			public override Task Do(Action work)
+			{
+				return _uiThreadTaskFactory.StartNew(work);
+			}
 		}
 	}
 }

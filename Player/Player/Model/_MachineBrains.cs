@@ -88,7 +88,7 @@ namespace Player.Model
 		[NotNull]
 		public static _MachineBrains WithTrivialSlidesAndUi(out KaraokeMachine machine, [NotNull] Clock clock)
 		{
-			machine = new KaraokeMachine(new UiControlMaker(ExecuteVia.BackgroundWorkers()));
+			machine = new KaraokeMachine(ExecuteVia.BackgroundWorkers());
 			return _ConnectBrainsToMachine(machine, _TrivialTestSlides.LoadAllSlides, clock);
 		}
 

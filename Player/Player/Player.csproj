@@ -108,12 +108,12 @@
     </Compile>
     <Compile Include="Model\AsyncLazy.cs" />
     <Compile Include="Model\Clock.cs" />
+    <Compile Include="Model\ExecuteVia.cs" />
     <Compile Include="Model\ImageLoader.cs" />
     <Compile Include="Model\RecurringEvent.cs" />
     <Compile Include="Model\SlideLibrary.cs" />
     <Compile Include="Model\StackJanitor.cs" />
     <Compile Include="Model\StoppedClock.cs" />
-    <Compile Include="Model\ExecuteVia.cs" />
     <Compile Include="Model\UiControlMaker.cs" />
     <Compile Include="Model\_ImageLoaderHardCoded.cs" />
     <Compile Include="Model\_ImageLoaderZip.cs" />
