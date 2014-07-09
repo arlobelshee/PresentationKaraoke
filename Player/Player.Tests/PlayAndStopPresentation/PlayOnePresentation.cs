@@ -3,6 +3,8 @@
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
+using System;
+using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
 using JetBrains.Annotations;
@@ -16,8 +18,9 @@ namespace Player.Tests.PlayAndStopPresentation
 	[TestFixture]
 	public class PlayOnePresentation
 	{
-		private KaraokeMachine _machine;
-		private _MachineBrains _testSubject;
+		[NotNull] private KaraokeMachine _machine;
+		[NotNull] private _MachineBrains _testSubject;
+		[NotNull] private StoppedClock _clock;
 
 		[Test]
 		public void NewlyCreatedMachines_Should_OfferToStartAPresentation()
@@ -28,7 +31,8 @@ namespace Player.Tests.PlayAndStopPresentation
 				.Be(20);
 		}
 
-		[NotNull,Test]
+		[NotNull]
+		[Test]
 		public async Task StartingAPresentation_Should_ShowSomeSlide()
 		{
 			await _testSubject.Start();
@@ -38,7 +42,33 @@ namespace Player.Tests.PlayAndStopPresentation
 				.NotBeNull();
 		}
 
-		[NotNull,Test]
+		[NotNull]
+		[Test]
+		public async Task StartingAnAutoplayPresentation_Should_SetUpSchedule()
+		{
+			_machine.SlideAdvanceSpeed = 33;
+			await _testSubject.StartAutoplay();
+			_clock.Triggers.Single()
+				.Should()
+				.Be(new RecurringEvent(TimeSpan.FromSeconds(33), _testSubject.AdvanceSlide));
+		}
+
+
+		[NotNull]
+		[Test]
+		public async Task StoppingAnAutoplayPresentation_Should_CancelScheduleAndShowOptions()
+		{
+			_machine.SlideAdvanceSpeed = 33;
+			await _testSubject.StartAutoplay();
+			_testSubject.Stop();
+			_clock.Triggers.Should()
+				.BeEmpty();
+			_machine.Should()
+				.BeShowingOptions();
+		}
+
+		[NotNull]
+		[Test]
 		public async Task StoppingAPresentation_Should_ReturnToOptions()
 		{
 			await _testSubject.Start();
@@ -50,7 +80,8 @@ namespace Player.Tests.PlayAndStopPresentation
 		[SetUp]
 		public void SetUp()
 		{
-			_testSubject = _MachineBrains.WithTrivialSlidesAndUi(out _machine);
+			_clock = new StoppedClock();
+			_testSubject = _MachineBrains.WithTrivialSlidesAndUi(out _machine, _clock);
 		}
 	}
 }

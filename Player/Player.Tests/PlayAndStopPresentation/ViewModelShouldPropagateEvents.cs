@@ -21,7 +21,7 @@ namespace Player.Tests.PlayAndStopPresentation
 		[Test]
 		public void NormalMachineInitialization_Should_BindEventsToBrains()
 		{
-			var brains = _MachineBrains.WithTrivialSlidesAndUi(out _testSubject);
+			var brains = _MachineBrains.WithTrivialSlidesAndUi(out _testSubject, new StoppedClock());
 			_testSubject.Pause.Should()
 				.BeBoundTo(brains.Pause);
 			_testSubject.AdvanceSlide.Should()
@@ -30,6 +30,8 @@ namespace Player.Tests.PlayAndStopPresentation
 				.BeBoundTo(brains.Stop);
 			_testSubject.Start.Should()
 				.BeBoundTo(brains.Start);
+			_testSubject.StartAutoplay.Should()
+				.BeBoundTo(brains.StartAutoplay);
 		}
 
 		[NotNull,Test]

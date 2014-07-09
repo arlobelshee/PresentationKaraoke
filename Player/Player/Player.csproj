@@ -107,14 +107,19 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\AsyncLazy.cs" />
+    <Compile Include="Model\Clock.cs" />
     <Compile Include="Model\ImageLoader.cs" />
+    <Compile Include="Model\RecurringEvent.cs" />
     <Compile Include="Model\SlideLibrary.cs" />
+    <Compile Include="Model\StackJanitor.cs" />
+    <Compile Include="Model\StoppedClock.cs" />
     <Compile Include="Model\UiControlMaker.cs" />
     <Compile Include="Model\_ImageLoaderHardCoded.cs" />
     <Compile Include="Model\_ImageLoaderZip.cs" />
     <Compile Include="Model\_PresentationData.cs" />
     <Compile Include="Model\_PresentationFileSet.cs" />
     <Compile Include="Model\_TrivialTestSlides.cs" />
+    <Compile Include="Model\_WallClock.cs" />
     <Compile Include="MvvmHelpers\AsyncCommand.cs" />
     <Compile Include="MvvmHelpers\Command.cs" />
     <Compile Include="MvvmHelpers\HasTarget.cs" />

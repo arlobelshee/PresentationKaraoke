@@ -13,11 +13,15 @@ namespace Player.Model
 	internal class _MachineBrains
 	{
 		[NotNull] private readonly KaraokeMachine _machine;
-		private readonly AsyncLazy<_SlideLibrary> _slideLibrary;
+		[NotNull] private readonly Clock _clock;
+		[NotNull] private readonly AsyncLazy<_SlideLibrary> _slideLibrary;
+		[CanBeNull] private RecurringEvent _slideAdvancer;
 
-		private _MachineBrains([NotNull] KaraokeMachine machine, [NotNull] Func<Task<_SlideLibrary>> slideLoader)
+		private _MachineBrains([NotNull] KaraokeMachine machine, [NotNull] Func<Task<_SlideLibrary>> slideLoader,
+			[NotNull] Clock clock)
 		{
 			_machine = machine;
+			_clock = clock;
 			machine.Brains_TestAccess = this;
 			_machine.ShowOptions();
 			_machine.SlideAdvanceSpeed = 20;
@@ -25,9 +29,16 @@ namespace Player.Model
 		}
 
 		[NotNull]
-		public async Task Start()
+		public Task Start()
 		{
-			await _machine.ShowSlide((await _slideLibrary).PickOneRandomSlide());
+			return AdvanceSlide();
+		}
+
+		[NotNull]
+		public Task StartAutoplay()
+		{
+			_slideAdvancer = _clock.Schedule(TimeSpan.FromSeconds(_machine.SlideAdvanceSpeed), AdvanceSlide);
+			return AdvanceSlide();
 		}
 
 		[NotNull]
@@ -42,30 +53,36 @@ namespace Player.Model
 
 		public void Stop()
 		{
+			if (_slideAdvancer != null)
+			{
+				_slideAdvancer.Dispose();
+				_slideAdvancer = null;
+			}
 			_machine.ShowOptions();
 		}
 
 		public static void SupplyBrainFor([NotNull] KaraokeMachine machine)
 		{
-			_ConnectBrainsToMachine(machine, () => _BuiltInSlides.LoadAllSlides());
+			_ConnectBrainsToMachine(machine, _BuiltInSlides.LoadAllSlides, new _WallClock());
 		}
 
 		[NotNull]
-		public static _MachineBrains WithTrivialSlidesAndUi(out KaraokeMachine machine)
+		public static _MachineBrains WithTrivialSlidesAndUi(out KaraokeMachine machine, [NotNull] Clock clock)
 		{
 			machine = new KaraokeMachine(UiControlMaker.Simulated());
-			return _ConnectBrainsToMachine(machine, _TrivialTestSlides.LoadAllSlides);
+			return _ConnectBrainsToMachine(machine, _TrivialTestSlides.LoadAllSlides, clock);
 		}
 
 		[NotNull]
 		private static _MachineBrains _ConnectBrainsToMachine([NotNull] KaraokeMachine machine,
-			[NotNull] Func<Task<_SlideLibrary>> slideLoader)
+			[NotNull] Func<Task<_SlideLibrary>> slideLoader, [NotNull] Clock clock)
 		{
-			var brains = new _MachineBrains(machine, slideLoader);
+			var brains = new _MachineBrains(machine, slideLoader, clock);
 			machine.Pause.BindTo(brains.Pause);
 			machine.AdvanceSlide.BindTo(brains.AdvanceSlide);
 			machine.Stop.BindTo(brains.Stop);
 			machine.Start.BindTo(brains.Start);
+			machine.StartAutoplay.BindTo(brains.StartAutoplay);
 			return brains;
 		}
 	}

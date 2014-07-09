@@ -60,6 +60,9 @@ namespace Player.ViewModels
 		public AsyncCommand Start { get; private set; }
 
 		[NotNull]
+		public AsyncCommand StartAutoplay { get; private set; }
+
+		[NotNull]
 		public Command Stop { get; private set; }
 
 		[NotNull]
@@ -97,6 +100,7 @@ namespace Player.ViewModels
 			Pause = new Command(_NoOp);
 			AdvanceSlide = AsyncCommand.Wrapping(_NoOp);
 			Start = AsyncCommand.Wrapping(_NoOp);
+			StartAutoplay = AsyncCommand.Wrapping(_NoOp);
 			Stop = new Command(_NoOp);
 		}
 

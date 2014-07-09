@@ -3,7 +3,6 @@
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
-using System;
 using FluentAssertions;
 using NUnit.Framework;
 using Player.MvvmHelpers;

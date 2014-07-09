@@ -49,7 +49,7 @@ namespace Player.Model
 		{
 			var result = new Slide(imageData)
 			{
-				BackgroundImageName = CarFileName,
+				BackgroundImageName = CarName,
 				BackgroundFill = Stretch.UniformToFill,
 				BackgroundColor = ColorScheme.FromHtmlArgbStringValue("#FF000000"),
 				MessageTop = "You are so advanced!"
@@ -63,7 +63,7 @@ namespace Player.Model
 		{
 			var result = new Slide(imageData)
 			{
-				BackgroundImageName = WhiskeyFileName,
+				BackgroundImageName = WhiskeyName,
 				BackgroundFill = Stretch.Uniform,
 				BackgroundColor = ColorScheme.FromHtmlArgbStringValue("#FFFFFFFF"),
 				MessageCenter = "Let's play!"
