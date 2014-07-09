@@ -15,41 +15,27 @@ namespace Player.Model
 {
 	public class UiControlMaker
 	{
-		private readonly TaskFactory _uiThreadTaskFactory;
+		[NotNull] private readonly ExecuteVia _uiThread;
 
-		public UiControlMaker() : this(TaskScheduler.FromCurrentSynchronizationContext())
+		public UiControlMaker([NotNull] ExecuteVia uiThread)
 		{
-		}
-
-		private UiControlMaker([NotNull] TaskScheduler scheduler)
-		{
-			_uiThreadTaskFactory = new TaskFactory(scheduler);
+			_uiThread = uiThread;
 		}
 
 		[NotNull]
-		public Task<BitmapImage> CreateImage([NotNull] IRandomAccessStream imageData)
+		private static async Task<BitmapImage> _CreateImage([NotNull] IRandomAccessStream imageData)
 		{
-			return _uiThreadTaskFactory.StartNew(async () =>
-			{
-				var image = new BitmapImage();
-				await image.SetSourceAsync(imageData);
-				return image;
-			})
-				.Unwrap();
-		}
-
-		[NotNull]
-		public static UiControlMaker Simulated()
-		{
-			return new UiControlMaker(TaskScheduler.Default);
+			var image = new BitmapImage();
+			await image.SetSourceAsync(imageData);
+			return image;
 		}
 
 		[NotNull]
 		public async Task<Slide> Inflate([NotNull] Slide slide)
 		{
 			if (string.IsNullOrEmpty(slide.BackgroundImageName)) return slide;
-			var slideImageData = slide.ImageData.Load(slide.BackgroundImageName);
-			slide.Background = await CreateImage(slideImageData.AsRandomAccessStream());
+			var slideImageData = (await slide.ImageData.Load(slide.BackgroundImageName)).AsRandomAccessStream();
+			slide.Background = await _uiThread.Do(() => _CreateImage(slideImageData));
 			return slide;
 		}
 

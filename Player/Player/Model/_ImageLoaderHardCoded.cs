@@ -5,6 +5,7 @@
 
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using JetBrains.Annotations;
 
 namespace Player.Model
@@ -18,9 +19,9 @@ namespace Player.Model
 			_images[name] = data;
 		}
 
-		public Stream Load(string name)
+		public Task<Stream> Load(string name)
 		{
-			return _images[name];
+			return Task.FromResult(_images[name]);
 		}
 	}
 }

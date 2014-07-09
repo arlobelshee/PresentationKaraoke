@@ -104,7 +104,7 @@ namespace Player.Tests.UsePresentationFromFile
 			{
 				await _WriteImageToStream(zipData);
 				var testSubject = new _ImageLoaderZip(new ZipArchive(zipData, ZipArchiveMode.Read));
-				using (var result = testSubject.Load(ImageName))
+				using (var result = await testSubject.Load(ImageName))
 				{
 					await result.ShouldNotBeEmpty();
 				}

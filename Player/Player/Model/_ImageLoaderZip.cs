@@ -1,22 +1,29 @@
-﻿using System.IO;
+﻿// Presentation Karaoke Player
+// File: _ImageLoaderZip.cs
+// 
+// Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
+
+using System.IO;
 using System.IO.Compression;
+using System.Threading.Tasks;
 using JetBrains.Annotations;
 
 namespace Player.Model
 {
 	internal class _ImageLoaderZip : ImageLoader
 	{
-		private readonly ZipArchive _imageBundle;
+		[NotNull] private readonly ZipArchive _imageBundle;
+		[NotNull] private readonly ExecuteVia _worker = ExecuteVia.BackgroundWorkers();
 
 		public _ImageLoaderZip([NotNull] ZipArchive imageBundle)
 		{
 			_imageBundle = imageBundle;
 		}
 
-		public Stream Load(string name)
+		public Task<Stream> Load(string name)
 		{
-			return _imageBundle.GetEntry(name)
-				.Open();
+			return _worker.Do(() => _imageBundle.GetEntry(name)
+				.Open());
 		}
 	}
 }

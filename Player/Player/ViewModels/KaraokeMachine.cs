@@ -4,8 +4,6 @@
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
 using System;
-using System.Threading.Tasks;
-using Windows.UI.Xaml.Controls;
 using JetBrains.Annotations;
 using Player.Model;
 using Player.MvvmHelpers;
@@ -86,11 +84,11 @@ namespace Player.ViewModels
 		[NotNull]
 		public static KaraokeMachine Brainless()
 		{
-			return new KaraokeMachine(UiControlMaker.Simulated());
+			return new KaraokeMachine(new UiControlMaker(ExecuteVia.BackgroundWorkers()));
 		}
 
 		protected KaraokeMachine()
-			: this(new UiControlMaker())
+			: this(new UiControlMaker(ExecuteVia.CurrentThread()))
 		{
 		}
 
