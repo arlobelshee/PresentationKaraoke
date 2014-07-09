@@ -19,16 +19,16 @@ namespace Player.Views
 			InitializeComponent();
 		}
 
-		private void PlayNormal_OnClick([CanBeNull] object sender, [CanBeNull] RoutedEventArgs e)
+		private async void PlayNormal_OnClick([CanBeNull] object sender, [CanBeNull] RoutedEventArgs e)
 		{
-			_TheMachine
+			await _TheMachine
 				.Start.Execute();
 		}
 
-		private void PlayFullAuto_OnClick([CanBeNull] object sender, [CanBeNull] RoutedEventArgs e)
+		private async void PlayFullAuto_OnClick([CanBeNull] object sender, [CanBeNull] RoutedEventArgs e)
 		{
-			_TheMachine
-				.Start.Execute();
+			await _TheMachine
+				.StartAutoplay.Execute();
 		}
 
 		[NotNull]

@@ -108,13 +108,9 @@ namespace Player.ViewModels
 		{
 		}
 
-		[NotNull]
-		public async Task ShowSlide([NotNull] Slide nextSlide)
+		public void ShowSlide([NotNull] Slide nextSlide)
 		{
-			await ControlMaker.Inflate(nextSlide);
-			var prevSlide = CurrentSlide;
 			CurrentSlide = nextSlide;
-			ControlMaker.Deflate(prevSlide);
 			CurrentPageType = typeof (PresentationPlayingPage);
 		}
 

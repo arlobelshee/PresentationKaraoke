@@ -12,7 +12,7 @@ namespace Player.Model
 	{
 		protected override void _Schedule(RecurringEvent whatAndWhen)
 		{
-			whatAndWhen.Cancelable = new Timer(_ => whatAndWhen.Action().RunSynchronously(), null, TimeSpan.Zero,
+			whatAndWhen.Cancelable = new Timer(_ => whatAndWhen.Action(), null, TimeSpan.Zero,
 				whatAndWhen.Frequency);
 		}
 	}

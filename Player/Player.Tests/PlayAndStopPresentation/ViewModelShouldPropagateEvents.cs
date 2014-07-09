@@ -16,7 +16,7 @@ namespace Player.Tests.PlayAndStopPresentation
 	[TestFixture]
 	public class ViewModelShouldPropagateEvents
 	{
-		private KaraokeMachine _testSubject;
+		[NotNull] private KaraokeMachine _testSubject;
 
 		[Test]
 		public void NormalMachineInitialization_Should_BindEventsToBrains()
@@ -40,7 +40,7 @@ namespace Player.Tests.PlayAndStopPresentation
 			_testSubject.CurrentPageType = typeof (object);
 			_testSubject.MonitorEvents();
 
-			await _testSubject.ShowSlide(new Slide(new _ImageLoaderHardCoded()));
+			_testSubject.ShowSlide(new Slide(new _ImageLoaderHardCoded()));
 
 			_testSubject.ShouldRaisePropertyChangeFor(m => m.CurrentPageType);
 			_testSubject.ShouldRaisePropertyChangeFor(m => m.CurrentSlide);

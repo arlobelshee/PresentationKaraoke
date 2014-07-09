@@ -4,6 +4,7 @@
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
 using Player.ViewModels;
@@ -16,6 +17,7 @@ namespace Player.Model
 		[NotNull] private readonly Clock _clock;
 		[NotNull] private readonly AsyncLazy<_SlideLibrary> _slideLibrary;
 		[CanBeNull] private RecurringEvent _slideAdvancer;
+		[NotNull] private Task<Slide> _slideBeingPrepared;
 
 		private _MachineBrains([NotNull] KaraokeMachine machine, [NotNull] Func<Task<_SlideLibrary>> slideLoader,
 			[NotNull] Clock clock)
@@ -26,6 +28,7 @@ namespace Player.Model
 			_machine.ShowOptions();
 			_machine.SlideAdvanceSpeed = 20;
 			_slideLibrary = new AsyncLazy<_SlideLibrary>(slideLoader);
+			_slideBeingPrepared = _StartPreparingOneSlide();
 		}
 
 		[NotNull]
@@ -44,7 +47,9 @@ namespace Player.Model
 		[NotNull]
 		public async Task AdvanceSlide()
 		{
-			await _machine.ShowSlide((await _slideLibrary).PickOneRandomSlide());
+			var inflationDone = _StartPreparingOneSlide();
+			Interlocked.Exchange(ref inflationDone, _slideBeingPrepared);
+			_ChangeSlideBeingDisplayed(await inflationDone);
 		}
 
 		public void Pause()
@@ -59,6 +64,20 @@ namespace Player.Model
 				_slideAdvancer = null;
 			}
 			_machine.ShowOptions();
+		}
+
+		private void _ChangeSlideBeingDisplayed([NotNull] Slide nextSlide)
+		{
+			var oldSlide = _machine.CurrentSlide;
+			_machine.ShowSlide(nextSlide);
+			_machine.ControlMaker.Deflate(oldSlide);
+		}
+
+		[NotNull]
+		private async Task<Slide> _StartPreparingOneSlide()
+		{
+			var onDeck = (await _slideLibrary).PickOneRandomSlide();
+			return await _machine.ControlMaker.Inflate(onDeck);
 		}
 
 		public static void SupplyBrainFor([NotNull] KaraokeMachine machine)

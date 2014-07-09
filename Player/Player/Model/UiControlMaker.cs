@@ -45,11 +45,12 @@ namespace Player.Model
 		}
 
 		[NotNull]
-		public async Task Inflate([NotNull] Slide slide)
+		public async Task<Slide> Inflate([NotNull] Slide slide)
 		{
-			if (string.IsNullOrEmpty(slide.BackgroundImageName)) return;
+			if (string.IsNullOrEmpty(slide.BackgroundImageName)) return slide;
 			var slideImageData = slide.ImageData.Load(slide.BackgroundImageName);
 			slide.Background = await CreateImage(slideImageData.AsRandomAccessStream());
+			return slide;
 		}
 
 		public void Deflate([CanBeNull] Slide slide)

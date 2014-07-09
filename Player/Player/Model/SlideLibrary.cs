@@ -3,6 +3,7 @@
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
@@ -12,8 +13,9 @@ namespace Player.Model
 {
 	internal class _SlideLibrary
 	{
-		private readonly Slide[] _allSlides;
+		[NotNull] private readonly Slide[] _allSlides;
 		private int _lastSlideGiven;
+		[NotNull] private readonly Random _rng = new Random();
 
 		public _SlideLibrary([NotNull] IEnumerable<Slide> slides)
 		{
@@ -29,8 +31,12 @@ namespace Player.Model
 		[NotNull]
 		public Slide PickOneRandomSlide()
 		{
-			_lastSlideGiven++;
-			if (_lastSlideGiven >= _allSlides.Length) _lastSlideGiven = 0;
+			var next = _lastSlideGiven;
+			while (next == _lastSlideGiven)
+			{
+				next = _rng.Next(_allSlides.Length);
+			}
+			_lastSlideGiven = next;
 			return _allSlides[_lastSlideGiven];
 		}
 	}
