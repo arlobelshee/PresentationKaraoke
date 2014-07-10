@@ -19,9 +19,15 @@ namespace Player.Model
 			_images[name] = data;
 		}
 
-		public Task<Stream> Load(string name)
+		public async Task<Stream> Load(string name)
 		{
-			return Task.FromResult(_images[name]);
+			var result = new MemoryStream();
+			var src = _images[name];
+			src.Seek(0, SeekOrigin.Begin);
+			await src.CopyToAsync(result);
+			await result.FlushAsync();
+			result.Seek(0, SeekOrigin.Begin);
+			return result;
 		}
 	}
 }

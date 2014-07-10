@@ -20,12 +20,13 @@ namespace Player.Model
 		private const string CarFileName = "burning_car.jpeg";
 		private const string CarName = "car";
 
-		private static readonly Lazy<ImageLoader> ImageData = new Lazy<ImageLoader>(_InitImageData);
+		[NotNull] private static readonly Lazy<ImageLoader> ImageData = new Lazy<ImageLoader>(_InitImageData);
 
 		[NotNull]
 		public static Task<_SlideLibrary> LoadAllSlides()
 		{
-			var allSlides = new[] {_MakeWhiskySlide(ImageData.Value), _MakeBurningCarSlide(ImageData.Value)};
+			var loader = ImageData.Value;
+			var allSlides = new[] {_MakeWhiskySlide(loader), _MakeBurningCarSlide(loader)};
 			return Task.FromResult(new _SlideLibrary(allSlides));
 		}
 

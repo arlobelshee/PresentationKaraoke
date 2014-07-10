@@ -28,7 +28,7 @@ namespace Player.Tests.PlayAndStopPresentation
 			_machine.Should()
 				.BeShowingOptions();
 			_machine.SlideAdvanceSpeed.Should()
-				.Be(20);
+				.Be(10);
 		}
 
 		[NotNull]

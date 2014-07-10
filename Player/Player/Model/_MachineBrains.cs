@@ -26,7 +26,7 @@ namespace Player.Model
 			_clock = clock;
 			machine.Brains_TestAccess = this;
 			_machine.ShowOptions();
-			_machine.SlideAdvanceSpeed = 20;
+			_machine.SlideAdvanceSpeed = 10;
 			_slideLibrary = new AsyncLazy<_SlideLibrary>(slideLoader);
 			_slideBeingPrepared = _StartPreparingOneSlide();
 		}
