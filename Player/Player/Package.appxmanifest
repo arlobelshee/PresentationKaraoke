@@ -18,6 +18,24 @@
       <m2:VisualElements DisplayName="Presentation Karaoke" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="Play a game of presentation karaoke! Present a topic to the most random slide deck in existence." ForegroundText="light" BackgroundColor="#464646" ToastCapable="false">
         <m2:SplashScreen Image="Assets\SplashScreen.png" />
       </m2:VisualElements>
+      <Extensions>
+        <Extension Category="windows.fileTypeAssociation">
+          <FileTypeAssociation Name="presentation_karaoke_deck">
+            <DisplayName>Presentation Karaoke Deck</DisplayName>
+            <EditFlags OpenIsSafe="true" />
+            <SupportedFileTypes>
+              <FileType ContentType="application/x-karaoke">.karaoke</FileType>
+            </SupportedFileTypes>
+          </FileTypeAssociation>
+        </Extension>
+        <Extension Category="windows.shareTarget">
+          <ShareTarget>
+            <SupportedFileTypes>
+              <FileType>.karaoke</FileType>
+            </SupportedFileTypes>
+          </ShareTarget>
+        </Extension>
+      </Extensions>
     </Application>
   </Applications>
   <Capabilities>
