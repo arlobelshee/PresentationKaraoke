@@ -1,0 +1,16 @@
+{
+"slides": [
+    {
+        "top":"It's what's for dinner",
+        "text_color": "black",
+        "background_color": "white",
+        "background_image": "whisky.jpeg"
+    },
+    {
+        "bottom":"You must run. Very fast.",
+        "text_color": "white",
+        "background_color": "black",
+        "background_image": "burning_car.jpeg"
+    }
+]
+}
