@@ -3,13 +3,13 @@
     {
         "top":"It's what's for dinner",
         "text_color": "black",
-        "background_color": "white",
+        "background_color": "#FFFFFFFF",
         "background_image": "whisky.jpeg"
     },
     {
         "bottom":"You must run. Very fast.",
         "text_color": "white",
-        "background_color": "black",
+        "background_color": "#FF000000",
         "background_image": "burning_car.jpeg"
     }
 ]
