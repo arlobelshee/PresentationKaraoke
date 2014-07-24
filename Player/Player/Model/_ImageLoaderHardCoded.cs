@@ -29,5 +29,14 @@ namespace Player.Model
 			result.Seek(0, SeekOrigin.Begin);
 			return result;
 		}
+
+		public void Dispose()
+		{
+			foreach (var stream in _images.Values)
+			{
+				stream.Dispose();
+			}
+			_images.Clear();
+		}
 	}
 }

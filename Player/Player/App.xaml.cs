@@ -76,8 +76,9 @@ namespace Player
 			Window.Current.Activate();
 		}
 
-		private static void _SaveApplicationState()
+		private void _SaveApplicationState()
 		{
+			_machine.Dispose();
 		}
 
 		private static void _LoadSavedStateFromTombstone()

@@ -11,14 +11,16 @@ using Player.ViewModels;
 
 namespace Player.Model
 {
-	internal class _SlideLibrary
+	internal class _SlideLibrary : IDisposable
 	{
+		private readonly ImageLoader _imageData;
 		[NotNull] private readonly Slide[] _allSlides;
 		private int _lastSlideGiven;
 		[NotNull] private readonly Random _rng = new Random();
 
-		public _SlideLibrary([NotNull] IEnumerable<Slide> slides)
+		public _SlideLibrary([NotNull] IEnumerable<Slide> slides, ImageLoader imageData)
 		{
+			_imageData = imageData;
 			_allSlides = slides.ToArray();
 			_lastSlideGiven = _allSlides.Length;
 		}
@@ -38,6 +40,11 @@ namespace Player.Model
 			}
 			_lastSlideGiven = next;
 			return _allSlides[_lastSlideGiven];
+		}
+
+		public void Dispose()
+		{
+			_imageData.Dispose();
 		}
 	}
 }

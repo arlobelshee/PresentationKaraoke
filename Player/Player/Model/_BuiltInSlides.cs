@@ -4,6 +4,7 @@
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -26,8 +27,9 @@ namespace Player.Model
 		public static Task<_SlideLibrary> LoadAllSlides()
 		{
 			var loader = ImageData.Value;
+			Debug.Assert(loader != null, "loader != null");
 			var allSlides = new[] {_MakeWhiskySlide(loader), _MakeBurningCarSlide(loader)};
-			return Task.FromResult(new _SlideLibrary(allSlides));
+			return Task.FromResult(new _SlideLibrary(allSlides, loader));
 		}
 
 		[NotNull]

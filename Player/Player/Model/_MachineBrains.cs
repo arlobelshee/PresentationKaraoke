@@ -11,7 +11,7 @@ using Player.ViewModels;
 
 namespace Player.Model
 {
-	internal class _MachineBrains
+	internal class _MachineBrains : IDisposable
 	{
 		[NotNull] private readonly KaraokeMachine _machine;
 		[NotNull] private readonly Clock _clock;
@@ -102,7 +102,13 @@ namespace Player.Model
 			machine.Stop.BindTo(brains.Stop);
 			machine.Start.BindTo(brains.Start);
 			machine.StartAutoplay.BindTo(brains.StartAutoplay);
+			machine._CleanUp = brains.Dispose;
 			return brains;
+		}
+
+		public void Dispose()
+		{
+			_slideLibrary.Value.Result.Dispose();
 		}
 	}
 }

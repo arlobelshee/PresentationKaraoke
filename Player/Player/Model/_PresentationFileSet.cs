@@ -3,6 +3,7 @@
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
@@ -19,8 +20,28 @@ namespace Player.Model
 		public async Task<_SlideLibrary> ReadPresentation([NotNull] Stream presentationFile)
 		{
 			var archive = new ZipArchive(presentationFile, ZipArchiveMode.Read);
-			var allSlides = ParseManifest(archive.GetEntry("index.json"), new _ImageLoaderZip(archive));
-			return new _SlideLibrary(await allSlides);
+			var imageData = new _ImageLoaderZip(archive);
+			try
+			{
+				var allSlides = ParseManifest(_LoadIndex(archive), imageData);
+				return new _SlideLibrary(await allSlides, imageData);
+			}
+			catch (Exception)
+			{
+				imageData.Dispose();
+				throw;
+			}
+		}
+
+		[NotNull]
+		private static ZipArchiveEntry _LoadIndex([NotNull] ZipArchive archive)
+		{
+			var index = archive.GetEntry("index.json");
+			if (index == null)
+			{
+				throw new FormatException("Error in presentation file. I could not find index.json. Please fix the file.");
+			}
+			return index;
 		}
 
 		[NotNull]

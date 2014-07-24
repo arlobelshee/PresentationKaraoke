@@ -11,7 +11,7 @@ using Player.Views;
 
 namespace Player.ViewModels
 {
-	public class KaraokeMachine : FirePropertyChanged
+	public class KaraokeMachine : FirePropertyChanged, IDisposable
 	{
 		[NotNull]
 		public Type CurrentPageType
@@ -64,6 +64,9 @@ namespace Player.ViewModels
 		public Command Stop { get; private set; }
 
 		[NotNull]
+		internal Action _CleanUp { get; set; }
+
+		[NotNull]
 		public UiControlMaker ControlMaker { get; private set; }
 
 		private Slide _currentSlide;
@@ -100,6 +103,7 @@ namespace Player.ViewModels
 			Start = AsyncCommand.Wrapping(_NoOp);
 			StartAutoplay = AsyncCommand.Wrapping(_NoOp);
 			Stop = new Command(_NoOp);
+			_CleanUp = _NoOp;
 		}
 
 		private static void _NoOp()
@@ -115,6 +119,11 @@ namespace Player.ViewModels
 		public void ShowOptions()
 		{
 			CurrentPageType = typeof (PresentationOptionsPage);
+		}
+
+		public void Dispose()
+		{
+			_CleanUp();
 		}
 	}
 

@@ -25,5 +25,10 @@ namespace Player.Model
 			return _worker.Do(() => _imageBundle.GetEntry(name)
 				.Open());
 		}
+
+		public void Dispose()
+		{
+			_imageBundle.Dispose();
+		}
 	}
 }
