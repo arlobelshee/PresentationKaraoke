@@ -1,33 +1,41 @@
+// Presentation Karaoke Player
+// File: _TrivialTestSlides.cs
+// 
+// Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
+
 using System.Threading.Tasks;
 using JetBrains.Annotations;
 using Player.ViewModels;
 
 namespace Player.Model
 {
-	internal static class _TrivialTestSlides
+	internal class _TrivialTestSlides : _SlideLoader
 	{
-		[NotNull] private static readonly Slide Slide1;
-		[NotNull] private static readonly Slide Slide2;
+		[NotNull] private readonly Slide _slide1;
+		[NotNull] private readonly Slide _slide2;
 
-		static _TrivialTestSlides()
+		public _TrivialTestSlides()
 		{
 			var noImages = new _ImageLoaderHardCoded();
-			Slide1 = new Slide(noImages)
+			_slide1 = new Slide(noImages)
 			{
 				MessageTop = "first slide"
 			};
-			Slide1.UseBlackText();
-			Slide2 = new Slide(noImages)
+			_slide1.UseBlackText();
+			_slide2 = new Slide(noImages)
 			{
 				MessageTop = "second slide"
 			};
-			Slide2.UseWhiteText();
+			_slide2.UseWhiteText();
 		}
 
-		[NotNull]
-		public static Task<_SlideLibrary> LoadAllSlides()
+		public Task<_SlideLibrary> LoadAllSlides()
 		{
-			return Task.FromResult(new _SlideLibrary(new[] {Slide1, Slide2}));
+			return Task.FromResult(new _SlideLibrary(new[] {_slide1, _slide2}));
+		}
+
+		public void Dispose()
+		{
 		}
 	}
 }

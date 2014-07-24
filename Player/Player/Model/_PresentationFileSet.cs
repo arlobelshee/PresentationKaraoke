@@ -14,7 +14,7 @@ using Player.ViewModels;
 
 namespace Player.Model
 {
-	internal class _PresentationFileSet : IDisposable
+	internal class _PresentationFileSet : _SlideLoader
 	{
 		[NotNull] private readonly ZipArchive _archive;
 
@@ -23,8 +23,7 @@ namespace Player.Model
 			_archive = new ZipArchive(presentationFile, ZipArchiveMode.Read);
 		}
 
-		[NotNull]
-		public async Task<_SlideLibrary> ReadPresentation()
+		public async Task<_SlideLibrary> LoadAllSlides()
 		{
 			var allSlides = ParseManifest(_LoadIndex(), new _ImageLoaderZip(_archive));
 			return new _SlideLibrary(await allSlides);

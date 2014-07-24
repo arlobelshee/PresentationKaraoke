@@ -32,7 +32,7 @@ namespace Player.Tests.UsePresentationFromFile
 				_SlideLibrary preso;
 				using (var testSubject = new _PresentationFileSet(zipData))
 				{
-					preso = await testSubject.ReadPresentation();
+					preso = await testSubject.LoadAllSlides();
 				}
 				preso.Length.Should()
 					.Be(1);
@@ -47,6 +47,7 @@ namespace Player.Tests.UsePresentationFromFile
 		[Test]
 		public void ShouldBeAbleToAccessBuiltInImageDataFromTests()
 		{
+			using (var builtInSlides = new _BuiltInSlides())
 			using (var data = _BuiltInSlides.ImageDataFor(_BuiltInSlides.WhiskeyFileName))
 			{
 				data.Length.Should()

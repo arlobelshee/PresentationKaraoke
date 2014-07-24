@@ -82,14 +82,14 @@ namespace Player.Model
 
 		public static void SupplyBrainFor([NotNull] KaraokeMachine machine)
 		{
-			_ConnectBrainsToMachine(machine, _BuiltInSlides.LoadAllSlides, new _WallClock());
+			_ConnectBrainsToMachine(machine, new _BuiltInSlides().LoadAllSlides, new _WallClock());
 		}
 
 		[NotNull]
 		public static _MachineBrains WithTrivialSlidesAndUi(out KaraokeMachine machine, [NotNull] Clock clock)
 		{
 			machine = new KaraokeMachine(ExecuteVia.BackgroundWorkers());
-			return _ConnectBrainsToMachine(machine, _TrivialTestSlides.LoadAllSlides, clock);
+			return _ConnectBrainsToMachine(machine, new _TrivialTestSlides().LoadAllSlides, clock);
 		}
 
 		[NotNull]

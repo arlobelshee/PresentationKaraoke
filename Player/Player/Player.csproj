@@ -119,6 +119,7 @@
     <Compile Include="Model\_ImageLoaderZip.cs" />
     <Compile Include="Model\_PresentationData.cs" />
     <Compile Include="Model\_PresentationFileSet.cs" />
+    <Compile Include="Model\_SlideLoader.cs" />
     <Compile Include="Model\_TrivialTestSlides.cs" />
     <Compile Include="Model\_WallClock.cs" />
     <Compile Include="MvvmHelpers\AsyncCommand.cs" />

@@ -122,7 +122,7 @@ namespace Player.ViewModels
 	{
 		public KaraokeMachine_PlayPresentation_DesignData()
 		{
-			var initialSlide = _BuiltInSlides.BurningCar();
+			var initialSlide = new _BuiltInSlides().BurningCar();
 			initialSlide.MessageBottom = "Witty down low";
 			initialSlide.MessageCenter = null;
 			initialSlide.MessageTop = "Smart and funny at the top";

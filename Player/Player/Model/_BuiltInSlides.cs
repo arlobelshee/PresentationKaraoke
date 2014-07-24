@@ -13,20 +13,23 @@ using Player.ViewModels;
 
 namespace Player.Model
 {
-	internal static class _BuiltInSlides
+	internal class _BuiltInSlides : _SlideLoader
 	{
 		public const string WhiskeyFileName = "whisky.jpeg";
 		private const string WhiskeyName = "whisky";
 		private const string CarFileName = "burning_car.jpeg";
 		private const string CarName = "car";
 
-		[NotNull] private static readonly Lazy<ImageLoader> ImageData = new Lazy<ImageLoader>(_InitImageData);
+		[NotNull] private readonly Lazy<ImageLoader> _imageData;
 
-		[NotNull]
-		public static Task<_SlideLibrary> LoadAllSlides()
+		public _BuiltInSlides()
 		{
-			var loader = ImageData.Value;
-			var allSlides = new[] {_MakeWhiskySlide(loader), _MakeBurningCarSlide(loader)};
+			_imageData = new Lazy<ImageLoader>(_InitImageData);
+		}
+
+		public Task<_SlideLibrary> LoadAllSlides()
+		{
+			var allSlides = new[] {_MakeWhiskySlide(), _MakeBurningCarSlide()};
 			return Task.FromResult(new _SlideLibrary(allSlides));
 		}
 
@@ -40,15 +43,15 @@ namespace Player.Model
 		}
 
 		[NotNull]
-		public static Slide BurningCar()
+		public Slide BurningCar()
 		{
-			return _MakeBurningCarSlide(ImageData.Value);
+			return _MakeBurningCarSlide();
 		}
 
 		[NotNull]
-		private static Slide _MakeBurningCarSlide([NotNull] ImageLoader imageData)
+		private Slide _MakeBurningCarSlide()
 		{
-			var result = new Slide(imageData)
+			var result = new Slide(_imageData.Value)
 			{
 				BackgroundImageName = CarName,
 				BackgroundFill = Stretch.UniformToFill,
@@ -60,9 +63,9 @@ namespace Player.Model
 		}
 
 		[NotNull]
-		private static Slide _MakeWhiskySlide([NotNull] ImageLoader imageData)
+		private Slide _MakeWhiskySlide()
 		{
-			var result = new Slide(imageData)
+			var result = new Slide(_imageData.Value)
 			{
 				BackgroundImageName = WhiskeyName,
 				BackgroundFill = Stretch.Uniform,
@@ -86,6 +89,10 @@ namespace Player.Model
 			var fileStream = ImageDataFor(WhiskeyFileName);
 			return fileStream.CopyToAsync(destination)
 				.ContinueWith(t => fileStream.Dispose());
+		}
+
+		public void Dispose()
+		{
 		}
 	}
 }
