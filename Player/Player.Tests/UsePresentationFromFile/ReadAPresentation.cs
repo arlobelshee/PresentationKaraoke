@@ -29,8 +29,7 @@ namespace Player.Tests.UsePresentationFromFile
 			using (var zipData = new MemoryStream())
 			{
 				await _WriteTrivialOneSlidePresoToStream(zipData);
-				var testSubject = new _PresentationFileSet();
-				var preso = await testSubject.ReadPresentation(zipData);
+				var preso = await _PresentationFileSet.ReadPresentation(zipData);
 				preso.Length.Should()
 					.Be(1);
 				var onlySlide = preso.PickOneRandomSlide();

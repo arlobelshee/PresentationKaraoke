@@ -16,7 +16,7 @@ namespace Player
 	/// </summary>
 	sealed partial class _App
 	{
-		[NotNull] private KaraokeMachine _machine;
+		[CanBeNull] private KaraokeMachine _machine;
 
 		/// <summary>
 		///    Initializes the singleton application object.  This is the first line of authored code
@@ -33,13 +33,14 @@ namespace Player
 		///    will be used such as when the application is launched to open a specific file.
 		/// </summary>
 		/// <param name="e">Details about the launch request and process.</param>
-		protected override void OnLaunched([NotNull] LaunchActivatedEventArgs e)
+		protected override async void OnLaunched([NotNull] LaunchActivatedEventArgs e)
 		{
 			_machine = KaraokeMachine.WithABrain();
 			var rootFrame = _CreateMainWindow();
 			_InitializeViewState(e);
 			rootFrame.ChangeToCurrentPageIfNotCurrentlyShowingAnything(e);
 			_ActivateApplication();
+			await _machine.TurnOn.Execute();
 		}
 
 		/// <summary>
@@ -87,7 +88,8 @@ namespace Player
 
 		private void _StopBackgroundActivity()
 		{
-			_machine.Pause.Execute();
+			if (_machine != null)
+				_machine.Pause.Execute();
 		}
 	}
 }

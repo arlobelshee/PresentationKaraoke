@@ -61,6 +61,9 @@ namespace Player.ViewModels
 		public AsyncCommand StartAutoplay { get; private set; }
 
 		[NotNull]
+		public AsyncCommand TurnOn { get; private set; }
+
+		[NotNull]
 		public Command Stop { get; private set; }
 
 		[NotNull]
@@ -73,8 +76,6 @@ namespace Player.ViewModels
 		private Type _currentPageType;
 
 		private int _slideAdvanceSpeed;
-
-		internal _MachineBrains Brains_TestAccess;
 
 		[NotNull]
 		public static KaraokeMachine WithABrain()
@@ -102,6 +103,7 @@ namespace Player.ViewModels
 			AdvanceSlide = AsyncCommand.Wrapping(_NoOp);
 			Start = AsyncCommand.Wrapping(_NoOp);
 			StartAutoplay = AsyncCommand.Wrapping(_NoOp);
+			TurnOn = AsyncCommand.Wrapping(_NoOp);
 			Stop = new Command(_NoOp);
 			_CleanUp = _NoOp;
 		}

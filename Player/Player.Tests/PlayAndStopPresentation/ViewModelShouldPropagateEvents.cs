@@ -32,6 +32,8 @@ namespace Player.Tests.PlayAndStopPresentation
 				.BeBoundTo(brains.Start);
 			_testSubject.StartAutoplay.Should()
 				.BeBoundTo(brains.StartAutoplay);
+			_testSubject.TurnOn.Should()
+				.BeBoundTo(brains.PrepareDeck);
 		}
 
 		[NotNull,Test]

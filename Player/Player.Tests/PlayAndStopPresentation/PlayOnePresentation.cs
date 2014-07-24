@@ -82,6 +82,7 @@ namespace Player.Tests.PlayAndStopPresentation
 		{
 			_clock = new StoppedClock();
 			_testSubject = _MachineBrains.WithTrivialSlidesAndUi(out _machine, _clock);
+			_testSubject.PrepareDeck();
 		}
 	}
 }

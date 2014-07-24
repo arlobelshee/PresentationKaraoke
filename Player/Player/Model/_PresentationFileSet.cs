@@ -14,16 +14,16 @@ using Player.ViewModels;
 
 namespace Player.Model
 {
-	internal class _PresentationFileSet
+	internal static class _PresentationFileSet
 	{
 		[NotNull]
-		public async Task<_SlideLibrary> ReadPresentation([NotNull] Stream presentationFile)
+		public static async Task<_SlideLibrary> ReadPresentation([NotNull] Stream presentationFile)
 		{
 			var archive = new ZipArchive(presentationFile, ZipArchiveMode.Read);
 			var imageData = new _ImageLoaderZip(archive);
 			try
 			{
-				var allSlides = ParseManifest(_LoadIndex(archive), imageData);
+				var allSlides = _ParseManifest(_LoadIndex(archive), imageData);
 				return new _SlideLibrary(await allSlides, imageData);
 			}
 			catch (Exception)
@@ -45,7 +45,7 @@ namespace Player.Model
 		}
 
 		[NotNull]
-		private async Task<IEnumerable<Slide>> ParseManifest([NotNull] ZipArchiveEntry manifest, [NotNull] ImageLoader imageData)
+		private static async Task<IEnumerable<Slide>> _ParseManifest([NotNull] ZipArchiveEntry manifest, [NotNull] ImageLoader imageData)
 		{
 			_PresentationData presentation;
 			using (var stream = manifest.Open())

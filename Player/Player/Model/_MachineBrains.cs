@@ -4,8 +4,11 @@
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
 using System;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using Windows.Storage;
+using Windows.Storage.Pickers;
 using JetBrains.Annotations;
 using Player.ViewModels;
 
@@ -14,8 +17,9 @@ namespace Player.Model
 	internal class _MachineBrains : IDisposable
 	{
 		[NotNull] private readonly KaraokeMachine _machine;
+		[NotNull] private readonly Func<Task<_SlideLibrary>> _slideLoader;
 		[NotNull] private readonly Clock _clock;
-		[NotNull] private readonly AsyncLazy<_SlideLibrary> _slideLibrary;
+		[CanBeNull] private _SlideLibrary _slideLibrary;
 		[CanBeNull] private RecurringEvent _slideAdvancer;
 		[NotNull] private Task<Slide> _slideBeingPrepared;
 
@@ -23,12 +27,11 @@ namespace Player.Model
 			[NotNull] Clock clock)
 		{
 			_machine = machine;
+			_slideLoader = slideLoader;
 			_clock = clock;
-			machine.Brains_TestAccess = this;
 			_machine.ShowOptions();
 			_machine.SlideAdvanceSpeed = 10;
-			_slideLibrary = new AsyncLazy<_SlideLibrary>(slideLoader);
-			_slideBeingPrepared = _StartPreparingOneSlide();
+			_slideLibrary = null;
 		}
 
 		[NotNull]
@@ -76,13 +79,34 @@ namespace Player.Model
 		[NotNull]
 		private async Task<Slide> _StartPreparingOneSlide()
 		{
-			var onDeck = (await _slideLibrary).PickOneRandomSlide();
+			var onDeck = _slideLibrary.PickOneRandomSlide();
 			return await _machine.ControlMaker.Inflate(onDeck);
 		}
 
 		public static void SupplyBrainFor([NotNull] KaraokeMachine machine)
 		{
-			_ConnectBrainsToMachine(machine, _BuiltInSlides.LoadAllSlides, new _WallClock());
+			_ConnectBrainsToMachine(machine, _OpenPresentationFile, new _WallClock());
+		}
+
+		[NotNull]
+		public async Task PrepareDeck()
+		{
+			_slideLibrary = await _slideLoader();
+			_slideBeingPrepared = _StartPreparingOneSlide();
+		}
+
+		[NotNull]
+		private static async Task<_SlideLibrary> _OpenPresentationFile()
+		{
+			StorageFile deck = null;
+			while (deck == null)
+			{
+				var openDiaog = new FileOpenPicker();
+				openDiaog.FileTypeFilter.Add(".karaoke");
+				deck = await openDiaog.PickSingleFileAsync();
+			}
+			var contents = deck.OpenReadAsync();
+			return await _PresentationFileSet.ReadPresentation((await contents).AsStreamForRead());
 		}
 
 		[NotNull]
@@ -102,13 +126,15 @@ namespace Player.Model
 			machine.Stop.BindTo(brains.Stop);
 			machine.Start.BindTo(brains.Start);
 			machine.StartAutoplay.BindTo(brains.StartAutoplay);
+			machine.TurnOn.BindTo(brains.PrepareDeck);
 			machine._CleanUp = brains.Dispose;
 			return brains;
 		}
 
 		public void Dispose()
 		{
-			_slideLibrary.Value.Result.Dispose();
+			if (_slideLibrary != null) _slideLibrary.Dispose();
+			_slideLibrary = null;
 		}
 	}
 }
