@@ -3,6 +3,7 @@
 // 
 // Copyright 2014, Arlo Belshee. All rights reserved. See LICENSE.txt for usage.
 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
@@ -13,14 +14,31 @@ using Player.ViewModels;
 
 namespace Player.Model
 {
-	internal class _PresentationFileSet
+	internal class _PresentationFileSet : IDisposable
 	{
-		[NotNull]
-		public async Task<_SlideLibrary> ReadPresentation([NotNull] Stream presentationFile)
+		[NotNull] private readonly ZipArchive _archive;
+
+		public _PresentationFileSet([NotNull] Stream presentationFile)
 		{
-			var archive = new ZipArchive(presentationFile, ZipArchiveMode.Read);
-			var allSlides = ParseManifest(archive.GetEntry("index.json"), new _ImageLoaderZip(archive));
+			_archive = new ZipArchive(presentationFile, ZipArchiveMode.Read);
+		}
+
+		[NotNull]
+		public async Task<_SlideLibrary> ReadPresentation()
+		{
+			var allSlides = ParseManifest(_LoadIndex(), new _ImageLoaderZip(_archive));
 			return new _SlideLibrary(await allSlides);
+		}
+
+		[NotNull]
+		private ZipArchiveEntry _LoadIndex()
+		{
+			var index = _archive.GetEntry("index.json");
+			if (index == null)
+			{
+				throw new FormatException("This presentation is incomplete. I could not find index.json.");
+			}
+			return index;
 		}
 
 		[NotNull]
@@ -32,6 +50,11 @@ namespace Player.Model
 				presentation = await _PresentationData.FromJson(stream);
 			}
 			return presentation.slides.Select(s => s.ToSlide(imageData));
+		}
+
+		public void Dispose()
+		{
+			_archive.Dispose();
 		}
 	}
 }
