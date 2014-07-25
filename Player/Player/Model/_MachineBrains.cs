@@ -51,7 +51,7 @@ namespace Player.Model
 		public async Task AdvanceSlide()
 		{
 			var inflationDone = _StartPreparingOneSlide();
-			Interlocked.Exchange(ref inflationDone, _slideBeingPrepared);
+			inflationDone = Interlocked.Exchange(ref _slideBeingPrepared, inflationDone);
 			_ChangeSlideBeingDisplayed(await inflationDone);
 		}
 
