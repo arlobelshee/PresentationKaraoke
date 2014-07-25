@@ -22,8 +22,17 @@ namespace Player.Model
 
 		public Task<Stream> Load(string name)
 		{
-			return _worker.Do(() => _imageBundle.GetEntry(name)
-				.Open());
+			return _worker.Do(async () =>
+			{
+				using (var rawZip = _imageBundle.GetEntry(name)
+						.Open())
+				{
+					var result = new MemoryStream();
+					await rawZip.CopyToAsync(result);
+					result.Seek(0, SeekOrigin.Begin);
+					return (Stream) result;
+				}
+			});
 		}
 
 		public void Dispose()
