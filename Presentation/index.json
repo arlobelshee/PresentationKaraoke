@@ -7,10 +7,33 @@
         "background_image": "whisky.jpeg"
     },
     {
+        "middle":"This slide intentionally left blank",
+        "text_color": "white",
+        "background_color": "#FF303070"
+    },
+    {
         "bottom":"You must run. Very fast.",
         "text_color": "white",
         "background_color": "#FF000000",
         "background_image": "burning_car.jpeg"
+    },
+    {
+        "top":"CEOs live on",
+        "text_color": "black",
+        "background_color": "#FF000000",
+        "background_image": "evil_jobs.jpeg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "actions_and_words.jpeg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "agile_strategy.jpeg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "all_for_one.jpeg"
     }
 ]
 }
