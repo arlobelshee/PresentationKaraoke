@@ -18,22 +18,38 @@
         "background_image": "burning_car.jpeg"
     },
     {
-        "top":"CEOs live on",
+        "top":"Filtering conditions vary",
         "text_color": "black",
-        "background_color": "#FF000000",
+        "background_color": "#FFFFFFFF",
         "background_image": "evil_jobs.jpeg"
     },
     {
+        "text_color": "black",
         "background_color": "#FF000000",
         "background_image": "actions_and_words.jpeg"
     },
     {
+        "text_color": "black",
         "background_color": "#FF000000",
         "background_image": "agile_strategy.jpeg"
     },
     {
-        "background_color": "#FF000000",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
         "background_image": "all_for_one.jpeg"
+    },
+    {
+        "top":"Hang together",
+        "bottom":"by the neck",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "bananas.jpeg"
+    },
+    {
+        "middle":"Where has the rum gone?",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "bottle_beach.jpeg"
     }
 ]
 }
