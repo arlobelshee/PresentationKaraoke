@@ -355,5 +355,86 @@
         "background_color": "#FF000000",
         "background_image": "wrong_way.jpg"
     },
+    {
+        "bottom":"Not what you think",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "not_what_you_think.jpg"
+    },
+    {
+        "middle":"Do not hire",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "young_hero.jpg"
+    },
+    {
+        "middle":"Swim here",
+        "text_color": "black",
+        "background_color": "#FF000000",
+        "background_image": "sharks.jpg"
+    },
+    {
+        "bottom":"The world spins both ways",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "world_changing.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "your_blood.jpg"
+    },
+    {
+        "middle":"Never accept constraints",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "tied_up.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "clap_your_hands.jpg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "dont_panic.png"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "love_pain.jpg"
+    },
+    {
+        "bottom":"Deforested by happy cows",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "heart_fields.jpg"
+    },
+    {
+        "bottom":"Notice arrythmia",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "ekg.jpg"
+    },
+    {
+        "bottom":"Think globally; act everywhere",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "circles_of_change.jpg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "refactoring_fail.png"
+    },
+    {
+        "top":"Cost of variation in manufacturing",
+        "middle":"(useless for knowledge work)",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "manufacturing_variation.png"
+    },
+    {
+        "bottom":"On a pale horse he built...",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "lego_death.png"
+    },
 ]
 }

@@ -33,10 +33,19 @@ namespace Player.Model
 		[NotNull]
 		public Slide PickOneRandomSlide()
 		{
-			var next = _lastSlideGiven;
-			while (next == _lastSlideGiven)
+			int next;
+			if (false)
 			{
-				next = _rng.Next(_allSlides.Length);
+				next = _lastSlideGiven;
+				while (next == _lastSlideGiven)
+				{
+					next = _rng.Next(_allSlides.Length);
+				}
+			}
+			else
+			{
+				next = --_lastSlideGiven;
+				if (next < 0) next = _allSlides.Length - 1;
 			}
 			_lastSlideGiven = next;
 			return _allSlides[_lastSlideGiven];
