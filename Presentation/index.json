@@ -18,25 +18,22 @@
         "background_image": "burning_car.jpeg"
     },
     {
-        "top":"Filtering conditions vary",
+        "top":"Opinions vary",
         "text_color": "black",
         "background_color": "#FFFFFFFF",
         "background_image": "evil_jobs.jpeg"
     },
     {
-        "text_color": "black",
         "background_color": "#FF000000",
-        "background_image": "actions_and_words.jpeg"
+        "background_image": "actions_and_words.jpg"
     },
     {
-        "text_color": "black",
         "background_color": "#FF000000",
-        "background_image": "agile_strategy.jpeg"
+        "background_image": "agile_strategy.png"
     },
     {
-        "text_color": "black",
         "background_color": "#FFFFFFFF",
-        "background_image": "all_for_one.jpeg"
+        "background_image": "all_for_one.jpg"
     },
     {
         "top":"Hang together",
@@ -50,6 +47,134 @@
         "text_color": "black",
         "background_color": "#FFFFFFFF",
         "background_image": "bottle_beach.jpeg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "chicken_flowchart.png"
+    },
+    {
+        "middle":"Chickens",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "chicken_graph.png"
+    },
+    {
+        "top":"Chicken,",
+        "middle":"chicken,",
+        "bottom":"chicken, chicken, ...",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "chicken_sequence.png"
+    },
+    {
+        "top":"Time is",
+        "bottom": "all that matters",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "clockwork.jpg"
+    },
+    {
+        "middle":"Refactorable architecture",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "cobb_house.jpg"
+    },
+    {
+        "top":"Don't think too hard",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "cognitive_load.jpg"
+    },
+    {
+        "top":"All of us",
+        "middle": "beats",
+        "bottom": "any of us",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "collective_ownership.jpg"
+    },
+    {
+        "bottom":"A foolish consistency",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "consistency.jpg"
+    },
+    {
+        "bottom": "Cooperate to compete",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "coopetition.jpg"
+    },
+    {
+        "top":"Bugs are",
+        "bottom": "injury accidents",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "days_since_last_injury.jpg"
+    },
+    {
+        "middle":"Decentralize to scale out",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "decentralized_network.jpg"
+    },
+    {
+        "bottom":"Design thinking",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "design_thinking.png"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "do_one_thing_today.png"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "emergent_strategy.jpg"
+    },
+    {
+        "top":"Always promised, never delivered",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "exponential_growth.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "forget_grammar.jpg"
+    },
+    {
+        "top":"Layered architecture",
+        "bottom": "dooming projects since 1980",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "giraph_arch.png"
+    },
+    {
+        "middle":"Money:",
+        "bottom": "less important than you think",
+        "text_color": "black",
+        "background_color": "#FF000000",
+        "background_image": "gold_coins.jpg"
+    },
+    {
+        "top":"How to prevent",
+        "bottom": "communication and trust",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "hierarchical_org_chart.jpg"
+    },
+    {
+        "top":"Hypothesis-driven development",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "hypothesis_testing.jpg"
+    },
+    {
+        "top": "Everyone is the center",
+        "bottom": "of their own world",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "australia.jpg"
     }
 ]
 }
