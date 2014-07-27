@@ -175,6 +175,185 @@
         "text_color": "white",
         "background_color": "#FF000000",
         "background_image": "australia.jpg"
-    }
+    },
+    {
+        "top":"Individual heroes",
+        "bottom": "are a myth",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "individual_hero.jpg"
+    },
+    {
+        "top":"The most flexible tool is best",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "best_tools.jpeg"
+    },
+    {
+        "top":"Which hand feeds you?",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "bite_the_hand.jpg"
+    },
+    {
+        "top":"How did you get here?",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "where_we_come_from.jpg"
+    },
+    {
+        "top":"Adult learning - learn it!",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "kolb.png"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "leave_a_legacy.jpg"
+    },
+    {
+        "middle":"Sustainable success is boring",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "maytag_repair_man.jpg"
+    },
+    {
+        "middle":"Metrics: how to lie to yourself",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "metrics.gif"
+    },
+    {
+        "middle":"Tempo, not time",
+        "text_color": "black",
+        "background_color": "#FF000000",
+        "background_image": "metronome.jpg"
+    },
+    {
+        "top":"Mob programming",
+        "bottom": "a traditional idea that works",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "mob_programming.png"
+    },
+    {
+        "top":"Agile planning: not new",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "modified_spiral.png"
+    },
+    {
+        "bottom":"Teams win, not leaders",
+        "text_color": "white",
+        "background_color": "#FFFFFFFF",
+        "background_image": "my_name_is_irrelevant.png"
+    },
+    {
+        "top":"New experiences require safety",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "new_experience.jpg"
+    },
+    {
+        "top":"Bugs are optional",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "no_bugs.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "no_pants.jpg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "own_your_destiny.png"
+    },
+    {
+        "top":"You choose",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "red_pill.png"
+    },
+    {
+        "top":"Risk is everything",
+        "bottom": "reduce it iteratively",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "reduce_risk.jpg"
+    },
+    {
+        "bottom":"In an era of data, management has changed",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "responsive_org.jpg"
+    },
+    {
+        "top":"How teams grow",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "stages_of_proficiency.png"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "striped_pants.jpg"
+    },
+    {
+        "top":"Everything in its place",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "suitcase_organizer.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "think_pair_share.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "thirst.jpeg"
+    },
+    {
+        "top":"Incremental value",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "value.jpg"
+    },
+    {
+        "middle":"Organizing for trust, joy, and RESULTS",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "valve_org_charts.png"
+    },
+    {
+        "top":"Focusing on efficiency",
+        "bottom": "causes risk to cascade",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "waterfall_planning.png"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "wearing_pants_men.jpg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "why_bother.jpg"
+    },
+    {
+        "top":"Learn from manufacturing",
+        "bottom": "use generalists",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "work_cell_u_shaped.jpg"
+    },
+    {
+        "top":"Expose yourself",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "work_out_loud.jpg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "wrong_way.jpg"
+    },
 ]
 }
