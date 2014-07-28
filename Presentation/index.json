@@ -626,5 +626,110 @@
         "background_color": "#FF000000",
         "background_image": "stonework.jpg"
     },
+    {
+        "middle": "Patterns are everywhere",
+        "text_color": "black",
+        "background_color": "#FF000000",
+        "background_image": "patterns.jpg"
+    },
+    {
+        "top": "Real-world examples are best",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "lego_workshop.jpg"
+    },
+    {
+        "top": "Managers just reflect your decisions",
+        "text_color": "black",
+        "background_color": "#FF000000",
+        "background_image": "pill_in_reflection.jpg"
+    },
+    {
+        "top": "Tiny hands make",
+        "bottom": "simplistic agreements",
+        "image_stretch": "None",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "handshake.jpg"
+    },
+    {
+        "top": "It's in a book",
+        "bottom": "so it must be right",
+        "image_stretch": "None",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "flawless_consulting.png"
+    },
+    {
+        "bottom": "Fail fast",
+        "text_color": "black",
+        "background_color": "#FF000000",
+        "background_image": "man_on_steps.jpg"
+    },
+    {
+        "top": "Sleepy Architect Syndrome",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "sleepy_drawings.jpg"
+    },
+    {
+        "bottom": "Does she feel safe?",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "curled_statue.jpg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "phone_box.jpg"
+    },
+    {
+        "bottom": "Start something",
+        "text_color": "black",
+        "background_color": "#FF000000",
+        "background_image": "match.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "stretch_mind.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "what_is_leadership.jpg"
+    },
+    {
+        "middle": "Emotions are our superpower",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "emotion_faces.jpg"
+    },
+    {
+        "middle": "What does the future hold?",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "closed_curtains.jpg"
+    },
+    {
+        "middle": "Correlation is not causation",
+        "text_color": "white",
+        "background_color": "#FFFFFFFF",
+        "background_image": "lemons_correlation.gif"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "test_tubes.png"
+    },
+    {
+        "bottom": "Value chain?",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "value_stacking.png"
+    },
+    {
+        "bottom": "Chart small",
+        "text_color": "white",
+        "image_stretch": "None",
+        "background_color": "#FF000000",
+        "background_image": "dream_big.png"
+    },
 ]
 }
