@@ -731,5 +731,219 @@
         "background_color": "#FF000000",
         "background_image": "dream_big.png"
     },
+    {
+        "background_color": "#FF000000",
+        "background_image": "unknnown_techniques.jpg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "florida.jpg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "brain_70.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "plan_b.png"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "brain_supercomputer.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "culture_underwater.png"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "china_english.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "wait.png"
+    },
+    {
+        "top": "Planning for tomorrow",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "sign_not_in_use.jpg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "tribes_ascending.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "agile_components.png"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "inside_hostile.png"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "pain_of_regret.jpg"
+    },
+    {
+        "bottom": "Mass customization",
+        "text_color": "white",
+        "background_color": "#FFFFFFFF",
+        "background_image": "starbucks_cups.jpg"
+    },
+    {
+        "bottom": "Preferring documentation",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "fireman_photo.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "done.png"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "another_way.jpg"
+    },
+    {
+        "top": "Should a manager do as asked?",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "dont_touch.jpg"
+    },
+    {
+        "bottom": "Don't threaten your partners",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "earth_eats_moon.jpg"
+    },
+    {
+        "bottom": "Myths have power",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "santa_tomb.jpg"
+    },
+    {
+        "top": "Stress comes from Facebook",
+        "text_color": "white",
+        "background_color": "#FFFFFFFF",
+        "background_image": "stress_correlations.jpg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "lack_access.jpg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "serve.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "bhag.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "ask_google.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "text_on_bike.png"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "learning_methods.png"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "ship_is.png"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "people_first.png"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "quote_1.jpg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "straw_camel.jpg"
+    },
+    {
+        "middle": "We are all individuals",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "soldiers.jpg"
+    },
+    {
+        "middle": "Not my kid!",
+        "text_color": "white",
+        "background_color": "#FFFFFFFF",
+        "background_image": "baby_butt.png"
+    },
+    {
+        "top": "Sea of uncertainty",
+        "text_color": "white",
+        "background_color": "#FFFFFFFF",
+        "background_image": "sea_of_uncertainty.png"
+    },
+    {
+        "bottom": "People overselect for risk",
+        "text_color": "white",
+        "background_color": "#FFFFFFFF",
+        "background_image": "low_risk.jpg"
+    },
+    {
+        "bottom": "Optimal UI...sometimes",
+        "text_color": "white",
+        "background_color": "#FFFFFFFF",
+        "background_image": "key_map.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "values.png"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "be_agile.png"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "what_focus.png"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "kapow.png"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "integrity.jpg"
+    },
+    {
+        "top": "Don't do this",
+        "text_color": "white",
+        "background_color": "#FFFFFFFF",
+        "background_image": "hate_you.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "many_books.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "light_passion.jpg"
+    },
+    {
+        "top": "Predictable == trustworthy",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "trustworthy.jpg"
+    },
+    {
+        "bottom": "Seek happiness!",
+        "text_color": "white",
+        "background_color": "#FFFFFFFF",
+        "background_image": "happy_buddha.png"
+    },
 ]
 }
