@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="2c59f10b-b53e-46d9-85a4-2e1d4d6163b8" Publisher="CN=Abel" Version="1.0.0.0" />
+  <Identity Name="27603ArloBelshee.PresentationKaraoke" Publisher="CN=2CAE4702-D700-4D25-AE8F-1485117D7087" Version="1.1.0.0" />
   <Properties>
     <DisplayName>Presentation Karaoke</DisplayName>
     <PublisherDisplayName>Arlo Belshee</PublisherDisplayName>
