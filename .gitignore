@@ -2,6 +2,9 @@
 [Bb]in/
 [Oo]bj/
 
+# Keys
+*.pfx
+
 # mstest test results
 TestResults
 
