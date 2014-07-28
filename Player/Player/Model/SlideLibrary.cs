@@ -34,7 +34,7 @@ namespace Player.Model
 		public Slide PickOneRandomSlide()
 		{
 			int next;
-			if (false)
+			if (true)
 			{
 				next = _lastSlideGiven;
 				while (next == _lastSlideGiven)
