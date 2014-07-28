@@ -436,5 +436,195 @@
         "background_color": "#FF000000",
         "background_image": "lego_death.png"
     },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "3000_books.jpg"
+    },
+    {
+        "top":"Metrics dartboard",
+        "bottom":"Now with arbitrary precision! (throw multiple darts)",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "metrics_dartboard.jpg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "co2_cycle.png"
+    },
+    {
+        "bottom": "The only metric you need",
+        "image_stretch": "None",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "thumbs_up.jpg"
+    },
+    {
+        "middle": "Messengers",
+        "text_color": "white",
+        "background_color": "#FFFFFFFF",
+        "background_image": "burning_witches.png"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "computer_tombstone.jpg"
+    },
+    {
+        "top": "Under intense load",
+        "bottom": "Shit breaks",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "wormhole.jpg"
+    },
+    {
+        "bottom": "The life we choose",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "phone_and_laptop.jpg"
+    },
+    {
+        "bottom": "The life I choose",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "waterfall.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "all_ears.jpg"
+    },
+    {
+        "bottom": "Ultimate programmer?",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "dude_vinci.gif"
+    },
+    {
+        "bottom": "Caffeine withdrawl",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "dude_before_coffee.jpg"
+    },
+    {
+        "bottom": "The path more travelled by",
+        "text_color": "black",
+        "background_color": "#FF000000",
+        "background_image": "path_more_travelled.jpg"
+    },
+    {
+        "bottom": "Planning at scale",
+        "text_color": "black",
+        "background_color": "#FF000000",
+        "background_image": "planning.png"
+    },
+    {
+        "bottom": "Who are you?",
+        "text_color": "black",
+        "background_color": "#FF000000",
+        "background_image": "band.jpg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "i_quit.jpg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "coding_bunny.jpg"
+    },
+    {
+        "top": "Lean",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "chair.jpg"
+    },
+    {
+        "bottom": "Efficient == environment-dependent",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "jellyfish.jpg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "teamwork.png"
+    },
+    {
+        "middle": "Typical decision-makers",
+        "text_color": "white",
+        "background_color": "#FFFFFFFF",
+        "background_image": "drunk_mice.jpg"
+    },
+    {
+        "bottom": "Safety first",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "hardhat.jpg"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "facepalm.png"
+    },
+    {
+        "top": "Stack",
+        "bottom": "(Iteration 1)",
+        "text_color": "black",
+        "background_color": "#FF000000",
+        "background_image": "pile_of_paper.png"
+    },
+    {
+        "middle": "Prefer flexible tools",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "brain.jpg"
+    },
+    {
+        "bottom": "Typically for the worse",
+        "text_color": "black",
+        "background_color": "#FFFFFFFF",
+        "background_image": "size_matters.jpg"
+    },
+    {
+        "middle": "What do they sell?",
+        "text_color": "white",
+        "background_color": "#FFFFFFFF",
+        "background_image": "beer_ad.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "more.png"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "solve_unknowns.jpg"
+    },
+    {
+        "bottom": "Did not run tests",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "beaver_fail.jpg"
+    },
+    {
+        "top": "Technical debt",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "beaver_in_danger.jpg"
+    },
+    {
+        "middle": "Successful product after 2 years",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "discarded_cell_phones.png"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "censored_da_vinci.png"
+    },
+    {
+        "background_color": "#FF000000",
+        "background_image": "web20.png"
+    },
+    {
+        "middle": "Temple or mausoleum?",
+        "text_color": "black",
+        "background_color": "#FF000000",
+        "background_image": "stonework.jpg"
+    },
 ]
 }
