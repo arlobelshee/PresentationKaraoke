@@ -945,5 +945,33 @@
         "background_color": "#FFFFFFFF",
         "background_image": "happy_buddha.png"
     },
+    {
+        "middle": "Seek happiness!",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "bear.png"
+    },
+    {
+        "bottom": "A model of efficiency",
+        "text_color": "white",
+        "background_color": "#FF000000",
+        "background_image": "factory.png"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "three_fingers.png"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "get_close.png"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "fake_it.jpg"
+    },
+    {
+        "background_color": "#FFFFFFFF",
+        "background_image": "chase.jpg"
+    },
 ]
 }
