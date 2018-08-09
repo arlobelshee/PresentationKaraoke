@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{b996c783-3224-444a-b433-bfb43df36105}</ProjectGuid>
+    <ProjectGuid>{B996C783-3224-444A-B433-BFB43DF36105}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NewPlayer</RootNamespace>
@@ -17,9 +17,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
-    
     <PackageCertificateKeyFile>NewPlayer_TemporaryKey.pfx</PackageCertificateKeyFile>
-    
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -94,23 +92,64 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Annotations.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\AsyncLazy.cs" />
+    <Compile Include="Model\Clock.cs" />
+    <Compile Include="Model\ExecuteVia.cs" />
+    <Compile Include="Model\ImageLoader.cs" />
+    <Compile Include="Model\RecurringEvent.cs" />
+    <Compile Include="Model\SlideLibrary.cs" />
+    <Compile Include="Model\StackJanitor.cs" />
+    <Compile Include="Model\StoppedClock.cs" />
+    <Compile Include="Model\UiControlMaker.cs" />
+    <Compile Include="Model\_BuiltInSlides.cs" />
+    <Compile Include="Model\_ImageLoaderHardCoded.cs" />
+    <Compile Include="Model\_ImageLoaderZip.cs" />
+    <Compile Include="Model\_MachineBrains.cs" />
+    <Compile Include="Model\_PresentationData.cs" />
+    <Compile Include="Model\_PresentationFileSet.cs" />
+    <Compile Include="Model\_TrivialTestSlides.cs" />
+    <Compile Include="Model\_WallClock.cs" />
+    <Compile Include="MvvmHelpers\AsyncCommand.cs" />
+    <Compile Include="MvvmHelpers\Command.cs" />
+    <Compile Include="MvvmHelpers\FirePropertyChanged.cs" />
+    <Compile Include="MvvmHelpers\HasTarget.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ColorScheme.cs" />
+    <Compile Include="ViewModels\HasContent.cs" />
+    <Compile Include="ViewModels\KaraokeMachine.cs" />
+    <Compile Include="ViewModels\Slide.cs" />
+    <Compile Include="Views\NavigationTarget.cs" />
+    <Compile Include="Views\PresentationOptionsPage.xaml.cs">
+      <DependentUpon>PresentationOptionsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PresentationPlayingPage.xaml.cs">
+      <DependentUpon>PresentationPlayingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_RootWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    
     <None Include="NewPlayer_TemporaryKey.pfx" />
-    
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\burning_car.jpeg" />
+    <Content Include="Assets\DocumentIcon.png" />
+    <Content Include="Assets\Logo-Src.png" />
+    <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\SmallLogo.scale-100.png" />
+    <Content Include="Assets\SplashScreen-Src.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\whisky.jpeg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -129,12 +168,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\PresentationOptionsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PresentationPlayingPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
-  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.1.4</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
-
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

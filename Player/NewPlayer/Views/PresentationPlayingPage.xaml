@@ -1,0 +1,40 @@
+﻿<Page
+	x:Class="Player.Views.PresentationPlayingPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="using:Player"
+	xmlns:vm="using:Player.ViewModels"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:viewModels="using:Player.ViewModels"
+	mc:Ignorable="d"
+	DataContext="{Binding RelativeSource={RelativeSource Self}}"
+	d:DataContext="{Binding Source={d:DesignInstance Type=viewModels:KaraokeMachine_PlayPresentation_DesignData, IsDesignTimeCreatable=True}}">
+
+	<Page.Resources>
+		<vm:HasContent x:Key="visibileIfValid" />
+		<vm:ColorScheme x:Key="asBrush" />
+	</Page.Resources>
+	<Grid x:Name="LayoutContainer" Background="{Binding CurrentSlide.BackgroundColor, Converter={StaticResource asBrush}}">
+		<Image x:Name="BackgroundImage" Margin="0" Source="{Binding CurrentSlide.Background}" Stretch="{Binding CurrentSlide.BackgroundFill}" />
+
+		<Border VerticalAlignment="Top" Background="{Binding CurrentSlide.TextBackgroundColor, Converter={StaticResource asBrush}}" IsHitTestVisible="False" Visibility="{Binding CurrentSlide.MessageTop, Converter={StaticResource visibileIfValid}}">
+			<TextBlock Text="{Binding CurrentSlide.MessageTop}" VerticalAlignment="Top" Padding="15,30" FontSize="48" FontFamily="Candara"
+			           IsTapEnabled="False" IsRightTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False"
+			           ManipulationMode="None" TextWrapping="WrapWholeWords" TextAlignment="Center" FontWeight="Bold" Opacity="1.0" Foreground="{Binding CurrentSlide.TextForegroundColor, Converter={StaticResource asBrush}}" />
+		</Border>
+
+		<Border VerticalAlignment="Center" Background="{Binding CurrentSlide.TextBackgroundColor, Converter={StaticResource asBrush}}" IsHitTestVisible="False" Visibility="{Binding CurrentSlide.MessageCenter, Converter={StaticResource visibileIfValid}}">
+			<TextBlock Text="{Binding CurrentSlide.MessageCenter}" VerticalAlignment="Top" Padding="15,30" FontSize="48" FontFamily="Candara"
+			           IsTapEnabled="False" IsRightTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False"
+			           ManipulationMode="None" TextWrapping="WrapWholeWords" TextAlignment="Center" FontWeight="Bold" Opacity="1.0" Foreground="{Binding CurrentSlide.TextForegroundColor, Converter={StaticResource asBrush}}" />
+		</Border>
+
+		<Border VerticalAlignment="Bottom" Background="{Binding CurrentSlide.TextBackgroundColor, Converter={StaticResource asBrush}}" IsHitTestVisible="False" Visibility="{Binding CurrentSlide.MessageBottom, Converter={StaticResource visibileIfValid}}">
+			<TextBlock Text="{Binding CurrentSlide.MessageBottom}" VerticalAlignment="Top" Padding="15,30" FontSize="48" FontFamily="Candara"
+			           IsTapEnabled="False" IsRightTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False"
+			           ManipulationMode="None" TextWrapping="WrapWholeWords" TextAlignment="Center" FontWeight="Bold" Opacity="1.0" Foreground="{Binding CurrentSlide.TextForegroundColor, Converter={StaticResource asBrush}}" />
+		</Border>
+
+	</Grid>
+</Page>
