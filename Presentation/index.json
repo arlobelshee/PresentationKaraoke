@@ -6,7 +6,13 @@
         "background_color": "#FFFFFFFF",
         "background_image": "whisky.jpeg"
     },
-    {
+		{
+			"top": "Didn't think this through...",
+			"text_color": "black",
+			"background_color": "#FF000000",
+			"background_image": "baby_cake.jpg"
+		},
+		{
         "middle":"This slide intentionally left blank",
         "text_color": "white",
         "background_color": "#FF303070"
@@ -37,12 +43,15 @@
     },
     {
         "top":"Hang together",
-        "bottom":"by the neck",
         "text_color": "black",
         "background_color": "#FFFFFFFF",
         "background_image": "bananas.jpeg"
     },
-    {
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "glad_we_agree.png"
+		},
+		{
         "middle":"Where has the rum gone?",
         "text_color": "black",
         "background_color": "#FFFFFFFF",
