@@ -25,27 +25,16 @@ namespace Player.Model
 			_lastSlideGiven = _allSlides.Length;
 		}
 
-		public int Length
-		{
-			get { return _allSlides.Length; }
-		}
+		public int Length => _allSlides.Length;
 
 		[NotNull]
 		public Slide PickOneRandomSlide()
 		{
 			int next;
-			if (true)
+			next = _lastSlideGiven;
+			while (next == _lastSlideGiven)
 			{
-				next = _lastSlideGiven;
-				while (next == _lastSlideGiven)
-				{
-					next = _rng.Next(_allSlides.Length);
-				}
-			}
-			else
-			{
-				next = --_lastSlideGiven;
-				if (next < 0) next = _allSlides.Length - 1;
+				next = _rng.Next(_allSlides.Length);
 			}
 			_lastSlideGiven = next;
 			return _allSlides[_lastSlideGiven];

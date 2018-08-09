@@ -18,10 +18,7 @@ namespace Player.MvvmHelpers
 			_whenCalled = whenCalled;
 		}
 
-		public Action Target
-		{
-			get { return _whenCalled; }
-		}
+		public Action Target => _whenCalled;
 
 		public bool CanExecute([CanBeNull] object parameter)
 		{
