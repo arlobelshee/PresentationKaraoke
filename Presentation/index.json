@@ -1,11 +1,11 @@
 {
-"slides": [
-    {
-        "top":"It's what's for dinner",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "whisky.jpeg"
-    },
+	"slides": [
+		{
+			"top": "It's what's for dinner",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "whisky.jpeg"
+		},
 		{
 			"top": "Didn't think this through...",
 			"text_color": "black",
@@ -13,974 +13,986 @@
 			"background_image": "baby_cake.jpg"
 		},
 		{
-        "middle":"This slide intentionally left blank",
-        "text_color": "white",
-        "background_color": "#FF303070"
-    },
-    {
-        "bottom":"You must run. Very fast.",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "burning_car.jpeg"
-    },
-    {
-        "top":"Opinions vary",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "evil_jobs.jpeg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "actions_and_words.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "agile_strategy.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "all_for_one.jpg"
-    },
-    {
-        "top":"Hang together",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "bananas.jpeg"
-    },
+			"middle": "This slide intentionally left blank",
+			"text_color": "white",
+			"background_color": "#FF303070"
+		},
+		{
+			"bottom": "You must run. Very fast.",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "burning_car.jpeg"
+		},
+		{
+			"top": "Opinions vary",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "evil_jobs.jpeg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "actions_and_words.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "agile_strategy.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "all_for_one.jpg"
+		},
+		{
+			"top": "Hang together",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "bananas.jpeg"
+		},
 		{
 			"background_color": "#FFFFFFFF",
 			"background_image": "glad_we_agree.png"
 		},
 		{
-        "middle":"Where has the rum gone?",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "bottle_beach.jpeg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "chicken_flowchart.png"
-    },
-    {
-        "middle":"Chickens",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "chicken_graph.png"
-    },
-    {
-        "top":"Chicken,",
-        "middle":"chicken,",
-        "bottom":"chicken, chicken, ...",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "chicken_sequence.png"
-    },
-    {
-        "top":"Time is",
-        "bottom": "all that matters",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "clockwork.jpg"
-    },
-    {
-        "middle":"Refactorable architecture",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "cobb_house.jpg"
-    },
-    {
-        "top":"Don't think too hard",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "cognitive_load.jpg"
-    },
-    {
-        "top":"All of us",
-        "middle": "beats",
-        "bottom": "any of us",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "collective_ownership.jpg"
-    },
-    {
-        "bottom":"A foolish consistency",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "consistency.jpg"
-    },
-    {
-        "bottom": "Cooperate to compete",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "coopetition.jpg"
-    },
-    {
-        "top":"Bugs are",
-        "bottom": "injury accidents",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "days_since_last_injury.jpg"
-    },
-    {
-        "middle":"Decentralize to scale out",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "decentralized_network.jpg"
-    },
-    {
-        "bottom":"Design thinking",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "design_thinking.png"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "do_one_thing_today.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "emergent_strategy.jpg"
-    },
-    {
-        "top":"Always promised, never delivered",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "exponential_growth.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "forget_grammar.jpg"
-    },
-    {
-        "top":"Layered architecture",
-        "bottom": "dooming projects since 1980",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "giraph_arch.png"
-    },
-    {
-        "middle":"Money:",
-        "bottom": "less important than you think",
-        "text_color": "black",
-        "background_color": "#FF000000",
-        "background_image": "gold_coins.jpg"
-    },
-    {
-        "top":"How to prevent",
-        "bottom": "communication and trust",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "hierarchical_org_chart.jpg"
-    },
-    {
-        "top":"Hypothesis-driven development",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "hypothesis_testing.jpg"
-    },
-    {
-        "top": "Everyone is the center",
-        "bottom": "of their own world",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "australia.jpg"
-    },
-    {
-        "top":"Individual heroes",
-        "bottom": "are a myth",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "individual_hero.jpg"
-    },
-    {
-        "top":"The most flexible tool is best",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "best_tools.jpeg"
-    },
-    {
-        "top":"Which hand feeds you?",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "bite_the_hand.jpg"
-    },
-    {
-        "top":"How did you get here?",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "where_we_come_from.jpg"
-    },
-    {
-        "top":"Adult learning - learn it!",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "kolb.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "leave_a_legacy.jpg"
-    },
-    {
-        "middle":"Sustainable success is boring",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "maytag_repair_man.jpg"
-    },
-    {
-        "middle":"Metrics: how to lie to yourself",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "metrics.gif"
-    },
-    {
-        "middle":"Tempo, not time",
-        "text_color": "black",
-        "background_color": "#FF000000",
-        "background_image": "metronome.jpg"
-    },
-    {
-        "top":"Mob programming",
-        "bottom": "a traditional idea that works",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "mob_programming.png"
-    },
-    {
-        "top":"Agile planning: not new",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "modified_spiral.png"
-    },
-    {
-        "bottom":"Teams win, not leaders",
-        "text_color": "white",
-        "background_color": "#FFFFFFFF",
-        "background_image": "my_name_is_irrelevant.png"
-    },
-    {
-        "top":"New experiences require safety",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "new_experience.jpg"
-    },
-    {
-        "top":"Bugs are optional",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "no_bugs.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "no_pants.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "own_your_destiny.png"
-    },
-    {
-        "top":"You choose",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "red_pill.png"
-    },
-    {
-        "top":"Risk is everything",
-        "bottom": "reduce it iteratively",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "reduce_risk.jpg"
-    },
-    {
-        "bottom":"In an era of data, management has changed",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "responsive_org.jpg"
-    },
-    {
-        "top":"How teams grow",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "stages_of_proficiency.png"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "striped_pants.jpg"
-    },
-    {
-        "top":"Everything in its place",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "suitcase_organizer.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "think_pair_share.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "thirst.jpeg"
-    },
-    {
-        "top":"Incremental value",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "value.jpg"
-    },
-    {
-        "middle":"Organizing for trust, joy, and RESULTS",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "valve_org_charts.png"
-    },
-    {
-        "top":"Focusing on efficiency",
-        "bottom": "causes risk to cascade",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "waterfall_planning.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "wearing_pants_men.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "why_bother.jpg"
-    },
-    {
-        "top":"Learn from manufacturing",
-        "bottom": "use generalists",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "work_cell_u_shaped.jpg"
-    },
-    {
-        "top":"Expose yourself",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "work_out_loud.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "wrong_way.jpg"
-    },
-    {
-        "bottom":"Not what you think",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "not_what_you_think.jpg"
-    },
-    {
-        "middle":"Do not hire",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "young_hero.jpg"
-    },
-    {
-        "middle":"Swim here",
-        "text_color": "black",
-        "background_color": "#FF000000",
-        "background_image": "sharks.jpg"
-    },
-    {
-        "bottom":"The world spins both ways",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "world_changing.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "your_blood.jpg"
-    },
-    {
-        "middle":"Never accept constraints",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "tied_up.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "clap_your_hands.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "dont_panic.png"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "love_pain.jpg"
-    },
-    {
-        "bottom":"Deforested by happy cows",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "heart_fields.jpg"
-    },
-    {
-        "bottom":"Notice arrythmia",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "ekg.jpg"
-    },
-    {
-        "bottom":"Think globally; act everywhere",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "circles_of_change.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "refactoring_fail.png"
-    },
-    {
-        "top":"Cost of variation in manufacturing",
-        "middle":"(useless for knowledge work)",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "manufacturing_variation.png"
-    },
-    {
-        "bottom":"On a pale horse he built...",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "lego_death.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "3000_books.jpg"
-    },
-    {
-        "top":"Metrics dartboard",
-        "bottom":"Now with arbitrary precision! (throw multiple darts)",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "metrics_dartboard.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "co2_cycle.png"
-    },
-    {
-        "bottom": "The only metric you need",
-        "image_stretch": "None",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "thumbs_up.jpg"
-    },
-    {
-        "middle": "Messengers",
-        "text_color": "white",
-        "background_color": "#FFFFFFFF",
-        "background_image": "burning_witches.png"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "computer_tombstone.jpg"
-    },
-    {
-        "top": "Under intense load",
-        "bottom": "Shit breaks",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "wormhole.jpg"
-    },
-    {
-        "bottom": "The life we choose",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "phone_and_laptop.jpg"
-    },
-    {
-        "bottom": "The life I choose",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "waterfall.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "all_ears.jpg"
-    },
-    {
-        "bottom": "Ultimate programmer?",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "dude_vinci.gif"
-    },
-    {
-        "bottom": "Caffeine withdrawl",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "dude_before_coffee.jpg"
-    },
-    {
-        "bottom": "The path more travelled by",
-        "text_color": "black",
-        "background_color": "#FF000000",
-        "background_image": "path_more_travelled.jpg"
-    },
-    {
-        "bottom": "Planning at scale",
-        "text_color": "black",
-        "background_color": "#FF000000",
-        "background_image": "planning.png"
-    },
-    {
-        "bottom": "Who are you?",
-        "text_color": "black",
-        "background_color": "#FF000000",
-        "background_image": "band.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "i_quit.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "coding_bunny.jpg"
-    },
-    {
-        "top": "Lean",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "chair.jpg"
-    },
-    {
-        "bottom": "Efficient == environment-dependent",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "jellyfish.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "teamwork.png"
-    },
-    {
-        "middle": "Typical decision-makers",
-        "text_color": "white",
-        "background_color": "#FFFFFFFF",
-        "background_image": "drunk_mice.jpg"
-    },
-    {
-        "bottom": "Safety first",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "hardhat.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "facepalm.png"
-    },
-    {
-        "top": "Stack",
-        "bottom": "(Iteration 1)",
-        "text_color": "black",
-        "background_color": "#FF000000",
-        "background_image": "pile_of_paper.png"
-    },
-    {
-        "middle": "Prefer flexible tools",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "brain.jpg"
-    },
-    {
-        "bottom": "Typically for the worse",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "size_matters.jpg"
-    },
-    {
-        "middle": "Does this belong here?",
-        "text_color": "white",
-        "background_color": "#FFFFFFFF",
-        "background_image": "beer_ad.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "more.png"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "solve_unknowns.jpg"
-    },
-    {
-        "bottom": "Did not run tests",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "beaver_fail.jpg"
-    },
-    {
-        "top": "Technical debt",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "beaver_in_danger.jpg"
-    },
-    {
-        "middle": "Successful product after 2 years",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "discarded_cell_phones.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "censored_da_vinci.png"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "web20.png"
-    },
-    {
-        "middle": "Temple or mausoleum?",
-        "text_color": "black",
-        "background_color": "#FF000000",
-        "background_image": "stonework.jpg"
-    },
-    {
-        "middle": "Patterns are everywhere",
-        "text_color": "black",
-        "background_color": "#FF000000",
-        "background_image": "patterns.jpg"
-    },
-    {
-        "top": "Real-world examples are best",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "lego_workshop.jpg"
-    },
-    {
-        "top": "Managers just reflect your decisions",
-        "text_color": "black",
-        "background_color": "#FF000000",
-        "background_image": "pill_in_reflection.jpg"
-    },
-    {
-        "top": "Tiny hands make",
-        "bottom": "simplistic agreements",
-        "image_stretch": "None",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "handshake.jpg"
-    },
-    {
-        "top": "It's in a book",
-        "bottom": "so it must be right",
-        "image_stretch": "None",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "flawless_consulting.png"
-    },
-    {
-        "bottom": "Fail fast",
-        "text_color": "black",
-        "background_color": "#FF000000",
-        "background_image": "man_on_steps.jpg"
-    },
-    {
-        "top": "Sleepy Architect Syndrome",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "sleepy_drawings.jpg"
-    },
-    {
-        "bottom": "Does she feel safe?",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "curled_statue.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "phone_box.jpg"
-    },
-    {
-        "bottom": "Start something",
-        "text_color": "black",
-        "background_color": "#FF000000",
-        "background_image": "match.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "stretch_mind.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "what_is_leadership.jpg"
-    },
-    {
-        "middle": "Emotions are our superpower",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "emotion_faces.jpg"
-    },
-    {
-        "middle": "What does the future hold?",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "closed_curtains.jpg"
-    },
-    {
-        "middle": "Correlation is not causation",
-        "text_color": "white",
-        "background_color": "#FFFFFFFF",
-        "background_image": "lemons_correlation.gif"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "test_tubes.png"
-    },
-    {
-        "bottom": "Value chain?",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "value_stacking.png"
-    },
-    {
-        "bottom": "Chart small",
-        "text_color": "white",
-        "image_stretch": "None",
-        "background_color": "#FF000000",
-        "background_image": "dream_big.png"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "unknnown_techniques.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "florida.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "brain_70.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "plan_b.png"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "brain_supercomputer.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "culture_underwater.png"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "china_english.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "wait.png"
-    },
-    {
-        "top": "Planning for tomorrow",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "sign_not_in_use.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "tribes_ascending.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "agile_components.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "inside_hostile.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "pain_of_regret.jpg"
-    },
-    {
-        "bottom": "Mass customization",
-        "text_color": "white",
-        "background_color": "#FFFFFFFF",
-        "background_image": "starbucks_cups.jpg"
-    },
-    {
-        "bottom": "Preferring documentation",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "fireman_photo.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "done.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "another_way.jpg"
-    },
-    {
-        "top": "Should a manager do as asked?",
-        "text_color": "black",
-        "background_color": "#FFFFFFFF",
-        "background_image": "dont_touch.jpg"
-    },
-    {
-        "bottom": "Don't threaten your partners",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "earth_eats_moon.jpg"
-    },
-    {
-        "bottom": "Myths have power",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "santa_tomb.jpg"
-    },
-    {
-        "top": "Stress comes from Facebook",
-        "text_color": "white",
-        "background_color": "#FFFFFFFF",
-        "background_image": "stress_correlations.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "lack_access.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "serve.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "bhag.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "ask_google.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "text_on_bike.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "learning_methods.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "ship_is.png"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "people_first.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "quote_1.jpg"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "straw_camel.jpg"
-    },
-    {
-        "middle": "We are all individuals",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "soldiers.jpg"
-    },
-    {
-        "middle": "Not my kid!",
-        "text_color": "white",
-        "background_color": "#FFFFFFFF",
-        "background_image": "baby_butt.png"
-    },
-    {
-        "top": "Sea of uncertainty",
-        "text_color": "white",
-        "background_color": "#FFFFFFFF",
-        "background_image": "sea_of_uncertainty.png"
-    },
-    {
-        "bottom": "People overselect for risk",
-        "text_color": "white",
-        "background_color": "#FFFFFFFF",
-        "background_image": "low_risk.jpg"
-    },
-    {
-        "bottom": "Optimal UI...sometimes",
-        "text_color": "white",
-        "background_color": "#FFFFFFFF",
-        "background_image": "key_map.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "values.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "be_agile.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "what_focus.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "kapow.png"
-    },
-    {
-        "background_color": "#FF000000",
-        "background_image": "integrity.jpg"
-    },
-    {
-        "top": "Don't do this",
-        "text_color": "white",
-        "background_color": "#FFFFFFFF",
-        "background_image": "hate_you.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "many_books.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "light_passion.jpg"
-    },
-    {
-        "top": "Predictable == trustworthy",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "trustworthy.jpg"
-    },
-    {
-        "bottom": "Seek happiness!",
-        "text_color": "white",
-        "background_color": "#FFFFFFFF",
-        "background_image": "happy_buddha.png"
-    },
-    {
-        "middle": "Seek happiness!",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "bear.png"
-    },
-    {
-        "bottom": "A model of efficiency",
-        "text_color": "white",
-        "background_color": "#FF000000",
-        "background_image": "factory.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "three_fingers.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "get_close.png"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "fake_it.jpg"
-    },
-    {
-        "background_color": "#FFFFFFFF",
-        "background_image": "chase.jpg"
-    },
-]
+			"bottom": "Speed tortoise is speedy",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "tortoise_catch.jpg"
+		},
+		{
+			"bottom": "I got this",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "sloth.jpg"
+		},
+		{
+			"middle": "Where has the rum gone?",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "bottle_beach.jpeg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "chicken_flowchart.png"
+		},
+		{
+			"middle": "Chickens",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "chicken_graph.png"
+		},
+		{
+			"top": "Chicken,",
+			"middle": "chicken,",
+			"bottom": "chicken, chicken, ...",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "chicken_sequence.png"
+		},
+		{
+			"top": "Time is",
+			"bottom": "all that matters",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "clockwork.jpg"
+		},
+		{
+			"middle": "Refactorable architecture",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "cobb_house.jpg"
+		},
+		{
+			"top": "Don't think too hard",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "cognitive_load.jpg"
+		},
+		{
+			"top": "All of us",
+			"middle": "beats",
+			"bottom": "any of us",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "collective_ownership.jpg"
+		},
+		{
+			"bottom": "A foolish consistency",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "consistency.jpg"
+		},
+		{
+			"bottom": "Cooperate to compete",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "coopetition.jpg"
+		},
+		{
+			"top": "Bugs are",
+			"bottom": "injury accidents",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "days_since_last_injury.jpg"
+		},
+		{
+			"middle": "Decentralize to scale out",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "decentralized_network.jpg"
+		},
+		{
+			"bottom": "Design thinking",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "design_thinking.png"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "do_one_thing_today.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "emergent_strategy.jpg"
+		},
+		{
+			"top": "Always promised, never delivered",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "exponential_growth.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "forget_grammar.jpg"
+		},
+		{
+			"top": "Layered architecture",
+			"bottom": "dooming projects since 1980",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "giraph_arch.png"
+		},
+		{
+			"middle": "Money:",
+			"bottom": "less important than you think",
+			"text_color": "black",
+			"background_color": "#FF000000",
+			"background_image": "gold_coins.jpg"
+		},
+		{
+			"top": "How to prevent",
+			"bottom": "communication and trust",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "hierarchical_org_chart.jpg"
+		},
+		{
+			"top": "Hypothesis-driven development",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "hypothesis_testing.jpg"
+		},
+		{
+			"top": "Everyone is the center",
+			"bottom": "of their own world",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "australia.jpg"
+		},
+		{
+			"top": "Individual heroes",
+			"bottom": "are a myth",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "individual_hero.jpg"
+		},
+		{
+			"top": "The most flexible tool is best",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "best_tools.jpeg"
+		},
+		{
+			"top": "Which hand feeds you?",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "bite_the_hand.jpg"
+		},
+		{
+			"top": "How did you get here?",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "where_we_come_from.jpg"
+		},
+		{
+			"top": "Adult learning - learn it!",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "kolb.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "leave_a_legacy.jpg"
+		},
+		{
+			"middle": "Sustainable success is boring",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "maytag_repair_man.jpg"
+		},
+		{
+			"middle": "Metrics: how to lie to yourself",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "metrics.gif"
+		},
+		{
+			"middle": "Tempo, not time",
+			"text_color": "black",
+			"background_color": "#FF000000",
+			"background_image": "metronome.jpg"
+		},
+		{
+			"top": "Mob programming",
+			"bottom": "a traditional idea that works",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "mob_programming.png"
+		},
+		{
+			"top": "Agile planning: not new",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "modified_spiral.png"
+		},
+		{
+			"bottom": "Teams win, not leaders",
+			"text_color": "white",
+			"background_color": "#FFFFFFFF",
+			"background_image": "my_name_is_irrelevant.png"
+		},
+		{
+			"top": "New experiences require safety",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "new_experience.jpg"
+		},
+		{
+			"top": "Bugs are optional",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "no_bugs.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "no_pants.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "own_your_destiny.png"
+		},
+		{
+			"top": "You choose",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "red_pill.png"
+		},
+		{
+			"top": "Risk is everything",
+			"bottom": "reduce it iteratively",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "reduce_risk.jpg"
+		},
+		{
+			"bottom": "In an era of data, management has changed",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "responsive_org.jpg"
+		},
+		{
+			"top": "How teams grow",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "stages_of_proficiency.png"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "striped_pants.jpg"
+		},
+		{
+			"top": "Everything in its place",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "suitcase_organizer.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "think_pair_share.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "thirst.jpeg"
+		},
+		{
+			"top": "Incremental value",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "value.jpg"
+		},
+		{
+			"middle": "Organizing for trust, joy, and RESULTS",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "valve_org_charts.png"
+		},
+		{
+			"top": "Focusing on efficiency",
+			"bottom": "causes risk to cascade",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "waterfall_planning.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "wearing_pants_men.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "why_bother.jpg"
+		},
+		{
+			"top": "Learn from manufacturing",
+			"bottom": "use generalists",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "work_cell_u_shaped.jpg"
+		},
+		{
+			"top": "Expose yourself",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "work_out_loud.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "wrong_way.jpg"
+		},
+		{
+			"bottom": "Not what you think",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "not_what_you_think.jpg"
+		},
+		{
+			"middle": "Do not hire",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "young_hero.jpg"
+		},
+		{
+			"middle": "Swim here",
+			"text_color": "black",
+			"background_color": "#FF000000",
+			"background_image": "sharks.jpg"
+		},
+		{
+			"bottom": "The world spins both ways",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "world_changing.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "your_blood.jpg"
+		},
+		{
+			"middle": "Never accept constraints",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "tied_up.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "clap_your_hands.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "dont_panic.png"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "love_pain.jpg"
+		},
+		{
+			"bottom": "Deforested by happy cows",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "heart_fields.jpg"
+		},
+		{
+			"bottom": "Notice arrythmia",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "ekg.jpg"
+		},
+		{
+			"bottom": "Think globally; act everywhere",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "circles_of_change.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "refactoring_fail.png"
+		},
+		{
+			"top": "Cost of variation in manufacturing",
+			"middle": "(useless for knowledge work)",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "manufacturing_variation.png"
+		},
+		{
+			"bottom": "On a pale horse he built...",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "lego_death.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "3000_books.jpg"
+		},
+		{
+			"top": "Metrics dartboard",
+			"bottom": "Now with arbitrary precision! (throw multiple darts)",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "metrics_dartboard.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "co2_cycle.png"
+		},
+		{
+			"bottom": "The only metric you need",
+			"image_stretch": "None",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "thumbs_up.jpg"
+		},
+		{
+			"middle": "Messengers",
+			"text_color": "white",
+			"background_color": "#FFFFFFFF",
+			"background_image": "burning_witches.png"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "computer_tombstone.jpg"
+		},
+		{
+			"top": "Under intense load",
+			"bottom": "Shit breaks",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "wormhole.jpg"
+		},
+		{
+			"bottom": "The life we choose",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "phone_and_laptop.jpg"
+		},
+		{
+			"bottom": "The life I choose",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "waterfall.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "all_ears.jpg"
+		},
+		{
+			"bottom": "Ultimate programmer?",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "dude_vinci.gif"
+		},
+		{
+			"bottom": "Caffeine withdrawl",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "dude_before_coffee.jpg"
+		},
+		{
+			"bottom": "The path more travelled by",
+			"text_color": "black",
+			"background_color": "#FF000000",
+			"background_image": "path_more_travelled.jpg"
+		},
+		{
+			"bottom": "Planning at scale",
+			"text_color": "black",
+			"background_color": "#FF000000",
+			"background_image": "planning.png"
+		},
+		{
+			"bottom": "Who are you?",
+			"text_color": "black",
+			"background_color": "#FF000000",
+			"background_image": "band.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "i_quit.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "coding_bunny.jpg"
+		},
+		{
+			"top": "Lean",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "chair.jpg"
+		},
+		{
+			"bottom": "Efficient == environment-dependent",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "jellyfish.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "teamwork.png"
+		},
+		{
+			"middle": "Typical decision-makers",
+			"text_color": "white",
+			"background_color": "#FFFFFFFF",
+			"background_image": "drunk_mice.jpg"
+		},
+		{
+			"bottom": "Safety first",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "hardhat.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "facepalm.png"
+		},
+		{
+			"top": "Stack",
+			"bottom": "(Iteration 1)",
+			"text_color": "black",
+			"background_color": "#FF000000",
+			"background_image": "pile_of_paper.png"
+		},
+		{
+			"middle": "Prefer flexible tools",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "brain.jpg"
+		},
+		{
+			"bottom": "Typically for the worse",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "size_matters.jpg"
+		},
+		{
+			"middle": "Does this belong here?",
+			"text_color": "white",
+			"background_color": "#FFFFFFFF",
+			"background_image": "beer_ad.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "more.png"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "solve_unknowns.jpg"
+		},
+		{
+			"bottom": "Did not run tests",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "beaver_fail.jpg"
+		},
+		{
+			"top": "Technical debt",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "beaver_in_danger.jpg"
+		},
+		{
+			"middle": "Successful product after 2 years",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "discarded_cell_phones.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "censored_da_vinci.png"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "web20.png"
+		},
+		{
+			"middle": "Temple or mausoleum?",
+			"text_color": "black",
+			"background_color": "#FF000000",
+			"background_image": "stonework.jpg"
+		},
+		{
+			"middle": "Patterns are everywhere",
+			"text_color": "black",
+			"background_color": "#FF000000",
+			"background_image": "patterns.jpg"
+		},
+		{
+			"top": "Real-world examples are best",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "lego_workshop.jpg"
+		},
+		{
+			"top": "Managers just reflect your decisions",
+			"text_color": "black",
+			"background_color": "#FF000000",
+			"background_image": "pill_in_reflection.jpg"
+		},
+		{
+			"top": "Tiny hands make",
+			"bottom": "simplistic agreements",
+			"image_stretch": "None",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "handshake.jpg"
+		},
+		{
+			"top": "It's in a book",
+			"bottom": "so it must be right",
+			"image_stretch": "None",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "flawless_consulting.png"
+		},
+		{
+			"bottom": "Fail fast",
+			"text_color": "black",
+			"background_color": "#FF000000",
+			"background_image": "man_on_steps.jpg"
+		},
+		{
+			"top": "Sleepy Architect Syndrome",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "sleepy_drawings.jpg"
+		},
+		{
+			"bottom": "Does she feel safe?",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "curled_statue.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "phone_box.jpg"
+		},
+		{
+			"bottom": "Start something",
+			"text_color": "black",
+			"background_color": "#FF000000",
+			"background_image": "match.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "stretch_mind.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "what_is_leadership.jpg"
+		},
+		{
+			"middle": "Emotions are our superpower",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "emotion_faces.jpg"
+		},
+		{
+			"middle": "What does the future hold?",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "closed_curtains.jpg"
+		},
+		{
+			"middle": "Correlation is not causation",
+			"text_color": "white",
+			"background_color": "#FFFFFFFF",
+			"background_image": "lemons_correlation.gif"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "test_tubes.png"
+		},
+		{
+			"bottom": "Value chain?",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "value_stacking.png"
+		},
+		{
+			"bottom": "Chart small",
+			"text_color": "white",
+			"image_stretch": "None",
+			"background_color": "#FF000000",
+			"background_image": "dream_big.png"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "unknnown_techniques.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "florida.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "brain_70.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "plan_b.png"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "brain_supercomputer.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "culture_underwater.png"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "china_english.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "wait.png"
+		},
+		{
+			"top": "Planning for tomorrow",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "sign_not_in_use.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "tribes_ascending.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "agile_components.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "inside_hostile.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "pain_of_regret.jpg"
+		},
+		{
+			"bottom": "Mass customization",
+			"text_color": "white",
+			"background_color": "#FFFFFFFF",
+			"background_image": "starbucks_cups.jpg"
+		},
+		{
+			"bottom": "Preferring documentation",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "fireman_photo.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "done.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "another_way.jpg"
+		},
+		{
+			"top": "Should a manager do as asked?",
+			"text_color": "black",
+			"background_color": "#FFFFFFFF",
+			"background_image": "dont_touch.jpg"
+		},
+		{
+			"bottom": "Don't threaten your partners",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "earth_eats_moon.jpg"
+		},
+		{
+			"bottom": "Myths have power",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "santa_tomb.jpg"
+		},
+		{
+			"top": "Stress comes from Facebook",
+			"text_color": "white",
+			"background_color": "#FFFFFFFF",
+			"background_image": "stress_correlations.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "lack_access.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "serve.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "bhag.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "ask_google.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "text_on_bike.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "learning_methods.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "ship_is.png"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "people_first.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "quote_1.jpg"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "straw_camel.jpg"
+		},
+		{
+			"middle": "We are all individuals",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "soldiers.jpg"
+		},
+		{
+			"middle": "Not my kid!",
+			"text_color": "white",
+			"background_color": "#FFFFFFFF",
+			"background_image": "baby_butt.png"
+		},
+		{
+			"top": "Sea of uncertainty",
+			"text_color": "white",
+			"background_color": "#FFFFFFFF",
+			"background_image": "sea_of_uncertainty.png"
+		},
+		{
+			"bottom": "People overselect for risk",
+			"text_color": "white",
+			"background_color": "#FFFFFFFF",
+			"background_image": "low_risk.jpg"
+		},
+		{
+			"bottom": "Optimal UI...sometimes",
+			"text_color": "white",
+			"background_color": "#FFFFFFFF",
+			"background_image": "key_map.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "values.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "be_agile.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "what_focus.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "kapow.png"
+		},
+		{
+			"background_color": "#FF000000",
+			"background_image": "integrity.jpg"
+		},
+		{
+			"top": "Don't do this",
+			"text_color": "white",
+			"background_color": "#FFFFFFFF",
+			"background_image": "hate_you.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "many_books.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "light_passion.jpg"
+		},
+		{
+			"top": "Predictable == trustworthy",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "trustworthy.jpg"
+		},
+		{
+			"bottom": "Seek happiness!",
+			"text_color": "white",
+			"background_color": "#FFFFFFFF",
+			"background_image": "happy_buddha.png"
+		},
+		{
+			"middle": "Seek happiness!",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "bear.png"
+		},
+		{
+			"bottom": "A model of efficiency",
+			"text_color": "white",
+			"background_color": "#FF000000",
+			"background_image": "factory.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "three_fingers.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "get_close.png"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "fake_it.jpg"
+		},
+		{
+			"background_color": "#FFFFFFFF",
+			"background_image": "chase.jpg"
+		}
+	]
 }
